@@ -17,6 +17,8 @@ main:focus { outline: none; }
 .home .nav-cta:hover, .home .button.dark:hover { background: #709600; border-color: #709600; }
 .home .hero h1 em { color: var(--olive); }
 .home .hero .eyebrow { color: var(--orange); }
+.home .about-grid > div:first-child > .eyebrow { color: var(--olive); }
+.home .why .eyebrow { color: var(--orange); }
 .process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
 .process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
 .decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
