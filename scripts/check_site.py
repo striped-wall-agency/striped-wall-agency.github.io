@@ -3,6 +3,7 @@ from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+from inline_styles import check_styles
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [ROOT / 'index.html', ROOT / 'work/subdesk/index.html']
@@ -29,7 +30,7 @@ class Page(HTMLParser):
 
 def check():
     pages = {path: Page(path) for path in PAGES}
-    errors = []
+    errors = check_styles()
     for path, page in pages.items():
         label = path.relative_to(ROOT)
         for tag in ('main', 'h1', 'title'):
