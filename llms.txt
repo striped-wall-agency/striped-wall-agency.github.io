@@ -1,0 +1,16 @@
+# Striped Wall
+
+> Independent product design and engineering studio for SaaS platforms, business systems and payment integrations.
+
+Striped Wall brings product discovery, UX/UI design, software development and technical integrations together. The studio focuses on SaaS payments and the admin dashboards support and operations teams use to manage them.
+
+Subdesk is a concept project with fictional data, illustrative HTML/CSS screens and an interactive browser demo. It does not process real payments or provide server authentication.
+
+## Website
+
+- [Studio](https://stripedwall.agency/): Services, process, selected work, studio background and contact details.
+- [Subdesk case study](https://stripedwall.agency/work/subdesk/): Support and billing workspace concept, product screens, design approach and limitations.
+
+## Optional
+
+- [Subdesk demo](https://stripedwall.agency/subdesk-demo/): Interactive concept using browser storage and fictional transactions.

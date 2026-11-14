@@ -122,7 +122,7 @@ header {
   letter-spacing:.04em
 }
 .crumb a:hover {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .hero-grid {
   display:grid;
@@ -132,7 +132,7 @@ header {
   margin-top:46px
 }
 .hero .eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 h1,h2,h3,p {
   margin-top:0
@@ -147,7 +147,7 @@ h1,h2,h3,p {
 .hero h1 em {
   font-family:var(--serif);
   font-weight:400;
-  color:var(--olive);
+  color:var(--olive-ink);
   letter-spacing:-.08em
 }
 .hero-copy {
@@ -280,10 +280,10 @@ section {
   letter-spacing:.12em
 }
 .product-section .eyebrow,#approach .eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 #story .eyebrow,#screens .eyebrow,.outcome-row .eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 #decisions .section-head .eyebrow {
   color:var(--yellow)
@@ -305,7 +305,7 @@ section {
   padding-bottom:14px
 }
 .visual-cap .tag {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 /* Product UI illustration */
@@ -392,7 +392,7 @@ section {
 }
 .demo-pill {
   background:#eff6dc;
-  color:#688a19;
+  color:#4b650c;
   padding:4px 8px;
   border-radius:2px
 }
@@ -528,7 +528,7 @@ section {
   top:36px
 }
 .split-copy .eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 .split-copy h2 {
   margin:16px 0 0
@@ -582,7 +582,7 @@ section {
 }
 .journey .step {
   font:10px var(--mono);
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .journey h3 {
   font-size:22px;
@@ -598,7 +598,7 @@ section {
 .journey .mini-label {
   font:9px var(--mono);
   text-transform:uppercase;
-  color:var(--orange);
+  color:var(--orange-ink);
   margin-top:auto;
   padding-top:19px
 }
@@ -627,7 +627,7 @@ section {
 }
 .screen-title .n {
   font:10px var(--mono);
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .screen-title h3 {
   font-size:21px;
@@ -750,7 +750,7 @@ section {
 .detail-badge {
   display:inline-block;
   background:#eef5dc;
-  color:#638516;
+  color:#4b650c;
   padding:4px 7px;
   font:7px var(--mono)
 }
@@ -973,7 +973,7 @@ section {
 }
 .outcome-item .n {
   font:10px var(--mono);
-  color:var(--olive);
+  color:var(--olive-ink);
   padding-top:4px
 }
 .outcome-item b {
