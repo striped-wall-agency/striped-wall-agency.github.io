@@ -219,7 +219,7 @@ section {
 }
 .num {
   font:11px var(--mono);
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .build-card h3 {
   font-size:30px;
@@ -273,7 +273,7 @@ section {
   font:10px/1.9 var(--mono);
   text-transform:uppercase;
   letter-spacing:.02em;
-  color:var(--olive);
+  color:var(--olive-ink);
   margin-top:20px
 }
 
@@ -447,7 +447,7 @@ section {
 }
 .project .type {
   font-size:11px;
-  color:var(--olive);
+  color:var(--olive-ink);
   margin:3px 0 12px
 }
 .project p {
@@ -832,7 +832,7 @@ section {
 .shot-metrics small {
   display:block;
   font-size:6px;
-  color:#77776e
+  color:#65665e
 }
 .shot-metrics b {
   font:15px var(--serif)
@@ -885,7 +885,7 @@ section {
   gap:4px
 }
 .shot-row span:last-child {
-  color:#ca5a34
+  color:#b63a00
 }
 .project-body {
   flex:1;
@@ -985,7 +985,7 @@ header {
   letter-spacing:.015em
 }
 .links a:hover,.footnav a:hover,.social a:hover {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .nav-cta {
@@ -998,7 +998,7 @@ header {
   padding:106px 0 72px
 }
 .hero .eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .hero-grid {
@@ -1016,7 +1016,7 @@ header {
 }
 
 .hero h1 em {
-  color:var(--olive);
+  color:var(--olive-ink);
   font-style:italic
 }
 
@@ -1067,7 +1067,7 @@ section {
 }
 
 .section-head>div:first-child .eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .section-head p {
   font-size:13px;
@@ -1116,13 +1116,13 @@ section {
 }
 
 .build-card:nth-child(1) .num {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .build-card:nth-child(2) .num {
-  color:#bc8c00
+  color:#795a00
 }
 .build-card:nth-child(3) .num {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .services {
@@ -1360,7 +1360,7 @@ section {
 .project .tags {
   font:8px/1.65 var(--mono);
   min-height:34px;
-  color:#73746c
+  color:#62645b
 }
 .project-link {
   font-size:10px;
@@ -1373,7 +1373,7 @@ section {
   font-size:9px;
   line-height:1.6;
   margin-top:16px;
-  color:#76766e
+  color:#62645b
 }
 
 .about {
@@ -1388,7 +1388,7 @@ section {
   max-width:510px
 }
 .about-grid>div:first-child .eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 .about-copy {
   padding-top:25px
@@ -1911,14 +1911,14 @@ section {
 }
 
 .hero .eyebrow {
-  color:var(--orange);
+  color:var(--orange-ink);
   font-size:12px;
   font-weight:500;
   letter-spacing:.12em
 }
 
 .hero h1 em {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .eyebrow {
@@ -2092,7 +2092,7 @@ header,.footer {
 }
 
 .process .section-head:first-child .eyebrow,.process .principle .num {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .process .principles~.section-head .eyebrow,.process .steps .num {
@@ -2157,14 +2157,14 @@ header,.footer {
   position:relative
 }
 .hero .eyebrow {
-  color:var(--orange);
+  color:var(--orange-ink);
   font-size:12px;
   font-weight:500;
   letter-spacing:.12em
 }
 
 .hero h1 em {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .hero-stripes {
@@ -2206,7 +2206,7 @@ header,.footer {
   font:500 11px/1.35 var(--mono);
   letter-spacing:.1em;
   text-transform:uppercase;
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .expertise-items {
@@ -2235,7 +2235,7 @@ header,.footer {
 }
 
 .build-card:nth-child(2) .num {
-  color:var(--orange);
+  color:var(--orange-ink);
   font-weight:500
 }
 
@@ -2333,19 +2333,19 @@ header,.footer {
 }
 
 .build-card:nth-child(1) .num,.build-card:nth-child(3) .num {
-  color:var(--orange);
+  color:var(--orange-ink);
   font-weight:500
 }
 
 .build-card:nth-child(2) .num {
-  color:var(--olive);
+  color:var(--olive-ink);
   font-weight:500
 }
 
 .service .num {
   font-size:14px;
   font-weight:500;
-  color:#729800;
+  color:#526e00;
   letter-spacing:.05em
 }
 
@@ -2388,38 +2388,38 @@ header,.footer {
 
 /* Alternate section labels across the light editorial sections. */
 .build .section-head>div:first-child>.eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .services .section-head>div:first-child>.eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .work .section-head>div:first-child>.eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .about-grid>div:first-child>.eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 
 
 /* Revised section-label color sequence. */
 .build .section-head>div:first-child>.eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .services .section-head>div:first-child>.eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .work .section-head>div:first-child>.eyebrow {
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .about-grid>div:first-child>.eyebrow {
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 
@@ -2439,7 +2439,7 @@ header,.footer {
 }
 
 .why-copy .eyebrow {
-  color:var(--olive);
+  color:var(--olive-ink);
   font-size:12px;
   font-weight:500;
   letter-spacing:.13em
@@ -2481,7 +2481,7 @@ header,.footer {
 }
 
 .workflow-top span:first-child {
-  color:var(--orange);
+  color:var(--orange-ink);
   font-weight:500
 }
 
@@ -2517,7 +2517,7 @@ header,.footer {
   justify-content:space-between;
   gap:16px;
   padding:10px 0 0;
-  color:#74756d;
+  color:#62645b;
   font-size:10px
 }
 
@@ -2571,7 +2571,7 @@ header,.footer {
 
 .workflow-steps b {
   font:500 10px var(--mono);
-  color:var(--olive)
+  color:var(--olive-ink)
 }
 
 .workflow-steps span {
@@ -2593,7 +2593,7 @@ header,.footer {
 .why-lower-title .eyebrow {
   font-size:11px;
   font-weight:500;
-  color:var(--orange);
+  color:var(--orange-ink);
   letter-spacing:.11em
 }
 
@@ -2618,7 +2618,7 @@ header,.footer {
 .why-story .why-experience {
   font-size:16px;
   line-height:1.5;
-  color:var(--olive);
+  color:var(--olive-ink);
   margin-bottom:17px
 }
 
@@ -2730,14 +2730,14 @@ header,.footer {
 .workflow-top span:first-child {
   font-size:10px;
   font-weight:700;
-  color:var(--olive);
+  color:var(--olive-ink);
   letter-spacing:.035em
 }
 
 .workflow-top span:last-child {
   font-size:9px;
   font-weight:500;
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .workflow-steps {
@@ -2753,7 +2753,7 @@ header,.footer {
 .workflow-steps b {
   font-size:14px;
   font-weight:500;
-  color:var(--orange)
+  color:var(--orange-ink)
 }
 
 .workflow-steps span {
