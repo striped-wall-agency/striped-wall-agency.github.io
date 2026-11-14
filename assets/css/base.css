@@ -12,6 +12,11 @@ main:focus { outline: none; }
 .nav-cta:hover, .button.dark:hover, .button.primary:hover { background: #466000; border-color: #466000; color: white; }
 .hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #b63a00; }
 .hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: #526e00; }
+/* Preserve the homepage accents from the supplied design. */
+.home .nav-cta, .home .button.dark { background: var(--action-green); border-color: var(--action-green); }
+.home .nav-cta:hover, .home .button.dark:hover { background: #709600; border-color: #709600; }
+.home .hero h1 em { color: var(--olive); }
+.home .hero .eyebrow { color: var(--orange); }
 .process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
 .process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
 .decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
