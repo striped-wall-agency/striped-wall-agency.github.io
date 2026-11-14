@@ -1,0 +1,73 @@
+/* Shared accessibility, navigation and responsive safeguards. Loaded last. */
+html { scroll-padding-top: 100px; }
+body { overflow-wrap: break-word; }
+header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
+main:focus { outline: none; }
+:focus-visible { outline: 3px solid #b63a00; outline-offset: 5px; }
+.process :focus-visible, .decisions :focus-visible, .talk :focus-visible, .next :focus-visible { outline-color: #ffc21f; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 20; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.menu-toggle { display: none; border: 1px solid currentColor; background: transparent; color: var(--ink); padding: 10px 12px; font: 12px var(--mono); cursor: pointer; }
+.nav-cta, .button.dark, .button.primary { background: #587800; border-color: #587800; color: white; }
+.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: #466000; border-color: #466000; color: white; }
+.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #b63a00; }
+.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: #526e00; }
+.process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
+.process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
+.decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
+.talk .eyebrow, .next .eyebrow { color: #e0e8c9; }
+.product-section::before, #story::before, #approach::before, #screens::before, .outcomes::before { width: 100%; left: 0; transform: none; }
+.product-section, #approach { width: 100%; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
+.split-copy { top: 110px; }
+.hero-grid > *, .about-grid > *, .talk-grid > *, .split > *, .next-grid > *, .outcome-row > *, .screen-grid > *, .architecture > * { min-width: 0; }
+.contacts a, .contact-mini a { overflow-wrap: anywhere; }
+.copyright, .process .process-close span { white-space: normal; }
+.demo-note { font-size: 12px; line-height: 1.7; }
+.arch-note, .truth { font-size: 13px; line-height: 1.7; }
+.visual-cap { flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .nav { flex-wrap: wrap; gap: 12px; }
+  header { height: auto; min-height: 78px; padding-block: 14px; }
+  .links { display: flex; width: 100%; order: 3; flex-wrap: wrap; gap: 12px 22px; padding-block: 10px; }
+  .links a { padding-block: 7px; }
+  .nav > .nav-cta { display: none; }
+  .nav-enhanced .menu-toggle { display: inline-flex; align-items: center; gap: 12px; }
+  .nav-enhanced .links { display: none; }
+  .nav-enhanced .links.is-open { display: flex; }
+  .product-section, #approach { padding-inline: 24px; }
+  .screen-grid { grid-template-columns: 1fr; }
+  .app { grid-template-columns: 145px minmax(0, 1fr); }
+  .dashboard-lower { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metric { border-bottom: 1px solid var(--app-line); }
+  .split-copy { position: static; }
+}
+@media (max-width: 640px) {
+  header { min-height: 66px; padding-block: 10px; }
+  .wrap { width: calc(100% - 36px); }
+  .product-section, #approach { width: 100%; padding-inline: 18px; }
+  .hero h1 { font-size: clamp(44px, 13vw, 74px); }
+  .talk h2, .next h2, .about h2, .section-head h2, .split-copy h2 { font-size: clamp(35px, 10vw, 55px); }
+  .app { grid-template-columns: 1fr; }
+  .app-side { display: none; }
+  .app-main { padding: 16px 12px; }
+  .app-top, .app-filters, .mini-toolbar { flex-wrap: wrap; gap: 8px; }
+  .metric small { font-size: 9px; }
+  .mini-data, .detail-layout { grid-template-columns: 1fr; }
+  .mini-sidecard, .detail-layout .detail-panel:last-child { display: block; }
+  .mini-row, .mini-row.head { font-size: 8px; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-wrap: anywhere; }
+  .mini-content, .mini-table { padding-inline: 8px; }
+  .table-row { font-size: 9px; }
+  .table-head { font-size: 8px; }
+  .screen { aspect-ratio: auto; min-height: 240px; }
+  .ui-shot { min-height: 205px; }
+  .shot-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shot-lower { grid-template-columns: 1fr; }
+  .shot-table { display: none; }
+  .workflow-top { flex-wrap: wrap; gap: 10px; }
+  .contact-links { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
