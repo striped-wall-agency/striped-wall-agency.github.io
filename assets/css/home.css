@@ -2818,12 +2818,12 @@ header,.footer {
 }
 .sf-shot {
   grid-template-columns: 26% 74%;
-  background: #f5f5f5;
-  color: #222222;
+  background: #f5f6f1;
+  color: #17251e;
 }
 .sf-sidebar {
-  background: var(--green);
-  color: #1a1a1a;
+  background: #183b31;
+  color: #fff;
   padding: 8px 6px;
   display: flex;
   flex-direction: column;
@@ -2836,12 +2836,12 @@ header,.footer {
 .sf-sidebar small {
   font-size: 5px;
   margin-top: -5px;
-  color: inherit;
+  color: #d1ddd5;
 }
 .sf-sidebar .shot-group {
   font: 5px var(--mono);
   letter-spacing: 0.06em;
-  color: inherit;
+  color: #bdcbc2;
   margin-top: 9px;
 }
 .sf-sidebar > span {
@@ -2851,7 +2851,7 @@ header,.footer {
   overflow: hidden;
 }
 .sf-sidebar .sf-active {
-  background: white;
+  background: #315647;
 }
 .sf-main {
   padding: 7px 8px;
@@ -2863,8 +2863,8 @@ header,.footer {
   justify-content: space-between;
   gap: 6px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #dcdcdc;
-  color: #626262;
+  border-bottom: 1px solid #daddd5;
+  color: #58665e;
   font-size: 5px;
   white-space: nowrap;
 }
@@ -2879,7 +2879,7 @@ header,.footer {
   letter-spacing: -0.04em;
 }
 .sf-heading small {
-  color: #717171;
+  color: #68746d;
   font-size: 6px;
 }
 .sf-filters {
@@ -2889,7 +2889,7 @@ header,.footer {
 }
 .sf-filters span {
   padding: 4px;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #d8ddd5;
   background: #fff;
   font-size: 5px;
   white-space: nowrap;
@@ -2898,10 +2898,10 @@ header,.footer {
 .sf-count {
   margin: 6px 0 4px;
   font-size: 5px;
-  color: #616161;
+  color: #59645e;
 }
 .sf-table {
-  border: 1px solid #e1e1e1;
+  border: 1px solid #dfe2dc;
   background: #fff;
 }
 .sf-row {
@@ -2910,7 +2910,7 @@ header,.footer {
   align-items: center;
   gap: 3px;
   padding: 5px 4px;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid #e5e7e1;
   font-size: 5px;
   min-height: 23px;
 }
@@ -2918,13 +2918,13 @@ header,.footer {
   border-top: 0;
 }
 .sf-row small {
-  color: #7e7e7e;
+  color: #778078;
   font-size: 5px;
 }
 .sf-label {
   font: 5px var(--mono);
   text-transform: uppercase;
-  color: #717171;
+  color: #69746d;
   min-height: 15px;
 }
 .sf-status {
@@ -2935,8 +2935,8 @@ header,.footer {
   white-space: nowrap;
 }
 .sf-status.active {
-  background: var(--green);
-  color: #1a1a1a;
+  background: #e4eee3;
+  color: #315b3a;
 }
 .sf-status.trial {
   background: #f5efd9;
