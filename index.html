@@ -2827,7 +2827,8 @@ header,.footer {
 
 }
 
-/* Subflow and Paycontrol previews are illustrative recreations of their demo interfaces. */
+/* Case previews are illustrative recreations of the demo interfaces. */
+.sd-shot,
 .sf-shot,
 .pc-shot {
   height: 100%;
@@ -3151,6 +3152,168 @@ header,.footer {
     font-size: 7px;
   }
 }
+
+.sd-shot {
+  grid-template-columns: 25% 75%;
+  background: #fbfaf6;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.sd-sidebar {
+  background: #272727;
+  color: #f8f7f1;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.sd-sidebar b {
+  font-size: 8px;
+  white-space: nowrap;
+}
+.sd-sidebar .shot-group {
+  font: 5px var(--mono);
+  letter-spacing: 0.07em;
+  color: #c5c5b8;
+  margin-top: 9px;
+}
+.sd-sidebar > span {
+  padding: 4px;
+  font-size: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sd-sidebar .sd-active {
+  background: #454545;
+  border-left: 2px solid var(--green);
+}
+.sd-main {
+  padding: 7px 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+.sd-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #dedbd1;
+  font: 5px var(--mono);
+  letter-spacing: 0.04em;
+  color: #666;
+  white-space: nowrap;
+}
+.sd-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 8px 0;
+}
+.sd-heading b {
+  font: 20px/1.05 var(--serif);
+  letter-spacing: -0.05em;
+}
+.sd-heading small {
+  font-size: 5px;
+  color: #6c6c6c;
+}
+.sd-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid #e0ddd3;
+  background: #fff;
+}
+.sd-metrics div {
+  padding: 6px 5px;
+  border-right: 1px solid #e0ddd3;
+  min-width: 0;
+}
+.sd-metrics div:last-child {
+  border: 0;
+}
+.sd-metrics small {
+  display: block;
+  font-size: 5px;
+  line-height: 1.2;
+  color: #6f6f6f;
+}
+.sd-metrics b {
+  font: 13px var(--serif);
+}
+.sd-lower {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+.sd-chart,
+.sd-issues {
+  border-top: 1px solid #d9d6cb;
+  padding-top: 5px;
+  min-width: 0;
+}
+.sd-chart > b,
+.sd-issues > b {
+  font: 8px var(--serif);
+}
+.sd-bars {
+  height: 44px;
+  margin-top: 5px;
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  border-bottom: 1px solid #ddd9ce;
+  padding: 0 4px;
+}
+.sd-bars i {
+  display: block;
+  flex: 1;
+  background: var(--green);
+  height: 48%;
+}
+.sd-bars i:nth-child(1) {
+  height: 80%;
+}
+.sd-bars i:nth-child(2) {
+  height: 35%;
+}
+.sd-bars i:nth-child(3) {
+  height: 57%;
+}
+.sd-issues div {
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e5e2d9;
+  font-size: 5px;
+  white-space: nowrap;
+}
+.sd-issues em {
+  font-style: normal;
+  color: #ca5a34;
+}
+@media (max-width: 600px) {
+  .sd-main {
+    padding: 6px;
+  }
+  .sd-sidebar {
+    padding: 7px 4px;
+  }
+  .sd-metrics div {
+    padding: 5px 3px;
+  }
+  .sd-metrics small {
+    font-size: 4px;
+  }
+  .sd-lower {
+    gap: 5px;
+  }
+  .sd-bars {
+    gap: 3px;
+  }
+}
 </style>
 <style data-source="assets/css/base.css">
 /* Shared accessibility, navigation and responsive safeguards. Loaded last. */
@@ -3253,7 +3416,47 @@ main:focus { outline: none; }
 <section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="eyebrow">03 / Clear thinking, connected work</div><h2>Design and Development,<br>Working as One.</h2></div><p>We don't design products and then hand them over. Product design and engineering work together from day one.</p></div><div class="principles"><article class="principle"><span class="num">01</span><h3>Design &amp; development from day one</h3><p>Every product decision considers user experience and technical implementation.</p></article><article class="principle"><span class="num">02</span><h3>A structured process</h3><p>Each stage has a clear purpose, outcome and checkpoint.</p></article><article class="principle"><span class="num">03</span><h3>Your involvement, without the management burden</h3><p>We lead the process. You join the decisions that matter.</p></article><article class="principle"><span class="num">04</span><h3>Technology that serves the product</h3><p>Architecture and tools follow your product's needs.</p></article></div><div class="section-head"><div><div class="eyebrow">The path, made visible</div><h2>A Clear Path from Idea<br>to Product.</h2></div><p>Clear goals, tangible outcomes and checkpoints. You know what's next and when your input is needed.</p></div><div class="steps">
 <article class="step"><span class="num">01 / DISCOVER</span><h3>Discovery &amp; Requirements</h3><p>Explore goals, users and needs to agree what the product should achieve.</p><div class="outcome">Outcome — Agreed goals &amp; requirements</div></article><article class="step"><span class="num">02 / STRUCTURE</span><h3>Product &amp; UX Architecture</h3><p>Define structure, flows, roles, functionality and business logic.</p><div class="outcome">Outcome — Product map</div></article><article class="step"><span class="num">03 / PLAN</span><h3>Technical Planning</h3><p>Set architecture, technology, APIs and implementation approach.</p><div class="outcome">Outcome — Technical plan</div></article><article class="step"><span class="num">04 / DESIGN</span><h3>Prototyping &amp; UI Design</h3><p>Prototype key journeys and build the interface and design system.</p><div class="outcome">Outcome — Approved design system</div></article><article class="step"><span class="num">05 / DEVELOP</span><h3>Development</h3><p>Build the product, business logic and integrations on the agreed foundation.</p><div class="outcome">Outcome — Working product</div></article><article class="step"><span class="num">06 / DELIVER</span><h3>QA &amp; Delivery</h3><p>Test key scenarios, resolve issues and prepare the product for handover.</p><div class="outcome">Outcome — Tested delivery</div></article></div><div class="process-close"><strong>One Process. Design and Development in Parallel.</strong><span>Connected at every stage</span></div></div></section>
 <section class="work" id="work"><div class="wrap"><div class="section-head"><div><div class="eyebrow">04 / Selected work</div><h2>Selected Work</h2></div><p>A closer look at what we design and build — from SaaS platforms to subscription and payment operations systems.</p></div><div class="work-cards">
-<article class="project"><div class="screen" role="img" aria-label="Illustrative dashboard preview with fictional data"><span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span><div class="ui-shot"><div class="shot-brand">STRIPED WALL&nbsp; / &nbsp;SUBDESK&nbsp; ● &nbsp;DEMO MODE</div><div class="shot-title">Overview.</div><div class="shot-sub">A clear view of your business, at a glance.</div><div class="shot-metrics"><div><small>Active subscriptions</small><b>3</b></div><div><small>Payments collected</small><b>$167</b></div><div><small>Refunded</small><b>$0</b></div><div><small>Failed payments</small><b>3</b></div></div><div class="shot-lower"><div class="shot-chart"><strong>Collected over time</strong><div class="shot-bars"><i></i><i></i><i></i><i></i></div></div><div class="shot-table"><strong>Payment issues</strong><div class="shot-row"><span>txn_1002</span><span>J. Wilson</span><span>Failed</span></div><div class="shot-row"><span>txn_1005</span><span>O. Martin</span><span>Failed</span></div><div class="shot-row"><span>txn_1006</span><span>N. Williams</span><span>Failed</span></div></div></div></div></div><div class="project-body"><h3>SUBDESK</h3><div class="type">SaaS Support &amp; Billing Dashboard</div><p>An internal workspace to manage customers, subscriptions, transactions and payment issues.</p><div class="tags">Product discovery · UX/UI · Full-stack development</div><a class="project-link" href="work/subdesk/">Explore case study <span>↗</span></a></div></article>
+<article class="project"><div
+  class="screen"
+  role="img"
+  aria-label="Illustrative Subdesk overview showing billing metrics and payment issues"
+>
+  <span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="sd-shot">
+    <div class="sd-sidebar">
+      <b>✳ subdesk.</b>
+      <div class="shot-group">WORKSPACE</div>
+      <span class="sd-active">Overview</span><span>Customers</span
+      ><span>Subscriptions</span><span>Transactions</span
+      ><span>Payment issues</span><span>Activity</span>
+    </div>
+    <div class="sd-main">
+      <div class="sd-top">STRIPED WALL / SUBDESK <span>DEMO MODE</span></div>
+      <div class="sd-heading">
+        <b>Overview.</b
+        ><small>A clear view of your business, at a glance.</small>
+      </div>
+      <div class="sd-metrics">
+        <div><small>Active subs</small><b>3</b></div>
+        <div><small>Collected</small><b>$167</b></div>
+        <div><small>Refunded</small><b>$0</b></div>
+        <div><small>Failed</small><b>3</b></div>
+      </div>
+      <div class="sd-lower">
+        <div class="sd-chart">
+          <b>Collected over time</b>
+          <div class="sd-bars"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="sd-issues">
+          <b>Payment issues</b>
+          <div><span>txn_1002</span><em>Failed</em></div>
+          <div><span>txn_1005</span><em>Failed</em></div>
+          <div><span>txn_1006</span><em>Failed</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div class="project-body"><h3>SUBDESK</h3><div class="type">SaaS Support &amp; Billing Dashboard</div><p>An internal workspace to manage customers, subscriptions, transactions and payment issues.</p><div class="tags">Product discovery · UX/UI · Full-stack development</div><a class="project-link" href="work/subdesk/">Explore case study <span>↗</span></a></div></article>
 <article class="project">
   <div
     class="screen"
