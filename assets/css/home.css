@@ -517,8 +517,8 @@ a.project-link::after {
 }
 
 .talk {
-  background:var(--green);
-  color:#f7f4eb;
+  background:#7fae16;
+  color:white;
   padding:90px 0
 }
 .talk .eyebrow {
@@ -1420,7 +1420,6 @@ section {
 }
 
 .talk {
-  background:var(--green);
   padding:94px 0 91px
 }
 .talk .eyebrow {
@@ -2114,8 +2113,8 @@ header,.footer {
 .contacts {
   border-color:var(--green)
 }
-.talk .eyebrow,.contacts small {
-  color:var(--green)
+.home .talk :is(.eyebrow,p,.contacts,small) {
+  color:inherit
 }
 
 
