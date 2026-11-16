@@ -14,24 +14,21 @@
 <style data-source="../../assets/css/subdesk.css">
 :root {
   --paper:#f5f2e9;
-  --ink:#292b27;
+  --ink:#2a2a2a;
   --muted:#77776e;
-  --olive:#729800;
   --yellow:#ffbd24;
   --orange:#f04b00;
   --line:#d7d3c8;
   --white:#fbfaf6;
   --soft:#eae7dc;
-  --green-deep:#557500;
   --serif:Georgia,'Times New Roman',serif;
   --sans:'Manrope',Arial,sans-serif;
   --mono:'DM Mono',monospace;
   --app:#f6f6f1;
-  --app-ink:#252822;
-  --app-muted:#85877e;
-  --app-line:#e2e3dc;
-  --lime:#b6d859;
-  --navy:#20241f
+  --app-ink:#272727;
+  --app-muted:#868686;
+  --app-line:#e2e2e2;
+  --navy:#232323
 }
 
 * {
@@ -69,7 +66,7 @@ a {
 }
 .stripe i {
   height:6px;
-  background:var(--olive)
+  background:var(--green)
 }
 .stripe i:nth-child(2) {
   background:var(--yellow)
@@ -119,9 +116,9 @@ header {
   color:white
 }
 .nav-cta {
-  background:#729800;
+  background:var(--green);
   color:#fff;
-  border-color:#729800
+  border-color:var(--green)
 }
 .mobile-menu {
   display:none
@@ -136,7 +133,7 @@ header {
   letter-spacing:.04em
 }
 .crumb a:hover {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .hero-grid {
   display:grid;
@@ -161,7 +158,7 @@ h1,h2,h3,p {
 .hero h1 em {
   font-family:var(--serif);
   font-weight:400;
-  color:var(--olive-ink);
+  color:var(--green);
   letter-spacing:-.08em
 }
 .hero-copy {
@@ -184,8 +181,8 @@ h1,h2,h3,p {
   margin-top:26px
 }
 .button.primary {
-  background:#729800;
-  border-color:#729800;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 .button.secondary {
@@ -207,11 +204,11 @@ h1,h2,h3,p {
   min-height:58px;
   padding:8px 12px;
   border:0;
-  border-left:4px solid var(--olive);
+  border-left:4px solid var(--green);
   background:var(--white)
 }
 .fact+.fact {
-  border-left:4px solid var(--olive);
+  border-left:4px solid var(--green);
   padding-left:12px
 }
 .fact:nth-child(2) {
@@ -221,7 +218,7 @@ h1,h2,h3,p {
   border-left-color:var(--orange)
 }
 .fact:nth-child(4) {
-  border-left-color:var(--olive)
+  border-left-color:var(--green)
 }
 .fact small {
   display:block;
@@ -260,13 +257,13 @@ section {
   background:var(--orange)
 }
 #approach::before {
-  background:var(--olive)
+  background:var(--green)
 }
 #screens::before {
   background:var(--orange)
 }
 .outcomes::before {
-  background:var(--olive)
+  background:var(--green)
 }
 .section-head {
   display:flex;
@@ -294,7 +291,7 @@ section {
   letter-spacing:.12em
 }
 .product-section .eyebrow,#approach .eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 #story .eyebrow,#screens .eyebrow,.outcome-row .eyebrow {
   color:var(--orange-ink)
@@ -319,7 +316,7 @@ section {
   padding-bottom:14px
 }
 .visual-cap .tag {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 /* Product UI illustration */
@@ -328,7 +325,7 @@ section {
   grid-template-columns:190px 1fr;
   min-height:520px;
   background:var(--app);
-  border:1px solid #dfe0d8;
+  border:1px solid #dfdfdf;
   color:var(--app-ink);
   font:11px/1.45 var(--sans);
   overflow:hidden
@@ -348,42 +345,42 @@ section {
   align-items:center;
   gap:8px;
   padding:1px 3px 25px;
-  border-bottom:1px solid #3b4038
+  border-bottom:1px solid #3e3e3e
 }
 .app-brand i {
   display:inline-block;
   width:9px;
   height:9px;
-  background:var(--lime);
+  background:var(--green);
   border-radius:50%
 }
 .app-label {
   font:8px var(--mono);
   letter-spacing:.1em;
-  color:#8d9486;
+  color:#929292;
   margin:23px 4px 8px;
   text-transform:uppercase
 }
 .app-nav {
   padding:8px 10px;
   border-radius:3px;
-  color:#bfc3b9;
+  color:#c1c1c1;
   margin:1px 0
 }
 .app-nav.active {
-  background:#343a31;
+  background:#383838;
   color:#fff
 }
 .app-nav span {
   float:right;
-  color:var(--lime)
+  color:var(--green)
 }
 .app-user {
   margin-top:auto;
-  border-top:1px solid #3b4038;
+  border-top:1px solid #3e3e3e;
   padding:14px 3px 0;
   font-size:9px;
-  color:#bfc3b9
+  color:#c1c1c1
 }
 .app-user b {
   display:block;
@@ -405,8 +402,8 @@ section {
   letter-spacing:.05em
 }
 .demo-pill {
-  background:#eff6dc;
-  color:#4b650c;
+  background:var(--green);
+  color: #1a1a1a;
   padding:4px 8px;
   border-radius:2px
 }
@@ -428,7 +425,7 @@ section {
   background:#fff;
   border:1px solid var(--app-line);
   padding:6px 9px;
-  color:#55584f;
+  color:#575757;
   font-size:8px
 }
 .metric-grid {
@@ -485,7 +482,7 @@ section {
 }
 .bar {
   flex:1;
-  background:var(--lime);
+  background:var(--green);
   max-width:34px;
   position:relative
 }
@@ -515,7 +512,7 @@ section {
 .table-row {
   font-size:8px;
   padding:9px 0;
-  border-bottom:1px solid #eeefe9
+  border-bottom:1px solid #eeeeee
 }
 .table-row:last-child {
   border:0
@@ -562,7 +559,7 @@ section {
 .callout {
   margin-top:32px;
   padding:21px 0;
-  border-top:3px solid var(--olive);
+  border-top:3px solid var(--green);
   border-bottom:1px solid #c9c5b9;
   font-size:20px;
   line-height:1.35;
@@ -596,7 +593,7 @@ section {
 }
 .journey .step {
   font:10px var(--mono);
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .journey h3 {
   font-size:22px;
@@ -641,7 +638,7 @@ section {
 }
 .screen-title .n {
   font:10px var(--mono);
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .screen-title h3 {
   font-size:21px;
@@ -658,7 +655,7 @@ section {
   padding:0 14px 14px
 }
 .mini-app {
-  border:1px solid #dedfd7;
+  border:1px solid #dedede;
   background:var(--app);
   overflow:hidden;
   color:var(--app-ink);
@@ -666,7 +663,7 @@ section {
 }
 .mini-top {
   background:var(--navy);
-  color:#e8e9e2;
+  color:#e8e8e8;
   padding:8px 10px;
   font:7px var(--mono);
   letter-spacing:.04em
@@ -700,7 +697,7 @@ section {
   color:#666
 }
 .mini-button {
-  background:#779d22;
+  background:var(--green);
   color:white;
   padding:6px 10px;
   font:7px var(--mono)
@@ -720,7 +717,7 @@ section {
   grid-template-columns:1.05fr .9fr .7fr .55fr;
   gap:4px;
   padding:8px 0;
-  border-bottom:1px solid #eff0eb;
+  border-bottom:1px solid #efefef;
   align-items:center;
   font-size:7px
 }
@@ -763,8 +760,8 @@ section {
 }
 .detail-badge {
   display:inline-block;
-  background:#eef5dc;
-  color:#4b650c;
+  background:var(--green);
+  color: #1a1a1a;
   padding:4px 7px;
   font:7px var(--mono)
 }
@@ -796,7 +793,7 @@ section {
   background:#fff;
   border:1px solid var(--app-line);
   padding:17px;
-  box-shadow:0 0 0 1200px rgba(28,32,26,.25);
+  box-shadow:0 0 0 1200px rgba(31, 31, 31,.25);
   position:relative
 }
 .refund-modal h4 {
@@ -809,7 +806,7 @@ section {
   margin-bottom:13px
 }
 .amount-box {
-  background:#f7f8f2;
+  background:var(--green);
   border:1px solid var(--app-line);
   padding:10px;
   margin-bottom:11px
@@ -845,8 +842,8 @@ section {
   font-size:7px
 }
 .modal-actions i:last-child {
-  background:#729800;
-  border-color:#729800;
+  background:var(--green);
+  border-color:var(--green);
   color:white
 }
 .after-refund {
@@ -865,7 +862,7 @@ section {
   margin:8px 0
 }
 .activity-line {
-  border-left:1px solid var(--lime);
+  border-left:1px solid var(--green);
   padding:0 0 8px 11px;
   margin:10px 0;
   font-size:7px
@@ -891,15 +888,15 @@ section {
 .decision-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  border-top:1px solid #53564e;
-  border-bottom:1px solid #53564e
+  border-top:1px solid #555555;
+  border-bottom:1px solid #555555
 }
 .decision {
   padding:23px 24px 27px 0;
   min-height:222px
 }
 .decision+.decision {
-  border-left:1px solid #53564e;
+  border-left:1px solid #555555;
   padding-left:24px
 }
 .decision .n {
@@ -936,7 +933,7 @@ section {
 }
 .stack span {
   font:9px var(--mono);
-  border:1px solid #53564e;
+  border:1px solid #555555;
   color:#e1e0d6;
   padding:7px 9px
 }
@@ -987,7 +984,7 @@ section {
 }
 .outcome-item .n {
   font:10px var(--mono);
-  color:var(--olive-ink);
+  color:var(--green);
   padding-top:4px
 }
 .outcome-item b {
@@ -1008,12 +1005,12 @@ section {
 }
 
 .next {
-  background:var(--green-deep);
+  background:var(--green);
   color:#f7f4eb;
   padding:78px 0
 }
 .next .eyebrow {
-  color:#e0e8c9
+  color:#1a1a1a
 }
 .next-grid {
   display:grid;
@@ -1040,12 +1037,12 @@ section {
   margin-top:23px
 }
 .contact-mini {
-  border-left:1px solid #9cae69;
+  border-left:1px solid var(--green);
   padding:12px 0 12px 27px
 }
 .contact-mini small {
   font:9px var(--mono);
-  color:#e0e8c9;
+  color:#1a1a1a;
   text-transform:uppercase
 }
 .contact-mini a {
@@ -1287,7 +1284,7 @@ section {
   min-height:0;
   padding:20px 0;
   border-left:0;
-  border-bottom:1px solid #53564e
+  border-bottom:1px solid #555555
 }
 .decision:last-child {
   border-bottom:0
@@ -1313,7 +1310,7 @@ section {
 }
 .contact-mini {
   border-left:0;
-  border-top:1px solid #9cae69;
+  border-top:1px solid var(--green);
   padding:20px 0 0
 }
 .footrow {
@@ -1343,33 +1340,30 @@ section {
 </style>
 <style data-source="../../assets/css/base.css">
 /* Shared accessibility, navigation and responsive safeguards. Loaded last. */
-:root { --olive-ink: #526e00; --orange-ink: #b63a00; --muted: #65665e; --app-muted: #65685e; }
-.mini-button, .modal-actions i:last-child { color: #1b2112; }
+:root { --green: #729800; --orange-ink: #f04b00; --muted: #656565; --app-muted: #676767; }
 html { scroll-padding-top: 100px; }
 body { overflow-wrap: break-word; }
 header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
 main:focus { outline: none; }
-:focus-visible { outline: 3px solid #b63a00; outline-offset: 5px; }
+:focus-visible { outline: 3px solid #f04b00; outline-offset: 5px; }
 .process :focus-visible, .decisions :focus-visible, .talk :focus-visible, .next :focus-visible { outline-color: #ffc21f; }
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 20; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
 .skip-link:focus { transform: none; }
 .menu-toggle { display: none; border: 1px solid currentColor; background: transparent; color: var(--ink); padding: 10px 12px; font: 12px var(--mono); cursor: pointer; }
-.nav-cta, .button.dark, .button.primary { background: #587800; border-color: #587800; color: white; }
-.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: #466000; border-color: #466000; color: white; }
-.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #b63a00; }
-.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: #526e00; }
-/* Bright brand backgrounds need dark text; small accent text needs darker ink. */
-.home .nav-cta, .home .button.dark { background: var(--action-green); border-color: var(--action-green); color: #1b2112; }
-.home .nav-cta:hover, .home .button.dark:hover { background: #709600; border-color: #709600; color: #1b2112; }
-.home .hero h1 em { color: var(--olive); }
-.home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #b63a00; }
-.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: #526e00; }
-.workflow-actions span:first-child { color: #1b2112; }
+.nav-cta, .button.dark, .button.primary { background: var(--green); border-color: var(--green); color: white; }
+.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: var(--green); border-color: var(--green); color: white; text-decoration: underline; }
+.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #f04b00; }
+.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: var(--green); }
+.home .hero h1 em { color: var(--green); }
+.home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #f04b00; }
+.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: var(--green); }
+.workflow-actions span:first-child { color: white; }
 .process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
-.process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
+.process .principles ~ .section-head .eyebrow, .process .steps .num { color: var(--green); }
 .decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
-.talk .eyebrow, .next .eyebrow { color: #e0e8c9; }
-.next .eyebrow, .next p, .contact-mini small { color: #fffefa; }
+.talk .eyebrow, .talk p, .contacts, .contacts small,
+.next .eyebrow, .next p, .contact-mini, .contact-mini small { color: #1a1a1a; }
+.contacts, .contact-mini { border-color: #4b4b4b; }
 .product-section::before, #story::before, #approach::before, #screens::before, .outcomes::before { width: 100%; left: 0; transform: none; }
 .product-section, #approach { width: 100%; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
 .split-copy { top: 110px; }
@@ -1448,8 +1442,8 @@ main:focus { outline: none; }
 
 <section class="screens" id="screens"><div class="wrap"><div class="section-head"><div><div class="eyebrow">04 / Key product screens</div><h2>Details that keep<br>the work moving.</h2></div><p>A closer look at the customer context, payment issue and refund flow that make the concept tangible.</p></div><div class="screen-grid">
   <article class="screen-card"><div class="screen-title"><div><span class="n">SCREEN 01</span><h3>Customer details</h3><p>Account, subscription and recent payment history stay in one place.</p></div></div><div class="screen-frame"><div class="mini-app"><div class="mini-top">STRIPED WALL &nbsp;/&nbsp; SUBDESK &nbsp;·&nbsp; CUSTOMERS</div><div class="mini-content"><h4 class="mini-heading">Olivia Martin.</h4><div class="mini-caption">Customer since 2024 · Active account</div><div class="mini-toolbar"><span class="mini-control">← Customers</span><span class="mini-control">cus_001</span></div><div class="mini-data"><div class="mini-table"><div class="mini-row head"><span>DATE</span><span>TRANSACTION</span><span>AMOUNT</span><span>STATUS</span></div><div class="mini-row"><span>Nov 10</span><span>txn_1004</span><span>$49.00</span><span>Paid</span></div><div class="mini-row"><span>Oct 12</span><span>txn_1005</span><span>$49.00</span><span class="status">Failed</span></div><div class="mini-row"><span>Sep 12</span><span>txn_0991</span><span>$49.00</span><span>Paid</span></div></div><div class="mini-sidecard"><b>Subscription</b><div class="detail-field"><span>Plan</span><span>Studio</span></div><div class="detail-field"><span>Status</span><span>Active</span></div><div class="detail-field"><span>Renews</span><span>Dec 12, 2026</span></div><div class="detail-rule"></div><div class="detail-kicker">ACCOUNT</div><div class="detail-field"><span>Email</span><span>olivia@example</span></div></div></div></div></div></div></article>
-  <article class="screen-card"><div class="screen-title"><div><span class="n">SCREEN 02</span><h3>Payment issue</h3><p>See the decline reason and jump to the customer context.</p></div></div><div class="screen-frame"><div class="mini-app"><div class="mini-top">STRIPED WALL &nbsp;/&nbsp; SUBDESK &nbsp;·&nbsp; TRANSACTION</div><div class="mini-content"><h4 class="mini-heading">Transaction details.</h4><div class="mini-caption">Payment attempt · txn_1005</div><div class="mini-toolbar"><span class="mini-control">← Payment issues</span><span class="mini-control">Customer: Olivia Martin ↗</span></div><div class="detail-layout"><div class="detail-panel"><div class="detail-kicker">AMOUNT</div><div class="detail-amount">$49.00</div><span class="detail-badge">FAILED</span><div class="detail-rule"></div><div class="detail-field"><span>Attempt date</span><span>Oct 12, 2026</span></div><div class="detail-field"><span>Payment method</span><span>Visa ···· 4242</span></div><div class="detail-field"><span>Subscription</span><span>Studio · Active</span></div><div class="reason">Payment declined · The card was declined by the issuer.</div></div><div class="detail-panel"><div class="detail-kicker">CUSTOMER</div><div style="font-size:10px;margin:8px 0 2px">Olivia Martin</div><div style="font-size:7px;color:#85877e">olivia@example</div><div class="detail-rule"></div><div class="detail-kicker">RELATED PLAN</div><div class="detail-field"><span>Plan</span><span>Studio</span></div><div class="detail-field"><span>Status</span><span>Active</span></div></div></div></div></div></div></article>
-  <article class="screen-card wide"><div class="screen-title"><div><span class="n">SCREEN 03 / ADMIN ONLY</span><h3>A considered test refund</h3><p>One explicit confirmation connects the decision to the updated transaction and its audit trail.</p></div></div><div class="screen-frame"><div class="mini-app"><div class="mini-top">STRIPED WALL &nbsp;/&nbsp; SUBDESK &nbsp;·&nbsp; REFUND FLOW</div><div class="mini-content"><div class="after-refund"><div class="refunded-card"><div class="detail-kicker">CONFIRM TEST REFUND</div><div class="refund-modal"><h4>Issue a test refund</h4><p>This demo action updates local sample data. No money will move.</p><div class="amount-box"><small>FULL REFUND AMOUNT</small><b>$49.00 USD</b></div><div class="select-box">Reason: &nbsp; Customer request <span>⌄</span></div><div class="select-box">Additional note (optional) <span>⌄</span></div><div class="modal-actions"><i>Cancel</i><i>Confirm test refund</i></div></div></div><div class="activity-card"><div class="detail-kicker">AFTER CONFIRMATION</div><span class="detail-badge" style="margin:10px 0 2px">REFUNDED</span><div class="detail-rule"></div><div class="activity-line"><b>Test refund issued · $49.00</b><small>Admin · QA refund · 14 Nov, 10:42 UTC</small></div><div class="activity-line"><b>Transaction updated</b><small>txn_1004 · Full amount · Local demo data</small></div><p style="font-size:7px;color:#85877e;margin:7px 0 0">The payment and activity entry are saved together in this browser.</p></div></div></div></div></div></article>
+  <article class="screen-card"><div class="screen-title"><div><span class="n">SCREEN 02</span><h3>Payment issue</h3><p>See the decline reason and jump to the customer context.</p></div></div><div class="screen-frame"><div class="mini-app"><div class="mini-top">STRIPED WALL &nbsp;/&nbsp; SUBDESK &nbsp;·&nbsp; TRANSACTION</div><div class="mini-content"><h4 class="mini-heading">Transaction details.</h4><div class="mini-caption">Payment attempt · txn_1005</div><div class="mini-toolbar"><span class="mini-control">← Payment issues</span><span class="mini-control">Customer: Olivia Martin ↗</span></div><div class="detail-layout"><div class="detail-panel"><div class="detail-kicker">AMOUNT</div><div class="detail-amount">$49.00</div><span class="detail-badge">FAILED</span><div class="detail-rule"></div><div class="detail-field"><span>Attempt date</span><span>Oct 12, 2026</span></div><div class="detail-field"><span>Payment method</span><span>Visa ···· 4242</span></div><div class="detail-field"><span>Subscription</span><span>Studio · Active</span></div><div class="reason">Payment declined · The card was declined by the issuer.</div></div><div class="detail-panel"><div class="detail-kicker">CUSTOMER</div><div style="font-size:10px;margin:8px 0 2px">Olivia Martin</div><div style="font-size:7px;color:#868686">olivia@example</div><div class="detail-rule"></div><div class="detail-kicker">RELATED PLAN</div><div class="detail-field"><span>Plan</span><span>Studio</span></div><div class="detail-field"><span>Status</span><span>Active</span></div></div></div></div></div></div></article>
+  <article class="screen-card wide"><div class="screen-title"><div><span class="n">SCREEN 03 / ADMIN ONLY</span><h3>A considered test refund</h3><p>One explicit confirmation connects the decision to the updated transaction and its audit trail.</p></div></div><div class="screen-frame"><div class="mini-app"><div class="mini-top">STRIPED WALL &nbsp;/&nbsp; SUBDESK &nbsp;·&nbsp; REFUND FLOW</div><div class="mini-content"><div class="after-refund"><div class="refunded-card"><div class="detail-kicker">CONFIRM TEST REFUND</div><div class="refund-modal"><h4>Issue a test refund</h4><p>This demo action updates local sample data. No money will move.</p><div class="amount-box"><small>FULL REFUND AMOUNT</small><b>$49.00 USD</b></div><div class="select-box">Reason: &nbsp; Customer request <span>⌄</span></div><div class="select-box">Additional note (optional) <span>⌄</span></div><div class="modal-actions"><i>Cancel</i><i>Confirm test refund</i></div></div></div><div class="activity-card"><div class="detail-kicker">AFTER CONFIRMATION</div><span class="detail-badge" style="margin:10px 0 2px">REFUNDED</span><div class="detail-rule"></div><div class="activity-line"><b>Test refund issued · $49.00</b><small>Admin · QA refund · 14 Nov, 10:42 UTC</small></div><div class="activity-line"><b>Transaction updated</b><small>txn_1004 · Full amount · Local demo data</small></div><p style="font-size:7px;color:#868686;margin:7px 0 0">The payment and activity entry are saved together in this browser.</p></div></div></div></div></div></article>
 </div><p class="demo-note">Screen visuals are illustrative HTML/CSS recreations of the public demo interface. Sample names and payment data are fictional.</p></div></section>
 
 <section class="decisions" id="decisions"><div class="wrap"><div class="section-head"><div><div class="eyebrow">05 / Product decisions</div><h2>Clarity in the details.</h2></div><p>The demo focuses on legible context, a small role model and a reversible, local workflow rather than production payment infrastructure.</p></div><div class="decision-grid"><article class="decision"><div class="n">01 / CONTEXT</div><h3>Keep customer and billing history connected</h3><p>Transactions link back to the customer and subscription, making the next useful detail one step away.</p></article><article class="decision"><div class="n">02 / ACTION</div><h3>Make the refund decision explicit</h3><p>Only Admin can start a full test refund. The amount is fixed, a reason is required, and a second refund is rejected.</p></article><article class="decision"><div class="n">03 / RECORD</div><h3>Update the payment and log together</h3><p>The local data layer writes the refunded status and activity record in one IndexedDB transaction.</p></article></div>

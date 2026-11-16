@@ -1,12 +1,17 @@
 """Check the static site's structure and relative resources without dependencies."""
 from collections import Counter
 from html.parser import HTMLParser
-from pathlib import Path
 from urllib.parse import unquote, urlsplit
-from inline_styles import check_styles
+from inline_styles import PAGES, ROOT, check_styles
 
-ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / 'index.html', ROOT / 'work/subdesk/index.html']
+CASE_DISCLOSURES = {
+    'subdesk': (
+        'IndexedDB', 'Fictional', 'no server, payment provider or real money',
+        'not server authentication', 'illustrative HTML/CSS recreations',
+    ),
+    'subflow': ('Fictional customers and billing data', 'No real recurring charges'),
+    'paycontrol': ('Fictional Northstar Commerce data', 'No live provider connection or real payment actions'),
+}
 
 
 class Page(HTMLParser):
@@ -29,7 +34,7 @@ class Page(HTMLParser):
 
 
 def check():
-    pages = {path: Page(path) for path in PAGES}
+    pages = {ROOT / name: Page(ROOT / name) for name in PAGES}
     errors = check_styles()
     for path, page in pages.items():
         label = path.relative_to(ROOT)
@@ -54,15 +59,18 @@ def check():
                 errors.append(f'{label}: missing resource {link}')
             elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
                 errors.append(f'{label}: missing anchor {link}')
-    home = PAGES[0].read_text()
-    case = PAGES[1].read_text()
-    for text in ('IndexedDB', 'Fictional', 'no server, payment provider or real money', 'not server authentication', 'illustrative HTML/CSS recreations'):
-        if text not in case:
-            errors.append(f'case: missing disclosure {text}')
-    if 'work/subdesk/' not in home or '../../index.html#work' not in case:
-        errors.append('missing homepage/case navigation')
-    if 'https://stripedwall.agency/subdesk-demo/' not in case:
-        errors.append('missing exact demo URL')
+    home = pages[ROOT / 'index.html']
+    for slug, disclosures in CASE_DISCLOSURES.items():
+        route = f'work/{slug}/'
+        case = pages[ROOT / route / 'index.html']
+        case_html = ' '.join(case.path.read_text().split())
+        for disclosure in disclosures:
+            if disclosure not in case_html:
+                errors.append(f'{route}: missing disclosure {disclosure}')
+        if route not in home.links or '../../index.html#work' not in case.links:
+            errors.append(f'{route}: missing homepage/case navigation')
+        if f'https://stripedwall.agency/{slug}-demo/' not in case.links:
+            errors.append(f'{route}: missing exact demo URL')
     if (ROOT / 'CNAME').read_text().strip() != 'stripedwall.agency':
         errors.append('CNAME changed')
     for css in (ROOT / 'assets/css').glob('*.css'):

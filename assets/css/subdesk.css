@@ -1,23 +1,20 @@
 :root {
   --paper:#f5f2e9;
-  --ink:#292b27;
+  --ink:#2a2a2a;
   --muted:#77776e;
-  --olive:#729800;
   --yellow:#ffbd24;
   --orange:#f04b00;
   --line:#d7d3c8;
   --white:#fbfaf6;
   --soft:#eae7dc;
-  --green-deep:#557500;
   --serif:Georgia,'Times New Roman',serif;
   --sans:'Manrope',Arial,sans-serif;
   --mono:'DM Mono',monospace;
   --app:#f6f6f1;
-  --app-ink:#252822;
-  --app-muted:#85877e;
-  --app-line:#e2e3dc;
-  --lime:#b6d859;
-  --navy:#20241f
+  --app-ink:#272727;
+  --app-muted:#868686;
+  --app-line:#e2e2e2;
+  --navy:#232323
 }
 
 * {
@@ -55,7 +52,7 @@ a {
 }
 .stripe i {
   height:6px;
-  background:var(--olive)
+  background:var(--green)
 }
 .stripe i:nth-child(2) {
   background:var(--yellow)
@@ -105,9 +102,9 @@ header {
   color:white
 }
 .nav-cta {
-  background:#729800;
+  background:var(--green);
   color:#fff;
-  border-color:#729800
+  border-color:var(--green)
 }
 .mobile-menu {
   display:none
@@ -122,7 +119,7 @@ header {
   letter-spacing:.04em
 }
 .crumb a:hover {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .hero-grid {
   display:grid;
@@ -147,7 +144,7 @@ h1,h2,h3,p {
 .hero h1 em {
   font-family:var(--serif);
   font-weight:400;
-  color:var(--olive-ink);
+  color:var(--green);
   letter-spacing:-.08em
 }
 .hero-copy {
@@ -170,8 +167,8 @@ h1,h2,h3,p {
   margin-top:26px
 }
 .button.primary {
-  background:#729800;
-  border-color:#729800;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 .button.secondary {
@@ -193,11 +190,11 @@ h1,h2,h3,p {
   min-height:58px;
   padding:8px 12px;
   border:0;
-  border-left:4px solid var(--olive);
+  border-left:4px solid var(--green);
   background:var(--white)
 }
 .fact+.fact {
-  border-left:4px solid var(--olive);
+  border-left:4px solid var(--green);
   padding-left:12px
 }
 .fact:nth-child(2) {
@@ -207,7 +204,7 @@ h1,h2,h3,p {
   border-left-color:var(--orange)
 }
 .fact:nth-child(4) {
-  border-left-color:var(--olive)
+  border-left-color:var(--green)
 }
 .fact small {
   display:block;
@@ -246,13 +243,13 @@ section {
   background:var(--orange)
 }
 #approach::before {
-  background:var(--olive)
+  background:var(--green)
 }
 #screens::before {
   background:var(--orange)
 }
 .outcomes::before {
-  background:var(--olive)
+  background:var(--green)
 }
 .section-head {
   display:flex;
@@ -280,7 +277,7 @@ section {
   letter-spacing:.12em
 }
 .product-section .eyebrow,#approach .eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 #story .eyebrow,#screens .eyebrow,.outcome-row .eyebrow {
   color:var(--orange-ink)
@@ -305,7 +302,7 @@ section {
   padding-bottom:14px
 }
 .visual-cap .tag {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 /* Product UI illustration */
@@ -314,7 +311,7 @@ section {
   grid-template-columns:190px 1fr;
   min-height:520px;
   background:var(--app);
-  border:1px solid #dfe0d8;
+  border:1px solid #dfdfdf;
   color:var(--app-ink);
   font:11px/1.45 var(--sans);
   overflow:hidden
@@ -334,42 +331,42 @@ section {
   align-items:center;
   gap:8px;
   padding:1px 3px 25px;
-  border-bottom:1px solid #3b4038
+  border-bottom:1px solid #3e3e3e
 }
 .app-brand i {
   display:inline-block;
   width:9px;
   height:9px;
-  background:var(--lime);
+  background:var(--green);
   border-radius:50%
 }
 .app-label {
   font:8px var(--mono);
   letter-spacing:.1em;
-  color:#8d9486;
+  color:#929292;
   margin:23px 4px 8px;
   text-transform:uppercase
 }
 .app-nav {
   padding:8px 10px;
   border-radius:3px;
-  color:#bfc3b9;
+  color:#c1c1c1;
   margin:1px 0
 }
 .app-nav.active {
-  background:#343a31;
+  background:#383838;
   color:#fff
 }
 .app-nav span {
   float:right;
-  color:var(--lime)
+  color:var(--green)
 }
 .app-user {
   margin-top:auto;
-  border-top:1px solid #3b4038;
+  border-top:1px solid #3e3e3e;
   padding:14px 3px 0;
   font-size:9px;
-  color:#bfc3b9
+  color:#c1c1c1
 }
 .app-user b {
   display:block;
@@ -391,8 +388,8 @@ section {
   letter-spacing:.05em
 }
 .demo-pill {
-  background:#eff6dc;
-  color:#4b650c;
+  background:var(--green);
+  color: #1a1a1a;
   padding:4px 8px;
   border-radius:2px
 }
@@ -414,7 +411,7 @@ section {
   background:#fff;
   border:1px solid var(--app-line);
   padding:6px 9px;
-  color:#55584f;
+  color:#575757;
   font-size:8px
 }
 .metric-grid {
@@ -471,7 +468,7 @@ section {
 }
 .bar {
   flex:1;
-  background:var(--lime);
+  background:var(--green);
   max-width:34px;
   position:relative
 }
@@ -501,7 +498,7 @@ section {
 .table-row {
   font-size:8px;
   padding:9px 0;
-  border-bottom:1px solid #eeefe9
+  border-bottom:1px solid #eeeeee
 }
 .table-row:last-child {
   border:0
@@ -548,7 +545,7 @@ section {
 .callout {
   margin-top:32px;
   padding:21px 0;
-  border-top:3px solid var(--olive);
+  border-top:3px solid var(--green);
   border-bottom:1px solid #c9c5b9;
   font-size:20px;
   line-height:1.35;
@@ -582,7 +579,7 @@ section {
 }
 .journey .step {
   font:10px var(--mono);
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .journey h3 {
   font-size:22px;
@@ -627,7 +624,7 @@ section {
 }
 .screen-title .n {
   font:10px var(--mono);
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .screen-title h3 {
   font-size:21px;
@@ -644,7 +641,7 @@ section {
   padding:0 14px 14px
 }
 .mini-app {
-  border:1px solid #dedfd7;
+  border:1px solid #dedede;
   background:var(--app);
   overflow:hidden;
   color:var(--app-ink);
@@ -652,7 +649,7 @@ section {
 }
 .mini-top {
   background:var(--navy);
-  color:#e8e9e2;
+  color:#e8e8e8;
   padding:8px 10px;
   font:7px var(--mono);
   letter-spacing:.04em
@@ -686,7 +683,7 @@ section {
   color:#666
 }
 .mini-button {
-  background:#779d22;
+  background:var(--green);
   color:white;
   padding:6px 10px;
   font:7px var(--mono)
@@ -706,7 +703,7 @@ section {
   grid-template-columns:1.05fr .9fr .7fr .55fr;
   gap:4px;
   padding:8px 0;
-  border-bottom:1px solid #eff0eb;
+  border-bottom:1px solid #efefef;
   align-items:center;
   font-size:7px
 }
@@ -749,8 +746,8 @@ section {
 }
 .detail-badge {
   display:inline-block;
-  background:#eef5dc;
-  color:#4b650c;
+  background:var(--green);
+  color: #1a1a1a;
   padding:4px 7px;
   font:7px var(--mono)
 }
@@ -782,7 +779,7 @@ section {
   background:#fff;
   border:1px solid var(--app-line);
   padding:17px;
-  box-shadow:0 0 0 1200px rgba(28,32,26,.25);
+  box-shadow:0 0 0 1200px rgba(31, 31, 31,.25);
   position:relative
 }
 .refund-modal h4 {
@@ -795,7 +792,7 @@ section {
   margin-bottom:13px
 }
 .amount-box {
-  background:#f7f8f2;
+  background:var(--green);
   border:1px solid var(--app-line);
   padding:10px;
   margin-bottom:11px
@@ -831,8 +828,8 @@ section {
   font-size:7px
 }
 .modal-actions i:last-child {
-  background:#729800;
-  border-color:#729800;
+  background:var(--green);
+  border-color:var(--green);
   color:white
 }
 .after-refund {
@@ -851,7 +848,7 @@ section {
   margin:8px 0
 }
 .activity-line {
-  border-left:1px solid var(--lime);
+  border-left:1px solid var(--green);
   padding:0 0 8px 11px;
   margin:10px 0;
   font-size:7px
@@ -877,15 +874,15 @@ section {
 .decision-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  border-top:1px solid #53564e;
-  border-bottom:1px solid #53564e
+  border-top:1px solid #555555;
+  border-bottom:1px solid #555555
 }
 .decision {
   padding:23px 24px 27px 0;
   min-height:222px
 }
 .decision+.decision {
-  border-left:1px solid #53564e;
+  border-left:1px solid #555555;
   padding-left:24px
 }
 .decision .n {
@@ -922,7 +919,7 @@ section {
 }
 .stack span {
   font:9px var(--mono);
-  border:1px solid #53564e;
+  border:1px solid #555555;
   color:#e1e0d6;
   padding:7px 9px
 }
@@ -973,7 +970,7 @@ section {
 }
 .outcome-item .n {
   font:10px var(--mono);
-  color:var(--olive-ink);
+  color:var(--green);
   padding-top:4px
 }
 .outcome-item b {
@@ -994,12 +991,12 @@ section {
 }
 
 .next {
-  background:var(--green-deep);
+  background:var(--green);
   color:#f7f4eb;
   padding:78px 0
 }
 .next .eyebrow {
-  color:#e0e8c9
+  color:#1a1a1a
 }
 .next-grid {
   display:grid;
@@ -1026,12 +1023,12 @@ section {
   margin-top:23px
 }
 .contact-mini {
-  border-left:1px solid #9cae69;
+  border-left:1px solid var(--green);
   padding:12px 0 12px 27px
 }
 .contact-mini small {
   font:9px var(--mono);
-  color:#e0e8c9;
+  color:#1a1a1a;
   text-transform:uppercase
 }
 .contact-mini a {
@@ -1273,7 +1270,7 @@ section {
   min-height:0;
   padding:20px 0;
   border-left:0;
-  border-bottom:1px solid #53564e
+  border-bottom:1px solid #555555
 }
 .decision:last-child {
   border-bottom:0
@@ -1299,7 +1296,7 @@ section {
 }
 .contact-mini {
   border-left:0;
-  border-top:1px solid #9cae69;
+  border-top:1px solid var(--green);
   padding:20px 0 0
 }
 .footrow {

@@ -1,0 +1,3080 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Paycontrol — payment operations and reconciliation dashboard by Striped Wall."
+    />
+    <title>Paycontrol — Clarity for every payment | Striped Wall</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    /></noscript>
+<style data-source="../../assets/css/paycontrol.css">
+:root {
+  --paper: #f5f2e9;
+  --ink: #2a2a2a;
+  --muted: #77776e;
+  --yellow: #ffbd24;
+  --orange: #f04b00;
+  --line: #d7d3c8;
+  --white: #fbfaf6;
+  --soft: #eae7dc;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: "Manrope", Arial, sans-serif;
+  --mono: "DM Mono", monospace;
+  --app: #f6f6f1;
+  --app-ink: #272727;
+  --app-muted: #868686;
+  --app-line: #e2e2e2;
+  --navy: #232323;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.6 var(--sans);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.wrap {
+  width: min(1240px, calc(100% - 80px));
+  margin: auto;
+}
+.eyebrow {
+  font: 11px var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.stripe {
+  display: flex;
+  gap: 4px;
+  width: 26px;
+  height: 26px;
+  flex-direction: column;
+}
+.stripe i {
+  height: 6px;
+  background: var(--green);
+}
+.stripe i:nth-child(2) {
+  background: var(--yellow);
+}
+.stripe i:nth-child(3) {
+  background: var(--orange);
+}
+header {
+  height: 78px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+}
+.nav-cta,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 17px;
+  border: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.18s;
+}
+.nav-cta:hover,
+.button.primary:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+.nav-cta {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.mobile-menu {
+  display: none;
+}
+.hero {
+  padding: 76px 0 72px;
+}
+.crumb {
+  font: 10px var(--mono);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.crumb a:hover {
+  color: var(--green);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.68fr;
+  gap: 8vw;
+  align-items: end;
+  margin-top: 46px;
+}
+.hero .eyebrow {
+  color: var(--orange);
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+.hero h1 {
+  font-size: clamp(62px, 8vw, 112px);
+  line-height: 0.9;
+  letter-spacing: -0.085em;
+  font-weight: 600;
+  margin: 20px 0 28px;
+}
+.hero h1 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--green);
+  letter-spacing: -0.08em;
+}
+.hero-copy {
+  max-width: 430px;
+  padding-bottom: 8px;
+}
+.hero-copy .lead {
+  font-size: 19px;
+  line-height: 1.55;
+  letter-spacing: -0.025em;
+  margin-bottom: 15px;
+}
+.hero-copy p:last-of-type {
+  color: var(--muted);
+  font-size: 13px;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+}
+.button.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+.button.secondary {
+  border-color: var(--line);
+}
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 66px;
+  padding-top: 18px;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 190px;
+  min-height: 58px;
+  padding: 8px 12px;
+  border: 0;
+  border-left: 4px solid var(--green);
+  background: var(--white);
+}
+.fact + .fact {
+  border-left: 4px solid var(--green);
+  padding-left: 12px;
+}
+.fact:nth-child(2) {
+  border-left-color: var(--yellow);
+}
+.fact:nth-child(3) {
+  border-left-color: var(--orange);
+}
+.fact:nth-child(4) {
+  border-left-color: var(--green);
+}
+.fact small {
+  display: block;
+  font: 9px var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 5px;
+}
+.fact b {
+  font-size: 12px;
+  font-weight: 700;
+}
+section {
+  padding: 102px 0;
+}
+.product-section,
+#story,
+#approach,
+#screens,
+.outcomes {
+  position: relative;
+  border-top: 0;
+}
+.product-section::before,
+#story::before,
+#approach::before,
+#screens::before,
+.outcomes::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 4px;
+}
+.product-section::before {
+  background: var(--yellow);
+}
+#story::before {
+  background: var(--orange);
+}
+#approach::before {
+  background: var(--green);
+}
+#screens::before {
+  background: var(--orange);
+}
+.outcomes::before {
+  background: var(--green);
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+.section-head h2,
+.split-copy h2 {
+  font-size: clamp(39px, 5vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.07em;
+  font-weight: 600;
+  margin: 12px 0 0;
+}
+.section-head p {
+  max-width: 430px;
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+.section-head .eyebrow,
+.split-copy .eyebrow,
+.outcome-row .eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.product-section .eyebrow,
+#approach .eyebrow {
+  color: var(--green);
+}
+#story .eyebrow,
+#screens .eyebrow,
+.outcome-row .eyebrow {
+  color: var(--orange);
+}
+#decisions .section-head .eyebrow {
+  color: var(--yellow);
+}
+.visual {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 20px;
+  position: relative;
+}
+.visual-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font: 9px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 14px;
+}
+.visual-cap .tag {
+  color: var(--green);
+}
+/* Product UI illustration */
+.app {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 520px;
+  background: var(--app);
+  border: 1px solid #dfdfdf;
+  color: var(--app-ink);
+  font: 11px/1.45 var(--sans);
+  overflow: hidden;
+}
+.app-side {
+  background: var(--navy);
+  color: #f4f4ed;
+  padding: 21px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.app-brand {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 1px 3px 25px;
+  border-bottom: 1px solid #3e3e3e;
+}
+.app-brand i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--green);
+  border-radius: 50%;
+}
+.app-label {
+  font: 8px var(--mono);
+  letter-spacing: 0.1em;
+  color: #929292;
+  margin: 23px 4px 8px;
+  text-transform: uppercase;
+}
+.app-nav {
+  padding: 8px 10px;
+  border-radius: 3px;
+  color: #c1c1c1;
+  margin: 1px 0;
+}
+.app-nav.active {
+  background: #383838;
+  color: #fff;
+}
+.app-nav span {
+  float: right;
+  color: var(--green);
+}
+.app-user {
+  margin-top: auto;
+  border-top: 1px solid #3e3e3e;
+  padding: 14px 3px 0;
+  font-size: 9px;
+  color: #c1c1c1;
+}
+.app-user b {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+}
+.app-main {
+  padding: 25px 28px 28px;
+  min-width: 0;
+}
+.app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--app-line);
+  padding: 0 0 15px;
+  color: var(--app-muted);
+  font: 8px var(--mono);
+  letter-spacing: 0.05em;
+}
+.demo-pill {
+  background: var(--green);
+  color: #1a1a1a;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+.app-title {
+  font: 32px/1.05 var(--serif);
+  letter-spacing: -0.04em;
+  margin: 22px 0 3px;
+}
+.app-sub {
+  font-size: 10px;
+  color: var(--app-muted);
+}
+.app-filters {
+  display: flex;
+  gap: 8px;
+  margin: 17px 0 16px;
+}
+.filter {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 6px 9px;
+  color: #575757;
+  font-size: 8px;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--app-line);
+  background: #fff;
+}
+.metric {
+  padding: 12px 13px;
+  border-right: 1px solid var(--app-line);
+}
+.metric:last-child {
+  border: 0;
+}
+.metric small {
+  display: block;
+  color: var(--app-muted);
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+.metric b {
+  font: 24px var(--serif);
+  font-weight: 400;
+}
+.dashboard-lower {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+  margin-top: 17px;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 13px;
+  min-width: 0;
+}
+.panel h4 {
+  font: 15px var(--serif);
+  margin: 0 0 4px;
+}
+.panel-sub {
+  font: 8px var(--mono);
+  color: var(--app-muted);
+  margin-bottom: 13px;
+}
+.bars {
+  height: 126px;
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  padding: 8px 6px 0;
+  border-bottom: 1px solid var(--app-line);
+}
+.bar {
+  flex: 1;
+  background: var(--green);
+  max-width: 34px;
+  position: relative;
+}
+.bar:after {
+  content: attr(data-date);
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  font: 7px var(--mono);
+  color: var(--app-muted);
+  white-space: nowrap;
+}
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 0.7fr;
+  gap: 4px;
+  align-items: center;
+}
+.table-head {
+  font: 7px var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--app-muted);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--app-line);
+}
+.table-row {
+  font-size: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.table-row:last-child {
+  border: 0;
+}
+.status {
+  font: 7px var(--mono);
+  color: #b8402c;
+  background: #fff0ea;
+  padding: 3px 5px;
+  width: max-content;
+}
+.context {
+  background: var(--soft);
+}
+.split {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 9vw;
+  align-items: start;
+}
+.split-copy {
+  position: sticky;
+  top: 36px;
+}
+.split-copy .eyebrow {
+  color: var(--orange);
+}
+.split-copy h2 {
+  margin: 16px 0 0;
+}
+.context-copy {
+  padding-top: 5px;
+}
+.context-copy p {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 630px;
+}
+.context-copy p.muted {
+  font-size: 13px;
+  color: var(--muted);
+}
+.callout {
+  margin-top: 32px;
+  padding: 21px 0;
+  border-top: 3px solid var(--green);
+  border-bottom: 1px solid #c9c5b9;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  max-width: 650px;
+}
+.callout span {
+  display: block;
+  font: 9px var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.journey {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.journey article {
+  display: flex;
+  flex-direction: column;
+  padding: 23px 24px 27px 0;
+  min-height: 205px;
+}
+.journey article + article {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.journey .step {
+  font: 10px var(--mono);
+  color: var(--green);
+}
+.journey h3 {
+  font-size: 22px;
+  letter-spacing: -0.05em;
+  margin: 28px 0 9px;
+}
+.journey p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 290px;
+  margin: 0;
+}
+.journey .mini-label {
+  font: 9px var(--mono);
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: auto;
+  padding-top: 19px;
+}
+.screens {
+  background: var(--white);
+}
+.screen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.screen-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-width: 0;
+}
+.screen-card.wide {
+  grid-column: 1/-1;
+}
+.screen-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 21px 22px 15px;
+}
+.screen-title .n {
+  font: 10px var(--mono);
+  color: var(--green);
+}
+.screen-title h3 {
+  font-size: 21px;
+  letter-spacing: -0.05em;
+  margin: 3px 0 3px;
+}
+.screen-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 420px;
+}
+.screen-frame {
+  padding: 0 14px 14px;
+}
+.mini-app {
+  border: 1px solid #dedede;
+  background: var(--app);
+  overflow: hidden;
+  color: var(--app-ink);
+  font: 8px var(--sans);
+}
+.mini-top {
+  background: var(--navy);
+  color: #e8e8e8;
+  padding: 8px 10px;
+  font: 7px var(--mono);
+  letter-spacing: 0.04em;
+}
+.mini-content {
+  padding: 13px 15px;
+}
+.mini-heading {
+  font: 22px var(--serif);
+  margin: 0 0 4px;
+}
+.mini-caption {
+  font-size: 7px;
+  color: var(--app-muted);
+  margin-bottom: 12px;
+}
+.mini-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  border-bottom: 1px solid var(--app-line);
+  padding-bottom: 9px;
+  margin-bottom: 10px;
+}
+.mini-control {
+  background: white;
+  border: 1px solid var(--app-line);
+  padding: 5px 7px;
+  font-size: 7px;
+  color: #666;
+}
+.mini-button {
+  background: var(--green);
+  color: white;
+  padding: 6px 10px;
+  font: 7px var(--mono);
+}
+.mini-data {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+}
+.mini-table {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 0 9px;
+}
+.mini-row {
+  display: grid;
+  grid-template-columns: 1.05fr 0.9fr 0.7fr 0.55fr;
+  gap: 4px;
+  padding: 8px 0;
+  border-bottom: 1px solid #efefef;
+  align-items: center;
+  font-size: 7px;
+}
+.mini-row:last-child {
+  border: 0;
+}
+.mini-row.head {
+  font: 6px var(--mono);
+  color: var(--app-muted);
+  letter-spacing: 0.03em;
+}
+.mini-sidecard {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 11px;
+}
+.mini-sidecard b {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 12px;
+}
+.detail-panel {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 12px;
+}
+.detail-kicker {
+  font: 7px var(--mono);
+  color: var(--app-muted);
+  letter-spacing: 0.05em;
+}
+.detail-amount {
+  font: 30px var(--serif);
+  margin: 5px 0;
+}
+.detail-badge {
+  display: inline-block;
+  background: var(--green);
+  color: #1a1a1a;
+  padding: 4px 7px;
+  font: 7px var(--mono);
+}
+.detail-rule {
+  height: 1px;
+  background: var(--app-line);
+  margin: 12px 0;
+}
+.detail-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 7px;
+}
+.detail-field span:first-child {
+  color: var(--app-muted);
+}
+.reason {
+  background: #fff3ee;
+  color: #a8442b;
+  padding: 8px;
+  font-size: 7px;
+  margin-top: 8px;
+}
+.refund-modal {
+  max-width: 430px;
+  margin: 7px auto;
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 17px;
+  box-shadow: 0 0 0 1200px rgba(31, 31, 31, 0.25);
+  position: relative;
+}
+.refund-modal h4 {
+  font: 20px var(--serif);
+  margin: 0 0 4px;
+}
+.refund-modal p {
+  font-size: 8px;
+  color: var(--app-muted);
+  margin-bottom: 13px;
+}
+.amount-box {
+  background: var(--green);
+  border: 1px solid var(--app-line);
+  padding: 10px;
+  margin-bottom: 11px;
+}
+.amount-box small {
+  display: block;
+  font-size: 7px;
+  color: var(--app-muted);
+}
+.amount-box b {
+  font: 21px var(--serif);
+}
+.select-box {
+  border: 1px solid var(--app-line);
+  padding: 8px;
+  margin-bottom: 9px;
+  color: #666;
+  font-size: 7px;
+}
+.select-box span {
+  float: right;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-top: 14px;
+}
+.modal-actions i {
+  font-style: normal;
+  padding: 6px 9px;
+  border: 1px solid var(--app-line);
+  font-size: 7px;
+}
+.modal-actions i:last-child {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+.after-refund {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+.refunded-card,
+.activity-card {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 12px;
+}
+.refunded-card strong {
+  font: 18px var(--serif);
+  display: block;
+  margin: 8px 0;
+}
+.activity-line {
+  border-left: 1px solid var(--green);
+  padding: 0 0 8px 11px;
+  margin: 10px 0;
+  font-size: 7px;
+}
+.activity-line b {
+  display: block;
+  font-size: 8px;
+}
+.activity-line small {
+  color: var(--app-muted);
+}
+.decisions {
+  background: var(--ink);
+  color: var(--paper);
+}
+.decisions .eyebrow {
+  color: #b5b3a8;
+}
+.decisions .section-head p {
+  color: #b5b3a8;
+}
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555;
+}
+.decision {
+  padding: 23px 24px 27px 0;
+  min-height: 222px;
+}
+.decision + .decision {
+  border-left: 1px solid #555555;
+  padding-left: 24px;
+}
+.decision .n {
+  font: 10px var(--mono);
+  color: var(--yellow);
+}
+.decision h3 {
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  margin: 25px 0 10px;
+  max-width: 270px;
+}
+.decision p {
+  font-size: 11px;
+  color: #b5b3a8;
+  max-width: 290px;
+}
+.architecture {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  margin-top: 68px;
+}
+.architecture h3 {
+  font-size: 24px;
+  letter-spacing: -0.05em;
+  margin: 8px 0 19px;
+}
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.stack span {
+  font: 9px var(--mono);
+  border: 1px solid #555555;
+  color: #e1e0d6;
+  padding: 7px 9px;
+}
+.arch-note {
+  font-size: 12px;
+  color: #b5b3a8;
+  max-width: 500px;
+  margin: 0;
+}
+.arch-note strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+.truth {
+  border-top: 3px solid var(--yellow);
+  margin-top: 32px;
+  padding-top: 15px;
+  font-size: 11px;
+  color: #b5b3a8;
+}
+.truth b {
+  color: var(--paper);
+}
+.outcomes {
+  padding: 97px 0;
+}
+.outcome-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 8vw;
+}
+.outcome-row h2 {
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1;
+  letter-spacing: -0.07em;
+  margin: 14px 0;
+}
+.outcome-list {
+  border-top: 1px solid var(--line);
+}
+.outcome-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.outcome-item .n {
+  font: 10px var(--mono);
+  color: var(--green);
+  padding-top: 4px;
+}
+.outcome-item b {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.outcome-item p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 540px;
+}
+.demo-note {
+  font: 9px var(--mono);
+  color: var(--muted);
+  margin-top: 22px;
+}
+.next {
+  background: var(--green);
+  color: #f7f4eb;
+  padding: 78px 0;
+}
+.next .eyebrow {
+  color: #1a1a1a;
+}
+.next-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 60px;
+  align-items: end;
+}
+.next h2 {
+  font-size: clamp(42px, 6vw, 76px);
+  letter-spacing: -0.07em;
+  line-height: 1;
+  margin: 15px 0;
+}
+.next p {
+  font-size: 13px;
+  color: #e5e3d6;
+  max-width: 520px;
+  margin: 0;
+}
+.next .button {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+  margin-top: 23px;
+}
+.contact-mini {
+  border-left: 1px solid var(--green);
+  padding: 12px 0 12px 27px;
+}
+.contact-mini small {
+  font: 9px var(--mono);
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+.contact-mini a {
+  display: block;
+  font-size: 14px;
+  margin: 7px 0 19px;
+}
+.footer {
+  padding: 24px 0;
+}
+.footrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footlinks {
+  display: flex;
+  gap: 23px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.copyright {
+  font: 9px var(--mono);
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .wrap {
+    width: calc(100% - 48px);
+  }
+  .hero-grid {
+    gap: 40px;
+  }
+  .app {
+    grid-template-columns: 155px 1fr;
+  }
+  .app-main {
+    padding: 21px 19px;
+  }
+  .facts {
+    gap: 8px;
+  }
+  .fact {
+    flex-basis: calc(50% - 8px);
+  }
+  .section-head {
+    align-items: start;
+  }
+  .split {
+    gap: 45px;
+  }
+  .split-copy {
+    position: static;
+  }
+  .app-side {
+    padding: 17px 12px;
+  }
+  .architecture {
+    gap: 25px;
+  }
+}
+@media (max-width: 640px) {
+  header {
+    height: 66px;
+  }
+  .wrap {
+    width: calc(100% - 36px);
+  }
+  .links,
+  .nav-cta {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    font: 10px var(--mono);
+  }
+  .hero {
+    padding: 46px 0 56px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 34px;
+  }
+  .hero h1 {
+    font-size: clamp(58px, 17vw, 84px);
+    margin: 18px 0;
+  }
+  .hero-copy .lead {
+    font-size: 17px;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+  .facts {
+    margin-top: 42px;
+  }
+  .fact {
+    padding: 8px 10px 8px 12px;
+  }
+  .fact + .fact {
+    padding-left: 12px;
+  }
+  .fact:nth-child(3) {
+    padding-left: 12px;
+  }
+  section {
+    padding: 72px 0;
+  }
+  .section-head {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-head p {
+    margin-top: 15px;
+  }
+  .section-head h2,
+  .split-copy h2 {
+    font-size: 42px;
+  }
+  .visual {
+    padding: 10px;
+  }
+  .visual-cap {
+    font-size: 7px;
+  }
+  .app {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .app-side {
+    display: none;
+  }
+  .app-main {
+    padding: 16px 12px;
+  }
+  .app-title {
+    font-size: 27px;
+  }
+  .app-filters {
+    margin: 12px 0;
+  }
+  .filter {
+    font-size: 7px;
+    padding: 5px 6px;
+  }
+  .metric {
+    padding: 8px 6px;
+  }
+  .metric small {
+    font-size: 6px;
+  }
+  .metric b {
+    font-size: 18px;
+  }
+  .dashboard-lower {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .bars {
+    height: 90px;
+  }
+  .panel {
+    padding: 10px;
+  }
+  .table-row {
+    font-size: 7px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .context-copy p {
+    font-size: 15px;
+  }
+  .callout {
+    font-size: 18px;
+  }
+  .journey {
+    grid-template-columns: 1fr;
+  }
+  .journey article,
+  .journey article + article {
+    min-height: 0;
+    padding: 20px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .journey article:last-child {
+    border-bottom: 0;
+  }
+  .journey h3 {
+    margin: 14px 0 5px;
+  }
+  .screen-grid {
+    grid-template-columns: 1fr;
+  }
+  .screen-card.wide {
+    grid-column: auto;
+  }
+  .screen-title {
+    padding: 16px 15px 12px;
+  }
+  .screen-frame {
+    padding: 0 9px 9px;
+  }
+  .mini-content {
+    padding: 10px;
+  }
+  .mini-data {
+    grid-template-columns: 1fr;
+  }
+  .mini-sidecard {
+    display: none;
+  }
+  .mini-row {
+    font-size: 6px;
+  }
+  .mini-row.head {
+    font-size: 5px;
+  }
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-layout .detail-panel:last-child {
+    display: none;
+  }
+  .refund-modal {
+    margin: 7px auto;
+    padding: 12px;
+  }
+  .after-refund {
+    grid-template-columns: 1fr;
+  }
+  .decision-grid {
+    grid-template-columns: 1fr;
+  }
+  .decision,
+  .decision + .decision {
+    min-height: 0;
+    padding: 20px 0;
+    border-left: 0;
+    border-bottom: 1px solid #555555;
+  }
+  .decision:last-child {
+    border-bottom: 0;
+  }
+  .decision h3 {
+    margin: 13px 0 6px;
+  }
+  .architecture {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 45px;
+  }
+  .outcome-row {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+  .outcome-row h2 {
+    font-size: 44px;
+  }
+  .next-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact-mini {
+    border-left: 0;
+    border-top: 1px solid var(--green);
+    padding: 20px 0 0;
+  }
+  .footrow {
+    flex-wrap: wrap;
+  }
+  .footlinks {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+  .copyright {
+    margin-left: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+.flow-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.flow-view.with-nav {
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr);
+}
+.flow-sidebar {
+  background: var(--green);
+  color: #1a1a1a;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font: 7px var(--sans);
+}
+.flow-sidebrand {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 3px 14px;
+  border-bottom: 1px solid #5b5b5b;
+  margin-bottom: 5px;
+}
+.flow-sidelabel {
+  font: 6px var(--mono);
+  letter-spacing: 0.1em;
+  color: #1a1a1a;
+  margin: 4px 3px;
+}
+.flow-sidenav {
+  padding: 7px 6px;
+  color: #1a1a1a;
+  border-radius: 4px;
+}
+.flow-sidenav.active {
+  background: white;
+  color: #1a1a1a;
+}
+.flow-shell {
+  min-width: 0;
+}
+.flow-view {
+  background: #f5f5f5;
+  border: 1px solid #e1e1e1;
+  overflow: hidden;
+  color: #2f2f2f;
+  font: 9px/1.45 var(--sans);
+  min-width: 0;
+}
+.flow-top {
+  height: 35px;
+  background: var(--green);
+  color: #1a1a1a;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: 7px var(--mono);
+  letter-spacing: 0.05em;
+}
+.flow-main {
+  padding: 16px;
+}
+.flow-label {
+  font: 7px var(--mono);
+  letter-spacing: 0.1em;
+  color: #7d7d7d;
+}
+.flow-title {
+  font: 22px/1.1 var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 7px 0 4px;
+}
+.flow-sub {
+  font-size: 8px;
+  color: #727272;
+  margin-bottom: 13px;
+}
+.flow-plan {
+  background: var(--green);
+  color: #1a1a1a;
+  border-radius: 8px;
+  padding: 15px;
+  min-height: 140px;
+}
+.flow-plan-tag {
+  font: 7px var(--mono);
+  letter-spacing: 0.09em;
+}
+.flow-plan h4 {
+  font-size: 15px;
+  margin: 13px 0 5px;
+}
+.flow-price {
+  font-size: 9px;
+}
+.flow-end {
+  font-size: 8px;
+  margin-top: 13px;
+  color: #1a1a1a;
+}
+.flow-cta {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-size: 8px;
+  margin-top: 10px;
+}
+.flow-plan .flow-state,
+.flow-plan .flow-cta {
+  box-shadow: inset 0 0 0 1px white;
+}
+.flow-card {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+}
+.flow-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 9px;
+  margin-bottom: 9px;
+}
+.flow-muted {
+  font-size: 7px;
+  color: #7d7d7d;
+}
+.flow-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+.flow-kpi {
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 7px;
+  padding: 10px 8px;
+}
+.flow-kpi small {
+  display: block;
+  font-size: 7px;
+  color: #7d7d7d;
+}
+.flow-kpi b {
+  display: block;
+  font-size: 16px;
+  margin-top: 4px;
+}
+.flow-row {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr 0.75fr;
+  gap: 5px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #efefef;
+  font-size: 7px;
+}
+.flow-row:last-child {
+  border: 0;
+}
+.flow-state {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 12px;
+  background: var(--green);
+  color: #1a1a1a;
+  font: 7px var(--mono);
+  width: max-content;
+}
+.flow-state.warn {
+  background: #fff0d4;
+  color: #8d6417;
+}
+.flow-state.neutral {
+  background: #ededed;
+  color: #636363;
+}
+.flow-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.flow-option {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 7px;
+  padding: 11px;
+}
+.flow-option.selected {
+  border: 2px solid var(--green);
+  padding: 10px;
+}
+.flow-option h5 {
+  font-size: 9px;
+  margin: 0 0 4px;
+}
+.flow-option strong {
+  font-size: 13px;
+}
+.flow-option p {
+  font-size: 7px;
+  color: #7d7d7d;
+  margin: 6px 0 0;
+}
+.flow-confirm {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 7px;
+  padding: 12px;
+  margin-top: 9px;
+}
+.flow-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid #efefef;
+  font-size: 7px;
+}
+.flow-line:last-child {
+  border: 0;
+}
+.flow-alert {
+  background: #fff5df;
+  border-left: 3px solid #e5ac37;
+  border-radius: 4px;
+  padding: 9px;
+  font-size: 7px;
+  margin: 10px 0;
+}
+.flow-screen-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-width: 0;
+}
+.flow-screen-card.wide {
+  grid-column: 1/-1;
+}
+.flow-screen-title {
+  padding: 20px 22px 14px;
+}
+.flow-screen-title .n {
+  font: 10px var(--mono);
+  color: var(--green);
+}
+.flow-screen-title h3 {
+  font-size: 21px;
+  letter-spacing: -0.05em;
+  margin: 3px 0;
+}
+.flow-screen-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.flow-screen-inner {
+  padding: 0 14px 14px;
+}
+.flow-screen-inner .flow-view {
+  min-height: 245px;
+}
+.flow-admin-list {
+  margin-top: 10px;
+}
+.flow-note {
+  font: 9px var(--mono);
+  color: var(--muted);
+  margin-top: 18px;
+}
+.flow-screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.flow-decisions .decision .n {
+  color: var(--yellow);
+}
+@media (max-width: 760px) {
+  .flow-dual {
+    grid-template-columns: 1fr;
+  }
+  .flow-main {
+    padding: 13px;
+  }
+  .flow-view {
+    font-size: 8px;
+  }
+  .flow-screens {
+    grid-template-columns: 1fr;
+  }
+  .flow-screen-card.wide {
+    grid-column: auto;
+  }
+}
+@media (max-width: 640px) {
+  .flow-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+  .flow-screen-title {
+    padding: 16px 15px 12px;
+  }
+  .flow-screen-inner {
+    padding: 0 9px 9px;
+  }
+}
+
+.pc-product {
+  padding-bottom: 86px;
+}
+.pc-app {
+  background: #f4f5f9;
+  border: 1px solid #dce0e9;
+  color: #17233a;
+  border-radius: 8px;
+  overflow: hidden;
+  font: 11px/1.45 var(--sans);
+  box-shadow: 0 20px 55px rgba(24, 35, 58, 0.08);
+}
+.pc-layout {
+  display: grid;
+  grid-template-columns: 205px minmax(0, 1fr);
+  min-height: 500px;
+}
+.pc-sidebar {
+  background: #14243d;
+  color: #eaf0fb;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+}
+.pc-logo {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  padding: 0 4px 17px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.pc-logo b {
+  font-weight: 800;
+  color: #fff;
+}
+.pc-logo-mark {
+  color: #c5b9ff;
+  font-size: 17px;
+  margin-right: 5px;
+}
+.pc-workspace {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 11px;
+  margin: 14px 0 18px;
+  font-size: 10px;
+}
+.pc-workspace small {
+  display: block;
+  color: #aebad0;
+  margin-top: 3px;
+  font-size: 8px;
+}
+.pc-nav-label {
+  font: 8px var(--mono);
+  letter-spacing: 0.12em;
+  color: #91a1ba;
+  margin: 8px 6px;
+}
+.pc-nav-item {
+  padding: 8px 9px;
+  border-radius: 6px;
+  color: #c3ccdb;
+  font-size: 10px;
+  margin: 2px 0;
+}
+.pc-nav-item.active {
+  color: #fff;
+  background: #293b59;
+  border-left: 3px solid #a89bff;
+  padding-left: 6px;
+}
+.pc-nav-item .count {
+  float: right;
+  background: #41516d;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+.pc-side-bottom {
+  margin-top: auto;
+  color: #aebad0;
+  font-size: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 13px 4px 0;
+}
+.pc-main {
+  min-width: 0;
+}
+.pc-topbar {
+  height: 54px;
+  background: #fff;
+  border-bottom: 1px solid #e3e6ed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #4d5a70;
+  font-size: 9px;
+}
+.pc-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pc-avatar {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #eeeaff;
+  color: #4536a5;
+  font-weight: 800;
+}
+.pc-main-content {
+  padding: 24px 24px 28px;
+}
+.pc-eyebrow {
+  font: 8px var(--mono);
+  letter-spacing: 0.1em;
+  color: #5e6880;
+  text-transform: uppercase;
+}
+.pc-heading {
+  font-size: 25px;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  color: #1b2940;
+  margin: 8px 0 4px;
+}
+.pc-subtitle {
+  font-size: 10px;
+  color: #627087;
+  margin-bottom: 17px;
+}
+.pc-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.pc-button {
+  display: inline-block;
+  background: #4935c6;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 9px;
+  font-weight: 700;
+}
+.pc-button.light {
+  background: #fff;
+  color: #28364c;
+  border: 1px solid #d7dce6;
+}
+.pc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 12px 0 15px;
+}
+.pc-filter {
+  background: #fff;
+  border: 1px solid #d9deea;
+  border-radius: 5px;
+  padding: 7px 9px;
+  color: #46536a;
+  font-size: 8px;
+}
+.pc-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+.pc-kpi {
+  background: #fff;
+  border: 1px solid #e0e4ec;
+  border-radius: 8px;
+  padding: 12px 11px;
+  min-width: 0;
+}
+.pc-kpi small {
+  display: block;
+  color: #637087;
+  font-size: 8px;
+  line-height: 1.3;
+  min-height: 21px;
+}
+.pc-kpi strong {
+  display: block;
+  color: #1c2a41;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin: 7px 0 4px;
+}
+.pc-kpi span {
+  color: #778398;
+  font-size: 7px;
+}
+.pc-lower {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px;
+  margin-top: 13px;
+}
+.pc-panel {
+  background: #fff;
+  border: 1px solid #e0e4ec;
+  border-radius: 8px;
+  padding: 13px;
+  min-width: 0;
+}
+.pc-panel h4 {
+  font-size: 12px;
+  letter-spacing: -0.025em;
+  margin: 0 0 8px;
+  color: #1c2a41;
+}
+.pc-panel-note {
+  font-size: 8px;
+  color: #738096;
+}
+.pc-chart {
+  height: 105px;
+  display: flex;
+  align-items: end;
+  gap: 9px;
+  padding: 10px 4px 0;
+  border-bottom: 1px solid #e8ebf1;
+}
+.pc-bar {
+  flex: 1;
+  max-width: 30px;
+  background: #d8d2ff;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+.pc-bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background: #6550dc;
+  border-radius: 4px 4px 0 0;
+}
+.pc-chart-key {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 7px;
+  color: #68758a;
+}
+.pc-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6550dc;
+  margin-right: 4px;
+}
+.pc-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #edf0f4;
+  font-size: 8px;
+  color: #334159;
+}
+.pc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8px;
+}
+.pc-table th {
+  text-align: left;
+  color: #6e7b8e;
+  font: 7px var(--mono);
+  letter-spacing: 0.04em;
+  padding: 8px 6px;
+  border-bottom: 1px solid #e3e7ee;
+}
+.pc-table td {
+  padding: 9px 6px;
+  border-bottom: 1px solid #eef0f4;
+  color: #344158;
+  white-space: nowrap;
+}
+.pc-table tr:last-child td {
+  border-bottom: 0;
+}
+.pc-status {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 99px;
+  background: #eeeaff;
+  color: #4b38be;
+  font: 7px var(--mono);
+}
+.pc-status.warn {
+  background: #fff0e8;
+  color: #bd5624;
+}
+.pc-status.ok {
+  background: var(--green);
+  color: #1a1a1a;
+}
+.pc-status.neutral {
+  background: #eef1f5;
+  color: #536177;
+}
+.pc-table-wrap {
+  overflow: auto;
+}
+.pc-recon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 11px 0;
+}
+.pc-record {
+  background: #fff;
+  border: 1px solid #e0e4ec;
+  border-radius: 7px;
+  padding: 12px;
+}
+.pc-record h5 {
+  font-size: 9px;
+  margin: 0 0 8px;
+  color: #536078;
+}
+.pc-record p {
+  font-size: 8px;
+  margin: 5px 0;
+  color: #354158;
+}
+.pc-diff {
+  background: #fff5e8;
+  border-left: 3px solid #e6a43b;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font-size: 8px;
+  color: #765321;
+}
+.pc-screen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.pc-screen-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-width: 0;
+}
+.pc-screen-title {
+  padding: 20px 22px 14px;
+}
+.pc-screen-title .n {
+  font: 10px var(--mono);
+  color: var(--green);
+}
+.pc-screen-title h3 {
+  font-size: 21px;
+  letter-spacing: -0.05em;
+  margin: 3px 0;
+}
+.pc-screen-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.pc-screen-inner {
+  padding: 0 12px 12px;
+}
+.pc-screen-inner .pc-app {
+  box-shadow: none;
+  border-radius: 4px;
+}
+.pc-screen-inner .pc-layout {
+  grid-template-columns: 118px minmax(0, 1fr);
+  min-height: 355px;
+}
+.pc-screen-inner .pc-sidebar {
+  padding: 11px 8px;
+}
+.pc-screen-inner .pc-logo {
+  font-size: 11px;
+  padding-bottom: 11px;
+}
+.pc-screen-inner .pc-workspace {
+  padding: 7px;
+  margin: 9px 0 12px;
+  font-size: 8px;
+}
+.pc-screen-inner .pc-workspace small {
+  font-size: 6px;
+}
+.pc-screen-inner .pc-nav-label {
+  font-size: 6px;
+  margin: 6px 4px;
+}
+.pc-screen-inner .pc-nav-item {
+  padding: 6px 5px;
+  font-size: 7px;
+}
+.pc-screen-inner .pc-nav-item.active {
+  padding-left: 3px;
+}
+.pc-screen-inner .pc-side-bottom {
+  font-size: 6px;
+  padding-top: 8px;
+}
+.pc-screen-inner .pc-topbar {
+  height: 38px;
+  padding: 0 10px;
+  font-size: 7px;
+}
+.pc-screen-inner .pc-avatar {
+  width: 20px;
+  height: 20px;
+}
+.pc-screen-inner .pc-main-content {
+  padding: 14px 12px 16px;
+}
+.pc-screen-inner .pc-heading {
+  font-size: 17px;
+  margin: 5px 0 3px;
+}
+.pc-screen-inner .pc-subtitle {
+  font-size: 7px;
+  margin-bottom: 10px;
+}
+.pc-screen-inner .pc-eyebrow {
+  font-size: 6px;
+}
+.pc-screen-inner .pc-filters {
+  gap: 4px;
+  margin: 8px 0 10px;
+}
+.pc-screen-inner .pc-filter {
+  padding: 5px;
+  font-size: 6px;
+}
+.pc-screen-inner .pc-kpis {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+.pc-screen-inner .pc-kpi {
+  padding: 7px 6px;
+  border-radius: 5px;
+}
+.pc-screen-inner .pc-kpi small {
+  font-size: 6px;
+  min-height: 15px;
+}
+.pc-screen-inner .pc-kpi strong {
+  font-size: 13px;
+  margin: 4px 0;
+}
+.pc-screen-inner .pc-kpi span {
+  font-size: 6px;
+}
+.pc-screen-inner .pc-lower {
+  gap: 6px;
+  margin-top: 7px;
+}
+.pc-screen-inner .pc-panel {
+  padding: 8px;
+  border-radius: 5px;
+}
+.pc-screen-inner .pc-panel h4 {
+  font-size: 9px;
+}
+.pc-screen-inner .pc-panel-note {
+  font-size: 6px;
+}
+.pc-screen-inner .pc-chart {
+  height: 72px;
+  gap: 4px;
+}
+.pc-screen-inner .pc-chart-key {
+  font-size: 5px;
+}
+.pc-screen-inner .pc-table {
+  font-size: 6px;
+}
+.pc-screen-inner .pc-table th {
+  font-size: 5px;
+  padding: 5px 3px;
+}
+.pc-screen-inner .pc-table td {
+  font-size: 6px;
+  padding: 6px 3px;
+}
+.pc-screen-inner .pc-status {
+  font-size: 5px;
+  padding: 3px 4px;
+}
+.pc-screen-inner .pc-button {
+  padding: 6px 8px;
+  font-size: 7px;
+}
+.pc-screen-inner .pc-record {
+  padding: 8px;
+}
+.pc-screen-inner .pc-record h5 {
+  font-size: 7px;
+}
+.pc-screen-inner .pc-record p,
+.pc-screen-inner .pc-diff {
+  font-size: 6px;
+}
+.pc-screen-inner .pc-recon-grid {
+  gap: 5px;
+}
+.pc-screen-inner .pc-actions {
+  margin-bottom: 8px;
+}
+.pc-screen-inner .pc-task {
+  font-size: 6px;
+  padding: 7px 0;
+}
+.pc-note {
+  font: 9px var(--mono);
+  color: var(--muted);
+  margin-top: 18px;
+}
+.pc-approach .journey-step .num {
+  color: var(--orange);
+}
+@media (max-width: 900px) {
+  .pc-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pc-screen-inner .pc-layout {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .pc-screen-grid {
+    grid-template-columns: 1fr;
+  }
+  .pc-layout {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+  .pc-lower {
+    grid-template-columns: 1fr;
+  }
+  .pc-screen-inner .pc-layout {
+    grid-template-columns: 118px minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .pc-layout {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+  .pc-sidebar {
+    padding: 12px 7px;
+  }
+  .pc-logo {
+    font-size: 12px;
+  }
+  .pc-workspace {
+    padding: 6px;
+    font-size: 7px;
+  }
+  .pc-nav-item {
+    font-size: 8px;
+    padding: 7px 5px;
+  }
+  .pc-nav-label {
+    font-size: 6px;
+  }
+  .pc-main-content {
+    padding: 15px 10px;
+  }
+  .pc-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pc-topbar {
+    padding: 0 9px;
+  }
+  .pc-screen-inner .pc-layout {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+  .pc-screen-inner .pc-main-content {
+    padding: 9px 7px;
+  }
+  .pc-screen-inner .pc-sidebar {
+    padding: 8px 5px;
+  }
+  .pc-screen-inner .pc-nav-item {
+    font-size: 6px;
+  }
+  .pc-screen-title {
+    padding: 16px 14px 12px;
+  }
+  .pc-screen-inner {
+    padding: 0 7px 8px;
+  }
+}
+</style>
+<style data-source="../../assets/css/base.css">
+/* Shared accessibility, navigation and responsive safeguards. Loaded last. */
+:root { --green: #729800; --orange-ink: #f04b00; --muted: #656565; --app-muted: #676767; }
+html { scroll-padding-top: 100px; }
+body { overflow-wrap: break-word; }
+header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
+main:focus { outline: none; }
+:focus-visible { outline: 3px solid #f04b00; outline-offset: 5px; }
+.process :focus-visible, .decisions :focus-visible, .talk :focus-visible, .next :focus-visible { outline-color: #ffc21f; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 20; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.menu-toggle { display: none; border: 1px solid currentColor; background: transparent; color: var(--ink); padding: 10px 12px; font: 12px var(--mono); cursor: pointer; }
+.nav-cta, .button.dark, .button.primary { background: var(--green); border-color: var(--green); color: white; }
+.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: var(--green); border-color: var(--green); color: white; text-decoration: underline; }
+.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #f04b00; }
+.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: var(--green); }
+.home .hero h1 em { color: var(--green); }
+.home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #f04b00; }
+.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: var(--green); }
+.workflow-actions span:first-child { color: white; }
+.process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
+.process .principles ~ .section-head .eyebrow, .process .steps .num { color: var(--green); }
+.decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
+.talk .eyebrow, .talk p, .contacts, .contacts small,
+.next .eyebrow, .next p, .contact-mini, .contact-mini small { color: #1a1a1a; }
+.contacts, .contact-mini { border-color: #4b4b4b; }
+.product-section::before, #story::before, #approach::before, #screens::before, .outcomes::before { width: 100%; left: 0; transform: none; }
+.product-section, #approach { width: 100%; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
+.split-copy { top: 110px; }
+.hero-grid > *, .about-grid > *, .talk-grid > *, .split > *, .next-grid > *, .outcome-row > *, .screen-grid > *, .architecture > * { min-width: 0; }
+.contacts a, .contact-mini a { overflow-wrap: anywhere; }
+.copyright, .process .process-close span { white-space: normal; }
+.demo-note { font-size: 12px; line-height: 1.7; }
+.arch-note, .truth { font-size: 13px; line-height: 1.7; }
+.visual-cap { flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .nav { flex-wrap: wrap; gap: 12px; }
+  header { height: auto; min-height: 78px; padding-block: 14px; }
+  .links { display: flex; width: 100%; order: 3; flex-wrap: wrap; gap: 12px 22px; padding-block: 10px; }
+  .links a { padding-block: 7px; }
+  .nav > .nav-cta { display: none; }
+  .nav-enhanced .menu-toggle { display: inline-flex; align-items: center; gap: 12px; }
+  .nav-enhanced .links { display: none; }
+  .nav-enhanced .links.is-open { display: flex; }
+  .product-section, #approach { padding-inline: 24px; }
+  .screen-grid { grid-template-columns: 1fr; }
+  .app { grid-template-columns: 145px minmax(0, 1fr); }
+  .dashboard-lower { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metric { border-bottom: 1px solid var(--app-line); }
+  .split-copy { position: static; }
+}
+@media (max-width: 640px) {
+  header { min-height: 66px; padding-block: 10px; }
+  .wrap { width: calc(100% - 36px); }
+  .product-section, #approach { width: 100%; padding-inline: 18px; }
+  .hero h1 { font-size: clamp(44px, 13vw, 74px); }
+  .talk h2, .next h2, .about h2, .section-head h2, .split-copy h2 { font-size: clamp(35px, 10vw, 55px); }
+  .app { grid-template-columns: 1fr; }
+  .app-side { display: none; }
+  .app-main { padding: 16px 12px; }
+  .app-top, .app-filters, .mini-toolbar { flex-wrap: wrap; gap: 8px; }
+  .metric small { font-size: 9px; }
+  .mini-data, .detail-layout { grid-template-columns: 1fr; }
+  .mini-sidecard, .detail-layout .detail-panel:last-child { display: block; }
+  .mini-row, .mini-row.head { font-size: 8px; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-wrap: anywhere; }
+  .mini-content, .mini-table { padding-inline: 8px; }
+  .table-row { font-size: 9px; }
+  .table-head { font-size: 8px; }
+  .screen { aspect-ratio: auto; min-height: 240px; }
+  .ui-shot { min-height: 205px; }
+  .shot-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shot-lower { grid-template-columns: 1fr; }
+  .shot-table { display: none; }
+  .workflow-top { flex-wrap: wrap; gap: 10px; }
+  .contact-links { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+    <script src="../../assets/js/navigation.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header id="top">
+      <div class="wrap nav">
+        <a class="brand" href="../../index.html" aria-label="Striped Wall home"
+          ><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span
+          >Striped Wall</a
+        >
+        <nav id="main-navigation" class="links" aria-label="Main navigation">
+          <a href="#story">The story</a><a href="#screens">Product screens</a
+          ><a href="#approach">Approach</a><a href="#contact">Contact</a>
+        </nav>
+        <a
+          class="nav-cta"
+          href="https://stripedwall.agency/paycontrol-demo/"
+          target="_blank"
+          rel="noopener"
+          >Open demo ↗</a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          Menu <span aria-hidden="true">+</span>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="wrap hero">
+        <div class="crumb">
+          <a href="../../index.html#work">WORK</a> &nbsp;/&nbsp; CASE 03
+          &nbsp;/&nbsp; PAYCONTROL
+        </div>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">A Striped Wall concept project</div>
+            <h1>Clarity for<br />every <em>payment.</em></h1>
+          </div>
+          <div class="hero-copy">
+            <p class="lead">
+              A payment operations workspace for the work behind every
+              transaction.
+            </p>
+            <p>
+              Paycontrol helps operations teams monitor payment activity,
+              investigate exceptions, and reconcile internal records with a
+              provider dataset — all in one focused workflow.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button primary"
+                href="https://stripedwall.agency/paycontrol-demo/"
+                target="_blank"
+                rel="noopener"
+                >Explore the demo ↗</a
+              ><a class="button secondary" href="#screens">See the product ↓</a>
+            </div>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <small>Product</small><b>Payment operations dashboard</b>
+          </div>
+          <div class="fact">
+            <small>For</small><b>Payment and finance operations</b>
+          </div>
+          <div class="fact">
+            <small>Focus</small><b>Transaction review · reconciliation</b>
+          </div>
+          <div class="fact">
+            <small>Format</small><b>Interactive browser demo</b>
+          </div>
+        </div>
+      </div>
+      <section
+        class="wrap product-section pc-product"
+        aria-labelledby="overview-title"
+      >
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">01 / The product</div>
+            <h2 id="overview-title">Every payment.<br />One clear view.</h2>
+          </div>
+          <p>
+            Paycontrol brings transaction monitoring, payment issues, refunds,
+            reconciliation, and activity into one workspace. Operators can
+            follow an exception from the overview to its transaction details and
+            save a review outcome.
+          </p>
+        </div>
+        <div class="visual">
+          <div class="visual-cap">
+            <span>PAYCONTROL / NORTHSTAR COMMERCE</span
+            ><span class="tag">DEMO · FICTIONAL DATA</span>
+          </div>
+          <div class="pc-app">
+            <div class="pc-layout">
+              <aside class="pc-sidebar">
+                <div class="pc-logo">
+                  <span class="pc-logo-mark">▤</span>Paycontrol
+                </div>
+                <div class="pc-workspace">
+                  N &nbsp; Northstar Commerce<small>Demo workspace</small>
+                </div>
+                <div class="pc-nav-label">MONITOR</div>
+                <div class="pc-nav-item active">▣ &nbsp; Overview</div>
+                <div class="pc-nav-item">▥ &nbsp; Reports</div>
+                <div class="pc-nav-label">OPERATIONS</div>
+                <div class="pc-nav-item">⇄ &nbsp; Transactions</div>
+                <div class="pc-nav-item">
+                  ◇ &nbsp; Payment issues <span class="count">11</span>
+                </div>
+                <div class="pc-nav-item">↶ &nbsp; Refunds</div>
+                <div class="pc-nav-item">≋ &nbsp; Reconciliation</div>
+                <div class="pc-nav-label">WORKSPACE</div>
+                <div class="pc-nav-item">◷ &nbsp; Activity log</div>
+                <div class="pc-nav-item">⚙ &nbsp; Settings</div>
+                <div class="pc-side-bottom">
+                  Local workspace<br />Demo data · USD / EUR
+                </div>
+              </aside>
+              <div class="pc-main">
+                <div class="pc-topbar">
+                  <span>Workspace &nbsp; / &nbsp; Overview</span>
+                  <div class="pc-profile">
+                    <span>Local demo · client-side roles</span
+                    ><span class="pc-avatar">AM</span><b>Alex Morgan</b>
+                  </div>
+                </div>
+                <div class="pc-main-content">
+                  <div class="pc-eyebrow">MONITOR / OVERVIEW</div>
+                  <div class="pc-actions">
+                    <div>
+                      <div class="pc-heading">Your payments, in focus.</div>
+                      <div class="pc-subtitle">
+                        A connected view of performance, exceptions and the work
+                        ahead.
+                      </div>
+                    </div>
+                    <span class="pc-button">Open reconciliation →</span>
+                  </div>
+                  <div class="pc-filters">
+                    <span class="pc-filter">From · UTC &nbsp; 01.11.2026</span
+                    ><span class="pc-filter">To · UTC &nbsp; 14.11.2026</span
+                    ><span class="pc-filter">Currency &nbsp; All</span>
+                  </div>
+                  <div class="pc-kpis">
+                    <div class="pc-kpi">
+                      <small>Payment attempts</small><strong>42</strong
+                      ><span>All internal attempts</span>
+                    </div>
+                    <div class="pc-kpi">
+                      <small>Gross successful volume</small
+                      ><strong>$5,637.98</strong
+                      ><span>USD · €1,603.20 EUR</span>
+                    </div>
+                    <div class="pc-kpi">
+                      <small>Success rate</small><strong>73.8%</strong
+                      ><span>Succeeded / all attempts</span>
+                    </div>
+                    <div class="pc-kpi">
+                      <small>Succeeded refunds</small><strong>2</strong
+                      ><span>$101.35 · €12.50</span>
+                    </div>
+                    <div class="pc-kpi">
+                      <small>Open discrepancies</small><strong>Not run</strong
+                      ><span>By accounting date</span>
+                    </div>
+                  </div>
+                  <div class="pc-lower">
+                    <div class="pc-panel">
+                      <h4>Payment activity</h4>
+                      <div class="pc-panel-note">
+                        Attempts by day · November 2026 UTC
+                      </div>
+                      <div class="pc-chart">
+                        <i class="pc-bar" style="height: 72%"></i
+                        ><i class="pc-bar" style="height: 76%"></i
+                        ><i class="pc-bar" style="height: 88%"></i
+                        ><i class="pc-bar" style="height: 65%"></i
+                        ><i class="pc-bar" style="height: 80%"></i
+                        ><i class="pc-bar" style="height: 92%"></i
+                        ><i class="pc-bar" style="height: 69%"></i
+                        ><i class="pc-bar" style="height: 84%"></i
+                        ><i class="pc-bar" style="height: 75%"></i
+                        ><i class="pc-bar" style="height: 90%"></i
+                        ><i class="pc-bar" style="height: 63%"></i
+                        ><i class="pc-bar" style="height: 82%"></i>
+                      </div>
+                      <div class="pc-chart-key">
+                        <span><i class="pc-dot"></i>Successful</span
+                        ><span>All attempts</span>
+                      </div>
+                    </div>
+                    <div class="pc-panel">
+                      <h4>Needs your attention</h4>
+                      <div class="pc-task">
+                        <span>Active investigations</span><b>11</b>
+                      </div>
+                      <div class="pc-panel-note">
+                        Follow up on declines and delayed confirmations.
+                      </div>
+                      <div class="pc-button" style="margin-top: 12px">
+                        Review payment issues →
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="context" id="story">
+        <div class="wrap">
+          <div class="split">
+            <div class="split-copy">
+              <div class="eyebrow">02 / Context</div>
+              <h2>Close the gap between records.</h2>
+            </div>
+            <div class="split-body">
+              <p>
+                Payment operations teams often need to move between internal
+                transaction records and provider data to understand what
+                happened. Paycontrol brings both sources into one place so staff
+                can locate an issue, compare the records, and document the
+                review.
+              </p>
+              <div class="pullquote">
+                From a payment overview to a documented reconciliation decision.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap pc-approach" id="approach">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">03 / The workflow</div>
+            <h2>Monitor. Investigate.<br />Reconcile.</h2>
+          </div>
+          <p>
+            One connected path takes the operator from an overview of payment
+            activity to the details and decision needed to move an exception
+            forward.
+          </p>
+        </div>
+        <div class="journey">
+          <article class="journey-step">
+            <div class="num">01 / MONITOR</div>
+            <h3>Find the signal</h3>
+            <p>
+              Review activity and key metrics, then narrow the transaction list
+              by period, status, amount, currency, or source.
+            </p>
+            <div class="journey-link">Overview → Transactions</div>
+          </article>
+          <article class="journey-step">
+            <div class="num">02 / INVESTIGATE</div>
+            <h3>Follow the payment</h3>
+            <p>
+              Inspect transaction details, related attempts, refunds, payment
+              issues, and the event timeline.
+            </p>
+            <div class="journey-link">Transaction → Details</div>
+          </article>
+          <article class="journey-step">
+            <div class="num">03 / RECONCILE</div>
+            <h3>Record the review</h3>
+            <p>
+              Compare internal and provider records, then save a review status
+              and comment to the activity history.
+            </p>
+            <div class="journey-link">Reconciliation → Decision</div>
+          </article>
+        </div>
+      </section>
+      <section class="screens" id="screens">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">04 / Key product screens</div>
+              <h2>Details that move work forward.</h2>
+            </div>
+            <p>
+              From a searchable transaction register to a side-by-side
+              comparison, each view keeps the next useful action close to its
+              context.
+            </p>
+          </div>
+          <div class="pc-screen-grid">
+            <article class="pc-screen-card">
+              <div class="pc-screen-title">
+                <span class="n">SCREEN 01</span>
+                <h3>Transactions</h3>
+                <p>
+                  Search and filter attempts across date, status, amount,
+                  currency, and source.
+                </p>
+              </div>
+              <div class="pc-screen-inner">
+                <div class="pc-app">
+                  <div class="pc-layout">
+                    <aside class="pc-sidebar">
+                      <div class="pc-logo">▤ Paycontrol</div>
+                      <div class="pc-nav-label">OPERATIONS</div>
+                      <div class="pc-nav-item active">⇄ Transactions</div>
+                      <div class="pc-nav-item">◇ Payment issues</div>
+                      <div class="pc-nav-item">≋ Reconciliation</div>
+                    </aside>
+                    <div class="pc-main">
+                      <div class="pc-topbar">
+                        Workspace / Transactions
+                        <span class="pc-profile">Local demo · Operator</span>
+                      </div>
+                      <div class="pc-main-content">
+                        <div class="pc-eyebrow">OPERATIONS / TRANSACTIONS</div>
+                        <div class="pc-heading">Transactions</div>
+                        <div class="pc-subtitle">
+                          Every payment attempt, with the context to move
+                          forward.
+                        </div>
+                        <div class="pc-filters">
+                          <span class="pc-filter">Search transactions</span
+                          ><span class="pc-filter">01–14 Nov</span
+                          ><span class="pc-filter">Status · All</span
+                          ><span class="pc-filter">Currency · All</span>
+                        </div>
+                        <div class="pc-table-wrap">
+                          <table class="pc-table">
+                            <thead>
+                              <tr>
+                                <th>TRANSACTION / ORDER</th>
+                                <th>CUSTOMER</th>
+                                <th>STATUS</th>
+                                <th>AMOUNT</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>TX-1042 · ORD-2042</td>
+                                <td>Liam Chen</td>
+                                <td>
+                                  <span class="pc-status ok">Succeeded</span>
+                                </td>
+                                <td>$273.57</td>
+                              </tr>
+                              <tr>
+                                <td>TX-1041 · ORD-2041</td>
+                                <td>Olivia Bennett</td>
+                                <td><span class="pc-status">Pending</span></td>
+                                <td>€255.80</td>
+                              </tr>
+                              <tr>
+                                <td>TX-1040 · ORD-2040</td>
+                                <td>Lucas Martin</td>
+                                <td>
+                                  <span class="pc-status ok">Succeeded</span>
+                                </td>
+                                <td>$238.03</td>
+                              </tr>
+                              <tr>
+                                <td>TX-1038 · ORD-2038</td>
+                                <td>Ethan Morgan</td>
+                                <td>
+                                  <span class="pc-status warn">Failed</span>
+                                </td>
+                                <td>$202.49</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="pc-screen-card">
+              <div class="pc-screen-title">
+                <span class="n">SCREEN 02</span>
+                <h3>Payment Issues</h3>
+                <p>
+                  Review failed, pending, and flagged attempts with their
+                  investigation history.
+                </p>
+              </div>
+              <div class="pc-screen-inner">
+                <div class="pc-app">
+                  <div class="pc-layout">
+                    <aside class="pc-sidebar">
+                      <div class="pc-logo">▤ Paycontrol</div>
+                      <div class="pc-nav-label">OPERATIONS</div>
+                      <div class="pc-nav-item">⇄ Transactions</div>
+                      <div class="pc-nav-item active">◇ Payment issues</div>
+                      <div class="pc-nav-item">≋ Reconciliation</div>
+                    </aside>
+                    <div class="pc-main">
+                      <div class="pc-topbar">
+                        Workspace / Payment issues
+                        <span class="pc-profile">Alex Morgan · Operator</span>
+                      </div>
+                      <div class="pc-main-content">
+                        <div class="pc-eyebrow">
+                          OPERATIONS / PAYMENT ISSUES
+                        </div>
+                        <div class="pc-heading">Payment issues</div>
+                        <div class="pc-subtitle">
+                          Follow up on declines and delayed confirmations.
+                        </div>
+                        <div class="pc-filters">
+                          <span class="pc-filter">Failed</span
+                          ><span class="pc-filter">Pending</span
+                          ><span class="pc-filter">Needs review</span>
+                        </div>
+                        <div class="pc-panel">
+                          <h4>
+                            Active investigations
+                            <span class="pc-status warn">11 open</span>
+                          </h4>
+                          <div class="pc-task">
+                            <span>TX-1038 · Ethan Morgan</span
+                            ><span class="pc-status warn">Failed</span>
+                          </div>
+                          <div class="pc-panel-note">
+                            Subscription · $202.49 USD · 13 Nov, 10:15 UTC
+                          </div>
+                          <div class="pc-task">
+                            <span>TX-1029 · Isabella Rossi</span
+                            ><span class="pc-status">Needs review</span>
+                          </div>
+                          <div class="pc-panel-note">
+                            Checkout · EUR · Comment required to save outcome
+                          </div>
+                          <div class="pc-button" style="margin-top: 11px">
+                            Open investigation →
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="pc-screen-card">
+              <div class="pc-screen-title">
+                <span class="n">SCREEN 03</span>
+                <h3>Reconciliation</h3>
+                <p>
+                  Run a defined batch against the fictional Meridian Pay
+                  dataset.
+                </p>
+              </div>
+              <div class="pc-screen-inner">
+                <div class="pc-app">
+                  <div class="pc-layout">
+                    <aside class="pc-sidebar">
+                      <div class="pc-logo">▤ Paycontrol</div>
+                      <div class="pc-nav-label">OPERATIONS</div>
+                      <div class="pc-nav-item">⇄ Transactions</div>
+                      <div class="pc-nav-item">◇ Payment issues</div>
+                      <div class="pc-nav-item active">≋ Reconciliation</div>
+                    </aside>
+                    <div class="pc-main">
+                      <div class="pc-topbar">
+                        Workspace / Reconciliation
+                        <span class="pc-profile">Local demo · Operator</span>
+                      </div>
+                      <div class="pc-main-content">
+                        <div class="pc-eyebrow">
+                          OPERATIONS / RECONCILIATION
+                        </div>
+                        <div class="pc-heading">Reconciliation</div>
+                        <div class="pc-subtitle">
+                          Compare your records with Meridian Pay.
+                        </div>
+                        <div class="pc-actions">
+                          <span class="pc-filter">Batch · Nov 1–7, 2026</span
+                          ><span class="pc-button">Run reconciliation</span>
+                        </div>
+                        <div class="pc-panel">
+                          <h4>Matching rules &amp; sources</h4>
+                          <div class="pc-panel-note">
+                            Exact transaction ID · amount · currency · mapped
+                            status · 24h window
+                          </div>
+                          <div class="pc-diff" style="margin-top: 10px">
+                            This batch has not been run. Run reconciliation to
+                            compare the fixed seed inputs.
+                          </div>
+                          <div class="pc-task">
+                            <span>Nothing here yet</span
+                            ><span class="pc-status neutral">Not run</span>
+                          </div>
+                          <div class="pc-button">Run reconciliation</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="pc-screen-card">
+              <div class="pc-screen-title">
+                <span class="n">SCREEN 04</span>
+                <h3>Discrepancy Details</h3>
+                <p>
+                  Compare both records, choose a review state, and leave a
+                  comment.
+                </p>
+              </div>
+              <div class="pc-screen-inner">
+                <div class="pc-app">
+                  <div class="pc-layout">
+                    <aside class="pc-sidebar">
+                      <div class="pc-logo">▤ Paycontrol</div>
+                      <div class="pc-nav-label">OPERATIONS</div>
+                      <div class="pc-nav-item">Transactions</div>
+                      <div class="pc-nav-item">Payment issues</div>
+                      <div class="pc-nav-item active">Reconciliation</div>
+                    </aside>
+                    <div class="pc-main">
+                      <div class="pc-topbar">
+                        Workspace / Discrepancy details
+                        <span class="pc-profile">Operator</span>
+                      </div>
+                      <div class="pc-main-content">
+                        <div class="pc-eyebrow">
+                          RECONCILIATION / DISCREPANCY
+                        </div>
+                        <div class="pc-heading">Review mismatch</div>
+                        <div class="pc-subtitle">TX-1018 · Amount mismatch</div>
+                        <div class="pc-recon-grid">
+                          <div class="pc-record">
+                            <h5>INTERNAL</h5>
+                            <p>Transaction TX-1018</p>
+                            <p>Amount &nbsp; $120.00 USD</p>
+                            <p>Status &nbsp; Succeeded</p>
+                          </div>
+                          <div class="pc-record">
+                            <h5>MERIDIAN PAY</h5>
+                            <p>Canonical ID &nbsp; TX-1018</p>
+                            <p>Amount &nbsp; $118.00 USD</p>
+                            <p>Status &nbsp; Settled</p>
+                          </div>
+                        </div>
+                        <div class="pc-diff">
+                          Amount mismatch · Save a review status and comment.
+                        </div>
+                        <div class="pc-filters">
+                          <span class="pc-filter">Open</span
+                          ><span class="pc-filter">Reviewed</span
+                          ><span class="pc-filter">Resolved</span>
+                        </div>
+                        <div class="pc-panel-note">
+                          Investigation decision is recorded separately from the
+                          transaction status.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="pc-note">
+            Screen illustrations based on the published demo · fictional
+            workspace and sample records.
+          </div>
+        </div>
+      </section>
+      <section class="decisions" id="decisions">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">05 / Product decisions</div>
+              <h2>Make every comparison explainable.</h2>
+            </div>
+            <p>
+              Clear rules and a traceable decision help operators understand how
+              a match was reached and what still needs review.
+            </p>
+          </div>
+          <div class="decision-grid">
+            <article class="decision">
+              <div class="n">01 / MATCH</div>
+              <h3>Use explicit match criteria</h3>
+              <p>
+                Match on the canonical transaction ID, then compare exact
+                amounts, currency, mapped status, and the agreed time window.
+              </p>
+            </article>
+            <article class="decision">
+              <div class="n">02 / STATUS</div>
+              <h3>Keep review separate from payment state</h3>
+              <p>
+                Resolved closes the investigation; the financial outcome remains
+                tied to the source records.
+              </p>
+            </article>
+            <article class="decision">
+              <div class="n">03 / TRACE</div>
+              <h3>Keep decisions in the history</h3>
+              <p>
+                Comments, decisions, and key workspace actions are saved in the
+                activity log for later review.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="outcomes">
+        <div class="wrap">
+          <div class="outcome-row">
+            <div>
+              <div class="eyebrow">06 / The result</div>
+              <h2>A workflow<br />you can explore.</h2>
+              <p style="color: var(--muted); font-size: 13px; max-width: 350px">
+                Paycontrol turns payment monitoring and reconciliation into a
+                connected, interactive browser demo.
+              </p>
+            </div>
+            <div class="outcome-list">
+              <div class="outcome-item">
+                <span class="n">01</span>
+                <div>
+                  <b>Monitor performance</b>
+                  <p>
+                    Review payment attempts, successful volume, success rate,
+                    refunds, and investigation activity.
+                  </p>
+                </div>
+              </div>
+              <div class="outcome-item">
+                <span class="n">02</span>
+                <div>
+                  <b>Investigate exceptions</b>
+                  <p>
+                    Move from a payment issue to the transaction timeline,
+                    related attempts, and recorded outcome.
+                  </p>
+                </div>
+              </div>
+              <div class="outcome-item">
+                <span class="n">03</span>
+                <div>
+                  <b>Reconcile with context</b>
+                  <p>
+                    Compare internal and provider records, then save a review
+                    status and comment.
+                  </p>
+                </div>
+              </div>
+              <div class="demo-note">
+                Concept project · Fictional Northstar Commerce data · No live
+                provider connection or real payment actions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="next" id="contact">
+        <div class="wrap next-grid">
+          <div>
+            <div class="eyebrow">Take a closer look</div>
+            <h2>Step into Paycontrol.</h2>
+            <p>
+              Explore the transaction dashboard and follow the reconciliation
+              workflow with fictional data.
+            </p>
+            <a
+              class="button"
+              href="https://stripedwall.agency/paycontrol-demo/"
+              target="_blank"
+              rel="noopener"
+              >Open Paycontrol demo ↗</a
+            >
+          </div>
+          <div class="contact-mini">
+            <small>Build a thoughtful product</small
+            ><a href="mailto:contact@stripedwall.agency"
+              >contact@stripedwall.agency ↗</a
+            ><small>More about Striped Wall</small
+            ><a
+              href="https://www.upwork.com/agencies/2120835511284164872/"
+              target="_blank"
+              rel="noopener"
+              >Upwork ↗</a
+            ><a
+              href="https://www.linkedin.com/in/roman-kuznetsov/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap footrow">
+        <a class="brand" href="../../index.html"
+          ><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span
+          >Striped Wall</a
+        >
+        <nav class="footlinks" aria-label="Footer navigation">
+          <a href="#story">The story</a><a href="#screens">Product screens</a
+          ><a href="#decisions">Approach</a><a href="#contact">Contact</a>
+        </nav>
+        <span class="copyright">© Striped Wall · 2026</span>
+      </div>
+    </footer>
+  </body>
+</html>

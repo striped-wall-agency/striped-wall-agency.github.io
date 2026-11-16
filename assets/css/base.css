@@ -1,31 +1,28 @@
 /* Shared accessibility, navigation and responsive safeguards. Loaded last. */
-:root { --olive-ink: #526e00; --orange-ink: #b63a00; --muted: #65665e; --app-muted: #65685e; }
-.mini-button, .modal-actions i:last-child { color: #1b2112; }
+:root { --green: #729800; --orange-ink: #f04b00; --muted: #656565; --app-muted: #676767; }
 html { scroll-padding-top: 100px; }
 body { overflow-wrap: break-word; }
 header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
 main:focus { outline: none; }
-:focus-visible { outline: 3px solid #b63a00; outline-offset: 5px; }
+:focus-visible { outline: 3px solid #f04b00; outline-offset: 5px; }
 .process :focus-visible, .decisions :focus-visible, .talk :focus-visible, .next :focus-visible { outline-color: #ffc21f; }
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 20; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
 .skip-link:focus { transform: none; }
 .menu-toggle { display: none; border: 1px solid currentColor; background: transparent; color: var(--ink); padding: 10px 12px; font: 12px var(--mono); cursor: pointer; }
-.nav-cta, .button.dark, .button.primary { background: #587800; border-color: #587800; color: white; }
-.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: #466000; border-color: #466000; color: white; }
-.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #b63a00; }
-.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: #526e00; }
-/* Bright brand backgrounds need dark text; small accent text needs darker ink. */
-.home .nav-cta, .home .button.dark { background: var(--action-green); border-color: var(--action-green); color: #1b2112; }
-.home .nav-cta:hover, .home .button.dark:hover { background: #709600; border-color: #709600; color: #1b2112; }
-.home .hero h1 em { color: var(--olive); }
-.home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #b63a00; }
-.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: #526e00; }
-.workflow-actions span:first-child { color: #1b2112; }
+.nav-cta, .button.dark, .button.primary { background: var(--green); border-color: var(--green); color: white; }
+.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: var(--green); border-color: var(--green); color: white; text-decoration: underline; }
+.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #f04b00; }
+.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: var(--green); }
+.home .hero h1 em { color: var(--green); }
+.home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #f04b00; }
+.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: var(--green); }
+.workflow-actions span:first-child { color: white; }
 .process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
-.process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
+.process .principles ~ .section-head .eyebrow, .process .steps .num { color: var(--green); }
 .decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
-.talk .eyebrow, .next .eyebrow { color: #e0e8c9; }
-.next .eyebrow, .next p, .contact-mini small { color: #fffefa; }
+.talk .eyebrow, .talk p, .contacts, .contacts small,
+.next .eyebrow, .next p, .contact-mini, .contact-mini small { color: #1a1a1a; }
+.contacts, .contact-mini { border-color: #4b4b4b; }
 .product-section::before, #story::before, #approach::before, #screens::before, .outcomes::before { width: 100%; left: 0; transform: none; }
 .product-section, #approach { width: 100%; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
 .split-copy { top: 110px; }
