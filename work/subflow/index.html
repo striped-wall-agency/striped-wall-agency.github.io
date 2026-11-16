@@ -1,0 +1,2314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Subflow — subscription management platform concept by Striped Wall."
+    />
+    <title>Subflow — Subscriptions, in a better place. | Striped Wall</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    /></noscript>
+<style data-source="../../assets/css/subflow.css">
+:root {
+  --paper: #f5f2e9;
+  --ink: #292b27;
+  --muted: #77776e;
+  --olive: #729800;
+  --yellow: #ffbd24;
+  --orange: #f04b00;
+  --line: #d7d3c8;
+  --white: #fbfaf6;
+  --soft: #eae7dc;
+  --green-deep: #557500;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: "Manrope", Arial, sans-serif;
+  --mono: "DM Mono", monospace;
+  --app: #f6f6f1;
+  --app-ink: #252822;
+  --app-muted: #85877e;
+  --app-line: #e2e3dc;
+  --lime: #b6d859;
+  --navy: #20241f;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.6 var(--sans);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.wrap {
+  width: min(1240px, calc(100% - 80px));
+  margin: auto;
+}
+.eyebrow {
+  font: 11px var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.stripe {
+  display: flex;
+  gap: 4px;
+  width: 26px;
+  height: 26px;
+  flex-direction: column;
+}
+.stripe i {
+  height: 6px;
+  background: var(--olive);
+}
+.stripe i:nth-child(2) {
+  background: var(--yellow);
+}
+.stripe i:nth-child(3) {
+  background: var(--orange);
+}
+header {
+  height: 78px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+}
+.nav-cta,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 17px;
+  border: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.18s;
+}
+.nav-cta:hover,
+.button.primary:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+.nav-cta {
+  background: #729800;
+  color: #fff;
+  border-color: #729800;
+}
+.mobile-menu {
+  display: none;
+}
+.hero {
+  padding: 76px 0 72px;
+}
+.crumb {
+  font: 10px var(--mono);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.crumb a:hover {
+  color: var(--olive);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.68fr;
+  gap: 8vw;
+  align-items: end;
+  margin-top: 46px;
+}
+.hero .eyebrow {
+  color: var(--orange);
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+.hero h1 {
+  font-size: clamp(62px, 8vw, 112px);
+  line-height: 0.9;
+  letter-spacing: -0.085em;
+  font-weight: 600;
+  margin: 20px 0 28px;
+}
+.hero h1 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--olive);
+  letter-spacing: -0.08em;
+}
+.hero-copy {
+  max-width: 430px;
+  padding-bottom: 8px;
+}
+.hero-copy .lead {
+  font-size: 19px;
+  line-height: 1.55;
+  letter-spacing: -0.025em;
+  margin-bottom: 15px;
+}
+.hero-copy p:last-of-type {
+  color: var(--muted);
+  font-size: 13px;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+}
+.button.primary {
+  background: #729800;
+  border-color: #729800;
+  color: #fff;
+}
+.button.secondary {
+  border-color: var(--line);
+}
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 66px;
+  padding-top: 18px;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 190px;
+  min-height: 58px;
+  padding: 8px 12px;
+  border: 0;
+  border-left: 4px solid var(--olive);
+  background: var(--white);
+}
+.fact + .fact {
+  border-left: 4px solid var(--olive);
+  padding-left: 12px;
+}
+.fact:nth-child(2) {
+  border-left-color: var(--yellow);
+}
+.fact:nth-child(3) {
+  border-left-color: var(--orange);
+}
+.fact:nth-child(4) {
+  border-left-color: var(--olive);
+}
+.fact small {
+  display: block;
+  font: 9px var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 5px;
+}
+.fact b {
+  font-size: 12px;
+  font-weight: 700;
+}
+section {
+  padding: 102px 0;
+}
+.product-section,
+#story,
+#approach,
+#screens,
+.outcomes {
+  position: relative;
+  border-top: 0;
+}
+.product-section::before,
+#story::before,
+#approach::before,
+#screens::before,
+.outcomes::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 4px;
+}
+.product-section::before {
+  background: var(--yellow);
+}
+#story::before {
+  background: var(--orange);
+}
+#approach::before {
+  background: var(--olive);
+}
+#screens::before {
+  background: var(--orange);
+}
+.outcomes::before {
+  background: var(--olive);
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+.section-head h2,
+.split-copy h2 {
+  font-size: clamp(39px, 5vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.07em;
+  font-weight: 600;
+  margin: 12px 0 0;
+}
+.section-head p {
+  max-width: 430px;
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+.section-head .eyebrow,
+.split-copy .eyebrow,
+.outcome-row .eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.product-section .eyebrow,
+#approach .eyebrow {
+  color: var(--olive);
+}
+#story .eyebrow,
+#screens .eyebrow,
+.outcome-row .eyebrow {
+  color: var(--orange);
+}
+#decisions .section-head .eyebrow {
+  color: var(--yellow);
+}
+.visual {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 20px;
+  position: relative;
+}
+.visual-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font: 9px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 14px;
+}
+.visual-cap .tag {
+  color: var(--olive);
+}
+/* Product UI illustration */
+.app {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 520px;
+  background: var(--app);
+  border: 1px solid #dfe0d8;
+  color: var(--app-ink);
+  font: 11px/1.45 var(--sans);
+  overflow: hidden;
+}
+.app-side {
+  background: var(--navy);
+  color: #f4f4ed;
+  padding: 21px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.app-brand {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 1px 3px 25px;
+  border-bottom: 1px solid #3b4038;
+}
+.app-brand i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--lime);
+  border-radius: 50%;
+}
+.app-label {
+  font: 8px var(--mono);
+  letter-spacing: 0.1em;
+  color: #8d9486;
+  margin: 23px 4px 8px;
+  text-transform: uppercase;
+}
+.app-nav {
+  padding: 8px 10px;
+  border-radius: 3px;
+  color: #bfc3b9;
+  margin: 1px 0;
+}
+.app-nav.active {
+  background: #343a31;
+  color: #fff;
+}
+.app-nav span {
+  float: right;
+  color: var(--lime);
+}
+.app-user {
+  margin-top: auto;
+  border-top: 1px solid #3b4038;
+  padding: 14px 3px 0;
+  font-size: 9px;
+  color: #bfc3b9;
+}
+.app-user b {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+}
+.app-main {
+  padding: 25px 28px 28px;
+  min-width: 0;
+}
+.app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--app-line);
+  padding: 0 0 15px;
+  color: var(--app-muted);
+  font: 8px var(--mono);
+  letter-spacing: 0.05em;
+}
+.demo-pill {
+  background: #eff6dc;
+  color: #688a19;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+.app-title {
+  font: 32px/1.05 var(--serif);
+  letter-spacing: -0.04em;
+  margin: 22px 0 3px;
+}
+.app-sub {
+  font-size: 10px;
+  color: var(--app-muted);
+}
+.app-filters {
+  display: flex;
+  gap: 8px;
+  margin: 17px 0 16px;
+}
+.filter {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 6px 9px;
+  color: #55584f;
+  font-size: 8px;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--app-line);
+  background: #fff;
+}
+.metric {
+  padding: 12px 13px;
+  border-right: 1px solid var(--app-line);
+}
+.metric:last-child {
+  border: 0;
+}
+.metric small {
+  display: block;
+  color: var(--app-muted);
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+.metric b {
+  font: 24px var(--serif);
+  font-weight: 400;
+}
+.dashboard-lower {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+  margin-top: 17px;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 13px;
+  min-width: 0;
+}
+.panel h4 {
+  font: 15px var(--serif);
+  margin: 0 0 4px;
+}
+.panel-sub {
+  font: 8px var(--mono);
+  color: var(--app-muted);
+  margin-bottom: 13px;
+}
+.bars {
+  height: 126px;
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  padding: 8px 6px 0;
+  border-bottom: 1px solid var(--app-line);
+}
+.bar {
+  flex: 1;
+  background: var(--lime);
+  max-width: 34px;
+  position: relative;
+}
+.bar:after {
+  content: attr(data-date);
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  font: 7px var(--mono);
+  color: var(--app-muted);
+  white-space: nowrap;
+}
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 0.7fr;
+  gap: 4px;
+  align-items: center;
+}
+.table-head {
+  font: 7px var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--app-muted);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--app-line);
+}
+.table-row {
+  font-size: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eeefe9;
+}
+.table-row:last-child {
+  border: 0;
+}
+.status {
+  font: 7px var(--mono);
+  color: #b8402c;
+  background: #fff0ea;
+  padding: 3px 5px;
+  width: max-content;
+}
+.context {
+  background: var(--soft);
+}
+.split {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 9vw;
+  align-items: start;
+}
+.split-copy {
+  position: sticky;
+  top: 36px;
+}
+.split-copy .eyebrow {
+  color: var(--orange);
+}
+.split-copy h2 {
+  margin: 16px 0 0;
+}
+.context-copy {
+  padding-top: 5px;
+}
+.context-copy p {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 630px;
+}
+.context-copy p.muted {
+  font-size: 13px;
+  color: var(--muted);
+}
+.callout {
+  margin-top: 32px;
+  padding: 21px 0;
+  border-top: 3px solid var(--olive);
+  border-bottom: 1px solid #c9c5b9;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  max-width: 650px;
+}
+.callout span {
+  display: block;
+  font: 9px var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.journey {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.journey article {
+  display: flex;
+  flex-direction: column;
+  padding: 23px 24px 27px 0;
+  min-height: 205px;
+}
+.journey article + article {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.journey .step {
+  font: 10px var(--mono);
+  color: var(--olive);
+}
+.journey h3 {
+  font-size: 22px;
+  letter-spacing: -0.05em;
+  margin: 28px 0 9px;
+}
+.journey p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 290px;
+  margin: 0;
+}
+.journey .mini-label {
+  font: 9px var(--mono);
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: auto;
+  padding-top: 19px;
+}
+.screens {
+  background: var(--white);
+}
+.screen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.screen-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-width: 0;
+}
+.screen-card.wide {
+  grid-column: 1/-1;
+}
+.screen-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 21px 22px 15px;
+}
+.screen-title .n {
+  font: 10px var(--mono);
+  color: var(--olive);
+}
+.screen-title h3 {
+  font-size: 21px;
+  letter-spacing: -0.05em;
+  margin: 3px 0 3px;
+}
+.screen-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 420px;
+}
+.screen-frame {
+  padding: 0 14px 14px;
+}
+.mini-app {
+  border: 1px solid #dedfd7;
+  background: var(--app);
+  overflow: hidden;
+  color: var(--app-ink);
+  font: 8px var(--sans);
+}
+.mini-top {
+  background: var(--navy);
+  color: #e8e9e2;
+  padding: 8px 10px;
+  font: 7px var(--mono);
+  letter-spacing: 0.04em;
+}
+.mini-content {
+  padding: 13px 15px;
+}
+.mini-heading {
+  font: 22px var(--serif);
+  margin: 0 0 4px;
+}
+.mini-caption {
+  font-size: 7px;
+  color: var(--app-muted);
+  margin-bottom: 12px;
+}
+.mini-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  border-bottom: 1px solid var(--app-line);
+  padding-bottom: 9px;
+  margin-bottom: 10px;
+}
+.mini-control {
+  background: white;
+  border: 1px solid var(--app-line);
+  padding: 5px 7px;
+  font-size: 7px;
+  color: #666;
+}
+.mini-button {
+  background: #779d22;
+  color: white;
+  padding: 6px 10px;
+  font: 7px var(--mono);
+}
+.mini-data {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+}
+.mini-table {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 0 9px;
+}
+.mini-row {
+  display: grid;
+  grid-template-columns: 1.05fr 0.9fr 0.7fr 0.55fr;
+  gap: 4px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eff0eb;
+  align-items: center;
+  font-size: 7px;
+}
+.mini-row:last-child {
+  border: 0;
+}
+.mini-row.head {
+  font: 6px var(--mono);
+  color: var(--app-muted);
+  letter-spacing: 0.03em;
+}
+.mini-sidecard {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 11px;
+}
+.mini-sidecard b {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 12px;
+}
+.detail-panel {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 12px;
+}
+.detail-kicker {
+  font: 7px var(--mono);
+  color: var(--app-muted);
+  letter-spacing: 0.05em;
+}
+.detail-amount {
+  font: 30px var(--serif);
+  margin: 5px 0;
+}
+.detail-badge {
+  display: inline-block;
+  background: #eef5dc;
+  color: #638516;
+  padding: 4px 7px;
+  font: 7px var(--mono);
+}
+.detail-rule {
+  height: 1px;
+  background: var(--app-line);
+  margin: 12px 0;
+}
+.detail-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 7px;
+}
+.detail-field span:first-child {
+  color: var(--app-muted);
+}
+.reason {
+  background: #fff3ee;
+  color: #a8442b;
+  padding: 8px;
+  font-size: 7px;
+  margin-top: 8px;
+}
+.refund-modal {
+  max-width: 430px;
+  margin: 7px auto;
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 17px;
+  box-shadow: 0 0 0 1200px rgba(28, 32, 26, 0.25);
+  position: relative;
+}
+.refund-modal h4 {
+  font: 20px var(--serif);
+  margin: 0 0 4px;
+}
+.refund-modal p {
+  font-size: 8px;
+  color: var(--app-muted);
+  margin-bottom: 13px;
+}
+.amount-box {
+  background: #f7f8f2;
+  border: 1px solid var(--app-line);
+  padding: 10px;
+  margin-bottom: 11px;
+}
+.amount-box small {
+  display: block;
+  font-size: 7px;
+  color: var(--app-muted);
+}
+.amount-box b {
+  font: 21px var(--serif);
+}
+.select-box {
+  border: 1px solid var(--app-line);
+  padding: 8px;
+  margin-bottom: 9px;
+  color: #666;
+  font-size: 7px;
+}
+.select-box span {
+  float: right;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-top: 14px;
+}
+.modal-actions i {
+  font-style: normal;
+  padding: 6px 9px;
+  border: 1px solid var(--app-line);
+  font-size: 7px;
+}
+.modal-actions i:last-child {
+  background: #729800;
+  border-color: #729800;
+  color: white;
+}
+.after-refund {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+.refunded-card,
+.activity-card {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  padding: 12px;
+}
+.refunded-card strong {
+  font: 18px var(--serif);
+  display: block;
+  margin: 8px 0;
+}
+.activity-line {
+  border-left: 1px solid var(--lime);
+  padding: 0 0 8px 11px;
+  margin: 10px 0;
+  font-size: 7px;
+}
+.activity-line b {
+  display: block;
+  font-size: 8px;
+}
+.activity-line small {
+  color: var(--app-muted);
+}
+.decisions {
+  background: var(--ink);
+  color: var(--paper);
+}
+.decisions .eyebrow {
+  color: #b5b3a8;
+}
+.decisions .section-head p {
+  color: #b5b3a8;
+}
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #53564e;
+  border-bottom: 1px solid #53564e;
+}
+.decision {
+  padding: 23px 24px 27px 0;
+  min-height: 222px;
+}
+.decision + .decision {
+  border-left: 1px solid #53564e;
+  padding-left: 24px;
+}
+.decision .n {
+  font: 10px var(--mono);
+  color: var(--yellow);
+}
+.decision h3 {
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  margin: 25px 0 10px;
+  max-width: 270px;
+}
+.decision p {
+  font-size: 11px;
+  color: #b5b3a8;
+  max-width: 290px;
+}
+.architecture {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  margin-top: 68px;
+}
+.architecture h3 {
+  font-size: 24px;
+  letter-spacing: -0.05em;
+  margin: 8px 0 19px;
+}
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.stack span {
+  font: 9px var(--mono);
+  border: 1px solid #53564e;
+  color: #e1e0d6;
+  padding: 7px 9px;
+}
+.arch-note {
+  font-size: 12px;
+  color: #b5b3a8;
+  max-width: 500px;
+  margin: 0;
+}
+.arch-note strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+.truth {
+  border-top: 3px solid var(--yellow);
+  margin-top: 32px;
+  padding-top: 15px;
+  font-size: 11px;
+  color: #b5b3a8;
+}
+.truth b {
+  color: var(--paper);
+}
+.outcomes {
+  padding: 97px 0;
+}
+.outcome-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 8vw;
+}
+.outcome-row h2 {
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1;
+  letter-spacing: -0.07em;
+  margin: 14px 0;
+}
+.outcome-list {
+  border-top: 1px solid var(--line);
+}
+.outcome-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.outcome-item .n {
+  font: 10px var(--mono);
+  color: var(--olive);
+  padding-top: 4px;
+}
+.outcome-item b {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.outcome-item p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 540px;
+}
+.demo-note {
+  font: 9px var(--mono);
+  color: var(--muted);
+  margin-top: 22px;
+}
+.next {
+  background: var(--green-deep);
+  color: #f7f4eb;
+  padding: 78px 0;
+}
+.next .eyebrow {
+  color: #e0e8c9;
+}
+.next-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 60px;
+  align-items: end;
+}
+.next h2 {
+  font-size: clamp(42px, 6vw, 76px);
+  letter-spacing: -0.07em;
+  line-height: 1;
+  margin: 15px 0;
+}
+.next p {
+  font-size: 13px;
+  color: #e5e3d6;
+  max-width: 520px;
+  margin: 0;
+}
+.next .button {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+  margin-top: 23px;
+}
+.contact-mini {
+  border-left: 1px solid #9cae69;
+  padding: 12px 0 12px 27px;
+}
+.contact-mini small {
+  font: 9px var(--mono);
+  color: #e0e8c9;
+  text-transform: uppercase;
+}
+.contact-mini a {
+  display: block;
+  font-size: 14px;
+  margin: 7px 0 19px;
+}
+.footer {
+  padding: 24px 0;
+}
+.footrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footlinks {
+  display: flex;
+  gap: 23px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.copyright {
+  font: 9px var(--mono);
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .wrap {
+    width: calc(100% - 48px);
+  }
+  .hero-grid {
+    gap: 40px;
+  }
+  .app {
+    grid-template-columns: 155px 1fr;
+  }
+  .app-main {
+    padding: 21px 19px;
+  }
+  .facts {
+    gap: 8px;
+  }
+  .fact {
+    flex-basis: calc(50% - 8px);
+  }
+  .section-head {
+    align-items: start;
+  }
+  .split {
+    gap: 45px;
+  }
+  .split-copy {
+    position: static;
+  }
+  .app-side {
+    padding: 17px 12px;
+  }
+  .architecture {
+    gap: 25px;
+  }
+}
+@media (max-width: 640px) {
+  header {
+    height: 66px;
+  }
+  .wrap {
+    width: calc(100% - 36px);
+  }
+  .links,
+  .nav-cta {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    font: 10px var(--mono);
+  }
+  .hero {
+    padding: 46px 0 56px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 34px;
+  }
+  .hero h1 {
+    font-size: clamp(58px, 17vw, 84px);
+    margin: 18px 0;
+  }
+  .hero-copy .lead {
+    font-size: 17px;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+  .facts {
+    margin-top: 42px;
+  }
+  .fact {
+    padding: 8px 10px 8px 12px;
+  }
+  .fact + .fact {
+    padding-left: 12px;
+  }
+  .fact:nth-child(3) {
+    padding-left: 12px;
+  }
+  section {
+    padding: 72px 0;
+  }
+  .section-head {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-head p {
+    margin-top: 15px;
+  }
+  .section-head h2,
+  .split-copy h2 {
+    font-size: 42px;
+  }
+  .visual {
+    padding: 10px;
+  }
+  .visual-cap {
+    font-size: 7px;
+  }
+  .app {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .app-side {
+    display: none;
+  }
+  .app-main {
+    padding: 16px 12px;
+  }
+  .app-title {
+    font-size: 27px;
+  }
+  .app-filters {
+    margin: 12px 0;
+  }
+  .filter {
+    font-size: 7px;
+    padding: 5px 6px;
+  }
+  .metric {
+    padding: 8px 6px;
+  }
+  .metric small {
+    font-size: 6px;
+  }
+  .metric b {
+    font-size: 18px;
+  }
+  .dashboard-lower {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .bars {
+    height: 90px;
+  }
+  .panel {
+    padding: 10px;
+  }
+  .table-row {
+    font-size: 7px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .context-copy p {
+    font-size: 15px;
+  }
+  .callout {
+    font-size: 18px;
+  }
+  .journey {
+    grid-template-columns: 1fr;
+  }
+  .journey article,
+  .journey article + article {
+    min-height: 0;
+    padding: 20px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .journey article:last-child {
+    border-bottom: 0;
+  }
+  .journey h3 {
+    margin: 14px 0 5px;
+  }
+  .screen-grid {
+    grid-template-columns: 1fr;
+  }
+  .screen-card.wide {
+    grid-column: auto;
+  }
+  .screen-title {
+    padding: 16px 15px 12px;
+  }
+  .screen-frame {
+    padding: 0 9px 9px;
+  }
+  .mini-content {
+    padding: 10px;
+  }
+  .mini-data {
+    grid-template-columns: 1fr;
+  }
+  .mini-sidecard {
+    display: none;
+  }
+  .mini-row {
+    font-size: 6px;
+  }
+  .mini-row.head {
+    font-size: 5px;
+  }
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-layout .detail-panel:last-child {
+    display: none;
+  }
+  .refund-modal {
+    margin: 7px auto;
+    padding: 12px;
+  }
+  .after-refund {
+    grid-template-columns: 1fr;
+  }
+  .decision-grid {
+    grid-template-columns: 1fr;
+  }
+  .decision,
+  .decision + .decision {
+    min-height: 0;
+    padding: 20px 0;
+    border-left: 0;
+    border-bottom: 1px solid #53564e;
+  }
+  .decision:last-child {
+    border-bottom: 0;
+  }
+  .decision h3 {
+    margin: 13px 0 6px;
+  }
+  .architecture {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 45px;
+  }
+  .outcome-row {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+  .outcome-row h2 {
+    font-size: 44px;
+  }
+  .next-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact-mini {
+    border-left: 0;
+    border-top: 1px solid #9cae69;
+    padding: 20px 0 0;
+  }
+  .footrow {
+    flex-wrap: wrap;
+  }
+  .footlinks {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+  .copyright {
+    margin-left: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+.flow-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.flow-view.with-nav {
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr);
+}
+.flow-sidebar {
+  background: #173d30;
+  color: #e9f0e7;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font: 7px var(--sans);
+}
+.flow-sidebrand {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 3px 14px;
+  border-bottom: 1px solid #416354;
+  margin-bottom: 5px;
+}
+.flow-sidelabel {
+  font: 6px var(--mono);
+  letter-spacing: 0.1em;
+  color: #b5c7b9;
+  margin: 4px 3px;
+}
+.flow-sidenav {
+  padding: 7px 6px;
+  color: #d9e3da;
+  border-radius: 4px;
+}
+.flow-sidenav.active {
+  background: #315b49;
+  color: #fff;
+}
+.flow-shell {
+  min-width: 0;
+}
+.flow-view {
+  background: #f5f6f2;
+  border: 1px solid #dfe2db;
+  overflow: hidden;
+  color: #26322b;
+  font: 9px/1.45 var(--sans);
+  min-width: 0;
+}
+.flow-top {
+  height: 35px;
+  background: #173d30;
+  color: #e9f0e7;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: 7px var(--mono);
+  letter-spacing: 0.05em;
+}
+.flow-main {
+  padding: 16px;
+}
+.flow-label {
+  font: 7px var(--mono);
+  letter-spacing: 0.1em;
+  color: #66866c;
+}
+.flow-title {
+  font: 22px/1.1 var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 7px 0 4px;
+}
+.flow-sub {
+  font-size: 8px;
+  color: #68756c;
+  margin-bottom: 13px;
+}
+.flow-plan {
+  background: #e7f2c9;
+  border-radius: 8px;
+  padding: 15px;
+  min-height: 140px;
+}
+.flow-plan-tag {
+  font: 7px var(--mono);
+  letter-spacing: 0.09em;
+}
+.flow-plan h4 {
+  font-size: 15px;
+  margin: 13px 0 5px;
+}
+.flow-price {
+  font-size: 9px;
+}
+.flow-end {
+  font-size: 8px;
+  margin-top: 13px;
+  color: #566b52;
+}
+.flow-cta {
+  display: inline-block;
+  background: #173d30;
+  color: white;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-size: 8px;
+  margin-top: 10px;
+}
+.flow-card {
+  background: #fff;
+  border: 1px solid #e1e4de;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+}
+.flow-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 9px;
+  margin-bottom: 9px;
+}
+.flow-muted {
+  font-size: 7px;
+  color: #758077;
+}
+.flow-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+.flow-kpi {
+  background: #fff;
+  border: 1px solid #e3e5df;
+  border-radius: 7px;
+  padding: 10px 8px;
+}
+.flow-kpi small {
+  display: block;
+  font-size: 7px;
+  color: #758077;
+}
+.flow-kpi b {
+  display: block;
+  font-size: 16px;
+  margin-top: 4px;
+}
+.flow-row {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr 0.75fr;
+  gap: 5px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #edf0ea;
+  font-size: 7px;
+}
+.flow-row:last-child {
+  border: 0;
+}
+.flow-state {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 12px;
+  background: #e7f2c9;
+  color: #41693c;
+  font: 7px var(--mono);
+  width: max-content;
+}
+.flow-state.warn {
+  background: #fff0d4;
+  color: #8d6417;
+}
+.flow-state.neutral {
+  background: #eceeea;
+  color: #5c665e;
+}
+.flow-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.flow-option {
+  background: #fff;
+  border: 1px solid #e0e3dc;
+  border-radius: 7px;
+  padding: 11px;
+}
+.flow-option.selected {
+  border: 2px solid #214d3b;
+  padding: 10px;
+}
+.flow-option h5 {
+  font-size: 9px;
+  margin: 0 0 4px;
+}
+.flow-option strong {
+  font-size: 13px;
+}
+.flow-option p {
+  font-size: 7px;
+  color: #758077;
+  margin: 6px 0 0;
+}
+.flow-confirm {
+  background: #fff;
+  border: 1px solid #e0e3dc;
+  border-radius: 7px;
+  padding: 12px;
+  margin-top: 9px;
+}
+.flow-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eff0eb;
+  font-size: 7px;
+}
+.flow-line:last-child {
+  border: 0;
+}
+.flow-alert {
+  background: #fff5df;
+  border-left: 3px solid #e5ac37;
+  border-radius: 4px;
+  padding: 9px;
+  font-size: 7px;
+  margin: 10px 0;
+}
+.flow-screen-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-width: 0;
+}
+.flow-screen-card.wide {
+  grid-column: 1/-1;
+}
+.flow-screen-title {
+  padding: 20px 22px 14px;
+}
+.flow-screen-title .n {
+  font: 10px var(--mono);
+  color: var(--olive);
+}
+.flow-screen-title h3 {
+  font-size: 21px;
+  letter-spacing: -0.05em;
+  margin: 3px 0;
+}
+.flow-screen-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.flow-screen-inner {
+  padding: 0 14px 14px;
+}
+.flow-screen-inner .flow-view {
+  min-height: 245px;
+}
+.flow-admin-list {
+  margin-top: 10px;
+}
+.flow-note {
+  font: 9px var(--mono);
+  color: var(--muted);
+  margin-top: 18px;
+}
+.flow-screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.flow-decisions .decision .n {
+  color: var(--yellow);
+}
+@media (max-width: 760px) {
+  .flow-dual {
+    grid-template-columns: 1fr;
+  }
+  .flow-main {
+    padding: 13px;
+  }
+  .flow-view {
+    font-size: 8px;
+  }
+  .flow-screens {
+    grid-template-columns: 1fr;
+  }
+  .flow-screen-card.wide {
+    grid-column: auto;
+  }
+}
+@media (max-width: 640px) {
+  .flow-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+  .flow-screen-title {
+    padding: 16px 15px 12px;
+  }
+  .flow-screen-inner {
+    padding: 0 9px 9px;
+  }
+}
+</style>
+<style data-source="../../assets/css/base.css">
+/* Shared accessibility, navigation and responsive safeguards. Loaded last. */
+:root { --olive-ink: #526e00; --orange-ink: #b63a00; --muted: #65665e; --app-muted: #65685e; }
+.mini-button, .modal-actions i:last-child { color: #1b2112; }
+html { scroll-padding-top: 100px; }
+body { overflow-wrap: break-word; }
+header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
+main:focus { outline: none; }
+:focus-visible { outline: 3px solid #b63a00; outline-offset: 5px; }
+.process :focus-visible, .decisions :focus-visible, .talk :focus-visible, .next :focus-visible { outline-color: #ffc21f; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 20; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.menu-toggle { display: none; border: 1px solid currentColor; background: transparent; color: var(--ink); padding: 10px 12px; font: 12px var(--mono); cursor: pointer; }
+.nav-cta, .button.dark, .button.primary { background: #587800; border-color: #587800; color: white; }
+.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: #466000; border-color: #466000; color: white; }
+.hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #b63a00; }
+.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: #526e00; }
+/* Bright brand backgrounds need dark text; small accent text needs darker ink. */
+.home .nav-cta, .home .button.dark { background: var(--action-green); border-color: var(--action-green); color: #1b2112; }
+.home .nav-cta:hover, .home .button.dark:hover { background: #709600; border-color: #709600; color: #1b2112; }
+.home .hero h1 em { color: var(--olive); }
+.home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #b63a00; }
+.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: #526e00; }
+.workflow-actions span:first-child { color: #1b2112; }
+.process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
+.process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
+.decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
+.talk .eyebrow, .next .eyebrow { color: #e0e8c9; }
+.next .eyebrow, .next p, .contact-mini small { color: #fffefa; }
+.product-section::before, #story::before, #approach::before, #screens::before, .outcomes::before { width: 100%; left: 0; transform: none; }
+.product-section, #approach { width: 100%; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
+.split-copy { top: 110px; }
+.hero-grid > *, .about-grid > *, .talk-grid > *, .split > *, .next-grid > *, .outcome-row > *, .screen-grid > *, .architecture > * { min-width: 0; }
+.contacts a, .contact-mini a { overflow-wrap: anywhere; }
+.copyright, .process .process-close span { white-space: normal; }
+.demo-note { font-size: 12px; line-height: 1.7; }
+.arch-note, .truth { font-size: 13px; line-height: 1.7; }
+.visual-cap { flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .nav { flex-wrap: wrap; gap: 12px; }
+  header { height: auto; min-height: 78px; padding-block: 14px; }
+  .links { display: flex; width: 100%; order: 3; flex-wrap: wrap; gap: 12px 22px; padding-block: 10px; }
+  .links a { padding-block: 7px; }
+  .nav > .nav-cta { display: none; }
+  .nav-enhanced .menu-toggle { display: inline-flex; align-items: center; gap: 12px; }
+  .nav-enhanced .links { display: none; }
+  .nav-enhanced .links.is-open { display: flex; }
+  .product-section, #approach { padding-inline: 24px; }
+  .screen-grid { grid-template-columns: 1fr; }
+  .app { grid-template-columns: 145px minmax(0, 1fr); }
+  .dashboard-lower { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metric { border-bottom: 1px solid var(--app-line); }
+  .split-copy { position: static; }
+}
+@media (max-width: 640px) {
+  header { min-height: 66px; padding-block: 10px; }
+  .wrap { width: calc(100% - 36px); }
+  .product-section, #approach { width: 100%; padding-inline: 18px; }
+  .hero h1 { font-size: clamp(44px, 13vw, 74px); }
+  .talk h2, .next h2, .about h2, .section-head h2, .split-copy h2 { font-size: clamp(35px, 10vw, 55px); }
+  .app { grid-template-columns: 1fr; }
+  .app-side { display: none; }
+  .app-main { padding: 16px 12px; }
+  .app-top, .app-filters, .mini-toolbar { flex-wrap: wrap; gap: 8px; }
+  .metric small { font-size: 9px; }
+  .mini-data, .detail-layout { grid-template-columns: 1fr; }
+  .mini-sidecard, .detail-layout .detail-panel:last-child { display: block; }
+  .mini-row, .mini-row.head { font-size: 8px; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-wrap: anywhere; }
+  .mini-content, .mini-table { padding-inline: 8px; }
+  .table-row { font-size: 9px; }
+  .table-head { font-size: 8px; }
+  .screen { aspect-ratio: auto; min-height: 240px; }
+  .ui-shot { min-height: 205px; }
+  .shot-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shot-lower { grid-template-columns: 1fr; }
+  .shot-table { display: none; }
+  .workflow-top { flex-wrap: wrap; gap: 10px; }
+  .contact-links { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+    <script src="../../assets/js/navigation.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header id="top">
+      <div class="wrap nav">
+        <a class="brand" href="../../index.html" aria-label="Striped Wall home"
+          ><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span
+          >Striped Wall</a
+        >
+        <nav id="main-navigation" class="links" aria-label="Main navigation">
+          <a href="#story">The story</a><a href="#screens">Product screens</a
+          ><a href="#approach">Approach</a><a href="#contact">Contact</a>
+        </nav>
+        <a
+          class="nav-cta"
+          href="https://stripedwall.agency/subflow-demo/"
+          target="_blank"
+          rel="noopener"
+          >Open the demo ↗</a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          Menu <span aria-hidden="true">+</span>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="wrap hero">
+        <div class="crumb">
+          <a href="../../index.html#work">WORK</a> &nbsp;/&nbsp; CASE 02
+          &nbsp;/&nbsp; SUBFLOW
+        </div>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">A Striped Wall concept project</div>
+            <h1>Subscriptions,<br />in a <em>better</em><br />place.</h1>
+          </div>
+          <div class="hero-copy">
+            <p class="lead">
+              A self-service subscription experience, connected to the tools
+              behind it.
+            </p>
+            <p>
+              Subflow brings customer subscription management and SaaS admin
+              workflows into one interactive demo — from choosing a plan to
+              tracking changes, renewals, and payment issues.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button primary"
+                href="https://stripedwall.agency/subflow-demo/"
+                target="_blank"
+                rel="noopener"
+                >Explore the demo ↗</a
+              ><a class="button secondary" href="#screens">See the product ↓</a>
+            </div>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <small>Product</small><b>Subscription management platform</b>
+          </div>
+          <div class="fact">
+            <small>For</small><b>SaaS customers and operators</b>
+          </div>
+          <div class="fact">
+            <small>Focus</small><b>Product · UX/UI · Frontend</b>
+          </div>
+          <div class="fact">
+            <small>Format</small><b>Interactive concept demo</b>
+          </div>
+        </div>
+      </div>
+      <section class="wrap product-section" aria-labelledby="overview-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">01 / The product</div>
+            <h2 id="overview-title">Two sides of<br />one subscription.</h2>
+          </div>
+          <p>
+            Subflow connects a customer portal with an admin workspace.
+            Customers review their plan and billing; admins see how
+            subscriptions are progressing across the business.
+          </p>
+        </div>
+        <div class="visual">
+          <div class="visual-cap">
+            <span>SUBFLOW / CUSTOMER + ADMIN</span
+            ><span class="tag">DEMO · FICTIONAL DATA</span>
+          </div>
+          <div class="flow-dual">
+            <div class="flow-view with-nav">
+              <aside class="flow-sidebar">
+                <div class="flow-sidebrand">◉ Subflow</div>
+                <div class="flow-sidelabel">WORKSPACE</div>
+                <div class="flow-sidenav active">Overview</div>
+                <div class="flow-sidenav">Plan &amp; Billing</div>
+                <div class="flow-sidenav">Change plan</div>
+                <div class="flow-sidenav">Billing history</div>
+                <div class="flow-sidenav">Payment details</div>
+                <div class="flow-sidenav">Settings</div>
+              </aside>
+              <div class="flow-shell">
+                <div class="flow-top">
+                  <span>◉ SUBFLOW</span><span>CUSTOMER</span>
+                </div>
+                <div class="flow-main">
+                  <div class="flow-label">CUSTOMER OVERVIEW</div>
+                  <div class="flow-title">Welcome back, Alex.</div>
+                  <div class="flow-sub">
+                    Everything you need to know about your subscription.
+                  </div>
+                  <div class="flow-plan">
+                    <div class="flow-plan-tag">YOUR SUBSCRIPTION</div>
+                    <h4>Studio plan</h4>
+                    <div class="flow-price">
+                      $49.00 / month &nbsp;
+                      <span class="flow-state">Active</span>
+                    </div>
+                    <div class="flow-end">Current period ends Feb 1, 2026.</div>
+                    <span class="flow-cta">View billing →</span>
+                  </div>
+                  <div class="flow-card">
+                    <div class="flow-card-head">
+                      <span>Next payment</span
+                      ><span class="flow-muted">Feb 1, 2026</span>
+                    </div>
+                    <div class="flow-muted">
+                      Visa •4242 · Manage payment details →
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flow-view">
+              <div class="flow-top">
+                <span>◉ SUBFLOW</span><span>ADMIN</span>
+              </div>
+              <div class="flow-main">
+                <div class="flow-label">ADMIN OVERVIEW</div>
+                <div class="flow-title">A clearer view of your business.</div>
+                <div class="flow-sub">
+                  Your demo subscription workspace at a glance.
+                </div>
+                <div class="flow-kpis">
+                  <div class="flow-kpi"><small>MRR</small><b>$98</b></div>
+                  <div class="flow-kpi"><small>Active</small><b>1</b></div>
+                  <div class="flow-kpi"><small>Past due</small><b>1</b></div>
+                </div>
+                <div class="flow-card flow-admin-list">
+                  <div class="flow-card-head">
+                    <span>Customers</span
+                    ><span class="flow-muted">5 records</span>
+                  </div>
+                  <div class="flow-row">
+                    <span>Alex Morgan</span><span>Studio</span
+                    ><span class="flow-state">Active</span>
+                  </div>
+                  <div class="flow-row">
+                    <span>Jamie Chen</span><span>Studio</span
+                    ><span class="flow-state neutral">Trialing</span>
+                  </div>
+                  <div class="flow-row">
+                    <span>Taylor Brooks</span><span>Studio</span
+                    ><span class="flow-state warn">Past Due</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flow-note">
+          Illustrative recreations of the public demo interface. Customer names
+          and billing data are fictional.
+        </div>
+      </section>
+      <section class="context" id="story">
+        <div class="wrap">
+          <div class="split">
+            <div class="split-copy">
+              <div class="eyebrow">02 / Context &amp; task</div>
+              <h2>Make every change<br />easy to understand.</h2>
+            </div>
+            <div class="context-copy">
+              <p>
+                A plan change or cancellation affects more than a label on a
+                screen. Customers need to know what they will pay and when a
+                change takes effect. Operators need a clear view of each
+                subscription’s current state.
+              </p>
+              <p class="muted">
+                Subflow makes those decisions visible before they are confirmed,
+                then carries the updated state through the customer and admin
+                views.
+              </p>
+              <div class="callout">
+                <span>Product question</span>How can customers manage their
+                subscription with confidence while operators keep a clear view
+                of every change?
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap" id="approach">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">03 / The approach</div>
+            <h2>From plan choice<br />to subscription state.</h2>
+          </div>
+          <p>
+            A shared subscription lifecycle links the customer journey to admin
+            oversight. Every action shows the next state and when it takes
+            effect.
+          </p>
+        </div>
+        <div class="journey">
+          <article>
+            <div class="step">01 / CHOOSE</div>
+            <h3>Compare plans</h3>
+            <p>
+              Review plan options and monthly or annual billing from the
+              customer portal.
+            </p>
+            <div class="mini-label">Change Plan</div>
+          </article>
+          <article>
+            <div class="step">02 / CONFIRM</div>
+            <h3>See what changes</h3>
+            <p>
+              Review the new price and effective date before scheduling the plan
+              change.
+            </p>
+            <div class="mini-label">Upcoming change</div>
+          </article>
+          <article>
+            <div class="step">03 / MANAGE</div>
+            <h3>Follow the lifecycle</h3>
+            <p>
+              Cancel or resume renewal, while customer and admin views reflect
+              the current subscription state.
+            </p>
+            <div class="mini-label">Renewal settings</div>
+          </article>
+        </div>
+      </section>
+      <section class="screens" id="screens">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">04 / Key product screens</div>
+              <h2>Every decision,<br />clearly shown.</h2>
+            </div>
+            <p>
+              From a customer’s plan choice to an admin’s payment review, the
+              screens keep price, timing, and status in view.
+            </p>
+          </div>
+          <div class="flow-screens">
+            <article class="flow-screen-card">
+              <div class="flow-screen-title">
+                <span class="n">SCREEN 01</span>
+                <h3>Change Plan</h3>
+                <p>
+                  Compare billing intervals and confirm the upcoming plan
+                  change.
+                </p>
+              </div>
+              <div class="flow-screen-inner">
+                <div class="flow-view">
+                  <div class="flow-top">
+                    <span>◉ SUBFLOW</span><span>CUSTOMER / CHANGE PLAN</span>
+                  </div>
+                  <div class="flow-main">
+                    <div class="flow-label">YOUR CURRENT PLAN · STUDIO</div>
+                    <div class="flow-title">Choose a plan.</div>
+                    <div class="flow-sub">
+                      Select a plan and billing interval that works for you.
+                    </div>
+                    <div class="flow-cards">
+                      <div class="flow-option">
+                        <h5>Core</h5>
+                        <strong>Monthly / Annual</strong>
+                        <p>Compare this plan.</p>
+                      </div>
+                      <div class="flow-option selected">
+                        <h5>Scale</h5>
+                        <strong>Monthly / Annual</strong>
+                        <p>Compare this plan.</p>
+                      </div>
+                    </div>
+                    <div class="flow-confirm">
+                      <div class="flow-card-head">
+                        <span>Review your change</span
+                        ><span class="flow-state">UPCOMING</span>
+                      </div>
+                      <div class="flow-line">
+                        <span>New plan</span><b>Scale · Monthly</b>
+                      </div>
+                      <div class="flow-line">
+                        <span>New price</span><b>Shown before confirmation</b>
+                      </div>
+                      <div class="flow-line">
+                        <span>Effective</span><b>Feb 1, 2026</b>
+                      </div>
+                      <span class="flow-cta">Confirm change →</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="flow-screen-card">
+              <div class="flow-screen-title">
+                <span class="n">SCREEN 02</span>
+                <h3>Scheduled to Cancel</h3>
+                <p>
+                  Show the access end date and whether renewal can still be
+                  resumed.
+                </p>
+              </div>
+              <div class="flow-screen-inner">
+                <div class="flow-view">
+                  <div class="flow-top">
+                    <span>◉ SUBFLOW</span><span>CUSTOMER / SETTINGS</span>
+                  </div>
+                  <div class="flow-main">
+                    <div class="flow-label">SUBSCRIPTION SETTINGS</div>
+                    <div class="flow-title">Manage renewal.</div>
+                    <div class="flow-sub">
+                      Your subscription settings and next steps.
+                    </div>
+                    <div class="flow-plan">
+                      <div class="flow-plan-tag">RENEWAL STATUS</div>
+                      <h4>Scheduled to Cancel</h4>
+                      <div class="flow-price">Studio plan · $49.00 / month</div>
+                      <div class="flow-end">
+                        Your access continues until Feb 1, 2026.
+                      </div>
+                    </div>
+                    <div class="flow-alert">
+                      Your plan will not renew after the current billing period.
+                    </div>
+                    <div class="flow-card">
+                      <div class="flow-card-head">
+                        <span>Want to keep your plan?</span
+                        ><span class="flow-state">RESUME AVAILABLE</span>
+                      </div>
+                      <span class="flow-cta">Resume subscription →</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="flow-screen-card wide">
+              <div class="flow-screen-title">
+                <span class="n">SCREEN 03 / ADMIN</span>
+                <h3>Payment Issues</h3>
+                <p>
+                  See open demo payment issues and take a manual retry action.
+                </p>
+              </div>
+              <div class="flow-screen-inner">
+                <div class="flow-view">
+                  <div class="flow-top">
+                    <span>◉ SUBFLOW</span><span>ADMIN / PAYMENT ISSUES</span>
+                  </div>
+                  <div class="flow-main">
+                    <div class="flow-label">ADMIN WORKSPACE</div>
+                    <div class="flow-title">Payment issues.</div>
+                    <div class="flow-sub">
+                      Review failed attempts and retry when appropriate.
+                    </div>
+                    <div class="flow-card">
+                      <div class="flow-card-head">
+                        <span>Open issues</span
+                        ><span class="flow-muted">1 open</span>
+                      </div>
+                      <div
+                        class="flow-row"
+                        style="font-weight: 700; color: #758077"
+                      >
+                        <span>CUSTOMER / SUBSCRIPTION</span><span>ATTEMPT</span
+                        ><span>ACTION</span>
+                      </div>
+                      <div class="flow-row">
+                        <span
+                          >Taylor Brooks · Bloom House<br /><span
+                            class="flow-muted"
+                            >Studio · monthly · Past Due</span
+                          ></span
+                        ><span><span class="flow-state warn">Failed</span></span
+                        ><span
+                          ><span class="flow-cta" style="margin: 0"
+                            >Retry payment →</span
+                          ></span
+                        >
+                      </div>
+                    </div>
+                    <div class="flow-muted" style="margin-top: 9px">
+                      Demo payment methods determine the result of a manual
+                      retry.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="decisions flow-decisions" id="decisions">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">05 / Product decisions</div>
+              <h2>Make the next state clear.</h2>
+            </div>
+            <p>
+              Subscription changes are easier to trust when the interface
+              explains what will happen, when it will happen, and where that
+              state appears next.
+            </p>
+          </div>
+          <div class="decision-grid">
+            <article class="decision">
+              <div class="n">01 / TIMING</div>
+              <h3>Make the effective date visible</h3>
+              <p>
+                A plan change appears as upcoming, so customers can see when the
+                new plan and price will apply.
+              </p>
+            </article>
+            <article class="decision">
+              <div class="n">02 / LIFECYCLE</div>
+              <h3>Let time move the demo forward</h3>
+              <p>
+                The demo clock makes renewal boundaries and subscription status
+                changes explorable across both roles.
+              </p>
+            </article>
+            <article class="decision">
+              <div class="n">03 / SHARED VIEW</div>
+              <h3>Keep both roles connected</h3>
+              <p>
+                Changes in the customer portal appear in the admin workspace
+                through shared subscription data.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="outcomes">
+        <div class="wrap">
+          <div class="outcome-row">
+            <div>
+              <div class="eyebrow">06 / The result</div>
+              <h2>A lifecycle<br />you can explore.</h2>
+              <p style="color: var(--muted); font-size: 13px; max-width: 350px">
+                Subflow brings subscription self-service and admin oversight
+                together in an interactive demo.
+              </p>
+            </div>
+            <div class="outcome-list">
+              <div class="outcome-item">
+                <span class="n">01</span>
+                <div>
+                  <b>Manage a subscription</b>
+                  <p>
+                    Customers can compare plans, review billing details, and
+                    manage renewal settings.
+                  </p>
+                </div>
+              </div>
+              <div class="outcome-item">
+                <span class="n">02</span>
+                <div>
+                  <b>Follow changes over time</b>
+                  <p>
+                    Plan changes, cancellations, renewals, and payment issues
+                    are reflected in the subscription state.
+                  </p>
+                </div>
+              </div>
+              <div class="outcome-item">
+                <span class="n">03</span>
+                <div>
+                  <b>Keep operators in the loop</b>
+                  <p>
+                    Admins can review subscription status, find customer
+                    records, and handle demonstration payment issues.
+                  </p>
+                </div>
+              </div>
+              <div class="demo-note">
+                Concept project · Fictional customers and billing data · No real
+                recurring charges.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="next" id="contact">
+        <div class="wrap next-grid">
+          <div>
+            <div class="eyebrow">Take a closer look</div>
+            <h2>Step into Subflow.</h2>
+            <p>
+              Explore subscription management from both sides: as a customer and
+              as an admin.
+            </p>
+            <a
+              class="button"
+              href="https://stripedwall.agency/subflow-demo/"
+              target="_blank"
+              rel="noopener"
+              >Open Subflow demo ↗</a
+            >
+          </div>
+          <div class="contact-mini">
+            <small>Build a thoughtful product</small
+            ><a href="mailto:contact@stripedwall.agency"
+              >contact@stripedwall.agency ↗</a
+            ><small>More about Striped Wall</small
+            ><a
+              href="https://www.upwork.com/agencies/2120835511284164872/"
+              target="_blank"
+              rel="noopener"
+              >Upwork ↗</a
+            ><a
+              href="https://www.linkedin.com/in/roman-kuznetsov/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap footrow">
+        <a class="brand" href="../../index.html"
+          ><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span
+          >Striped Wall</a
+        >
+        <nav class="footlinks" aria-label="Footer navigation">
+          <a href="#story">The story</a><a href="#screens">Product screens</a
+          ><a href="#approach">Approach</a><a href="#contact">Contact</a>
+        </nav>
+        <span class="copyright">© Striped Wall · 2026</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-"""Embed authored CSS into the two static pages to avoid blocking requests."""
+"""Embed authored CSS into the static pages to avoid blocking requests."""
 from pathlib import Path
 import re
 
@@ -6,6 +6,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGES = {
     'index.html': ('assets/css/home.css', 'assets/css/base.css'),
     'work/subdesk/index.html': ('../../assets/css/subdesk.css', '../../assets/css/base.css'),
+    'work/subflow/index.html': ('../../assets/css/subflow.css', '../../assets/css/base.css'),
+    'work/paycontrol/index.html': ('../../assets/css/paycontrol.css', '../../assets/css/base.css'),
 }
 
 

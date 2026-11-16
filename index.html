@@ -2834,6 +2834,331 @@ header,.footer {
 
 
 }
+
+/* Subflow and Paycontrol previews are illustrative recreations of their demo interfaces. */
+.sf-shot,
+.pc-shot {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  border: 1px solid #c9c6bb;
+  font-family: var(--sans);
+  font-size: 6px;
+  line-height: 1.3;
+}
+.sf-shot {
+  grid-template-columns: 26% 74%;
+  background: #f5f6f1;
+  color: #17251e;
+}
+.sf-sidebar {
+  background: #183b31;
+  color: #fff;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.sf-sidebar b {
+  font-size: 8px;
+}
+.sf-sidebar small {
+  font-size: 5px;
+  margin-top: -5px;
+  color: #d1ddd5;
+}
+.sf-sidebar .shot-group {
+  font: 5px var(--mono);
+  letter-spacing: 0.06em;
+  color: #bdcbc2;
+  margin-top: 9px;
+}
+.sf-sidebar > span {
+  padding: 4px 4px;
+  font-size: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sf-sidebar .sf-active {
+  background: #315647;
+}
+.sf-main {
+  padding: 7px 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+.sf-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #daddd5;
+  color: #58665e;
+  font-size: 5px;
+  white-space: nowrap;
+}
+.sf-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 9px 0 7px;
+}
+.sf-heading b {
+  font-size: 13px;
+  letter-spacing: -0.04em;
+}
+.sf-heading small {
+  color: #68746d;
+  font-size: 6px;
+}
+.sf-filters {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 3px;
+}
+.sf-filters span {
+  padding: 4px;
+  border: 1px solid #d8ddd5;
+  background: #fff;
+  font-size: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sf-count {
+  margin: 6px 0 4px;
+  font-size: 5px;
+  color: #59645e;
+}
+.sf-table {
+  border: 1px solid #dfe2dc;
+  background: #fff;
+}
+.sf-row {
+  display: grid;
+  grid-template-columns: 1.25fr 0.65fr 0.65fr;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 4px;
+  border-top: 1px solid #e5e7e1;
+  font-size: 5px;
+  min-height: 23px;
+}
+.sf-row:first-child {
+  border-top: 0;
+}
+.sf-row small {
+  color: #778078;
+  font-size: 5px;
+}
+.sf-label {
+  font: 5px var(--mono);
+  text-transform: uppercase;
+  color: #69746d;
+  min-height: 15px;
+}
+.sf-status {
+  justify-self: start;
+  border-radius: 10px;
+  padding: 3px 5px;
+  font-size: 5px;
+  white-space: nowrap;
+}
+.sf-status.active {
+  background: #e4eee3;
+  color: #315b3a;
+}
+.sf-status.trial {
+  background: #f5efd9;
+  color: #80650d;
+}
+.sf-status.past {
+  background: #f7e6de;
+  color: #a34b2f;
+}
+.pc-shot {
+  grid-template-columns: 27% 73%;
+  background: #f4f5fa;
+  color: #17233b;
+}
+.pc-sidebar {
+  background: #16253f;
+  color: #f3f5fb;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.pc-sidebar b {
+  font-size: 8px;
+}
+.pc-sidebar small {
+  font: 5px var(--mono);
+  letter-spacing: 0.08em;
+  color: #d4daea;
+}
+.pc-sidebar .shot-group {
+  font: 5px var(--mono);
+  letter-spacing: 0.07em;
+  color: #aab5d1;
+  margin-top: 8px;
+}
+.pc-sidebar > span {
+  font-size: 6px;
+  padding: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.pc-sidebar .pc-active {
+  background: #2c3d5c;
+  border-left: 2px solid #8b75fa;
+}
+.pc-main {
+  padding: 7px 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+.pc-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e1e4ee;
+  font-size: 5px;
+  color: #65718b;
+  white-space: nowrap;
+}
+.pc-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 8px 0;
+}
+.pc-heading small {
+  font: 5px var(--mono);
+  letter-spacing: 0.07em;
+  color: #737e9a;
+}
+.pc-heading b {
+  font-size: 12px;
+  letter-spacing: -0.04em;
+}
+.pc-heading span {
+  font-size: 5px;
+  color: #66718a;
+}
+.pc-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 3px;
+}
+.pc-kpis div {
+  background: #fff;
+  border: 1px solid #e0e3ec;
+  padding: 5px 4px;
+  min-width: 0;
+}
+.pc-kpis small {
+  display: block;
+  min-height: 13px;
+  font-size: 4px;
+  line-height: 1.2;
+  color: #6d7892;
+}
+.pc-kpis b {
+  font-size: 8px;
+  white-space: nowrap;
+  letter-spacing: -0.03em;
+}
+.pc-lower {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5px;
+  margin-top: 6px;
+}
+.pc-chart,
+.pc-attention {
+  background: #fff;
+  border: 1px solid #e0e3ec;
+  padding: 6px 5px;
+  min-width: 0;
+}
+.pc-chart > b {
+  font-size: 7px;
+}
+.pc-bars {
+  height: 36px;
+  margin-top: 6px;
+  border-bottom: 1px solid #e3e5ed;
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  padding: 0 3px;
+}
+.pc-bars i {
+  display: block;
+  flex: 1;
+  background: #7161d5;
+  height: 45%;
+}
+.pc-bars i:nth-child(3n + 1) {
+  height: 78%;
+  background: #c8c0f4;
+}
+.pc-bars i:nth-child(3n + 2) {
+  height: 57%;
+}
+.pc-attention small {
+  display: block;
+  font: 4px var(--mono);
+  letter-spacing: 0.04em;
+  color: #777f99;
+}
+.pc-attention > b {
+  display: block;
+  font-size: 7px;
+  margin-top: 5px;
+}
+.pc-attention strong {
+  display: inline-block;
+  font-size: 17px;
+  margin-top: 6px;
+}
+.pc-attention span {
+  font-size: 5px;
+  color: #6a7590;
+  margin-left: 3px;
+}
+@media (max-width: 600px) {
+  .sf-main,
+  .pc-main {
+    padding: 6px;
+  }
+  .sf-sidebar,
+  .pc-sidebar {
+    padding: 7px 4px;
+  }
+  .sf-row {
+    grid-template-columns: 1.1fr 0.55fr 0.7fr;
+  }
+  .sf-filters span {
+    font-size: 4px;
+  }
+  .pc-kpis {
+    gap: 2px;
+  }
+  .pc-kpis div {
+    padding: 4px 2px;
+  }
+  .pc-kpis small {
+    font-size: 3.5px;
+  }
+  .pc-kpis b {
+    font-size: 7px;
+  }
+}
 </style>
 <style data-source="assets/css/base.css">
 /* Shared accessibility, navigation and responsive safeguards. Loaded last. */
@@ -2940,8 +3265,133 @@ main:focus { outline: none; }
 <article class="step"><span class="num">01 / DISCOVER</span><h3>Discovery &amp; Requirements</h3><p>Explore goals, users and needs to agree what the product should achieve.</p><div class="outcome">Outcome — Agreed goals &amp; requirements</div></article><article class="step"><span class="num">02 / STRUCTURE</span><h3>Product &amp; UX Architecture</h3><p>Define structure, flows, roles, functionality and business logic.</p><div class="outcome">Outcome — Product map</div></article><article class="step"><span class="num">03 / PLAN</span><h3>Technical Planning</h3><p>Set architecture, technology, APIs and implementation approach.</p><div class="outcome">Outcome — Technical plan</div></article><article class="step"><span class="num">04 / DESIGN</span><h3>Prototyping &amp; UI Design</h3><p>Prototype key journeys and build the interface and design system.</p><div class="outcome">Outcome — Approved design system</div></article><article class="step"><span class="num">05 / DEVELOP</span><h3>Development</h3><p>Build the product, business logic and integrations on the agreed foundation.</p><div class="outcome">Outcome — Working product</div></article><article class="step"><span class="num">06 / DELIVER</span><h3>QA &amp; Delivery</h3><p>Test key scenarios, resolve issues and prepare the product for handover.</p><div class="outcome">Outcome — Tested delivery</div></article></div><div class="process-close"><strong>One Process. Design and Development in Parallel.</strong><span>Connected at every stage</span></div></div></section>
 <section class="work" id="work"><div class="wrap"><div class="section-head"><div><div class="eyebrow">04 / Selected work</div><h2>Selected Work</h2></div><p>A closer look at what we design and build — from SaaS platforms to subscription and payment operations systems.</p></div><div class="work-cards">
 <article class="project"><div class="screen" role="img" aria-label="Illustrative dashboard preview with fictional data"><span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span><div class="ui-shot"><div class="shot-brand">STRIPED WALL&nbsp; / &nbsp;SUBDESK&nbsp; ● &nbsp;DEMO MODE</div><div class="shot-title">Overview.</div><div class="shot-sub">A clear view of your business, at a glance.</div><div class="shot-metrics"><div><small>Active subscriptions</small><b>3</b></div><div><small>Payments collected</small><b>$167</b></div><div><small>Refunded</small><b>$0</b></div><div><small>Failed payments</small><b>3</b></div></div><div class="shot-lower"><div class="shot-chart"><strong>Collected over time</strong><div class="shot-bars"><i></i><i></i><i></i><i></i></div></div><div class="shot-table"><strong>Payment issues</strong><div class="shot-row"><span>txn_1002</span><span>J. Wilson</span><span>Failed</span></div><div class="shot-row"><span>txn_1005</span><span>O. Martin</span><span>Failed</span></div><div class="shot-row"><span>txn_1006</span><span>N. Williams</span><span>Failed</span></div></div></div></div></div><div class="project-body"><h3>SUBDESK</h3><div class="type">SaaS Support &amp; Billing Dashboard</div><p>An internal workspace to manage customers, subscriptions, transactions and payment issues.</p><div class="tags">Product discovery · UX/UI · Full-stack development</div><a class="project-link" href="work/subdesk/">Explore case study <span>↗</span></a></div></article>
-<article class="project"><div class="screen" role="img" aria-label="Illustrative dashboard preview with fictional data"><span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span><div class="ui-shot"><div class="shot-brand">STRIPED WALL&nbsp; / &nbsp;SUBDESK&nbsp; ● &nbsp;DEMO MODE</div><div class="shot-title">Overview.</div><div class="shot-sub">A clear view of your business, at a glance.</div><div class="shot-metrics"><div><small>Active subscriptions</small><b>3</b></div><div><small>Payments collected</small><b>$167</b></div><div><small>Refunded</small><b>$0</b></div><div><small>Failed payments</small><b>3</b></div></div><div class="shot-lower"><div class="shot-chart"><strong>Collected over time</strong><div class="shot-bars"><i></i><i></i><i></i><i></i></div></div><div class="shot-table"><strong>Payment issues</strong><div class="shot-row"><span>txn_1002</span><span>J. Wilson</span><span>Failed</span></div><div class="shot-row"><span>txn_1005</span><span>O. Martin</span><span>Failed</span></div><div class="shot-row"><span>txn_1006</span><span>N. Williams</span><span>Failed</span></div></div></div></div></div><div class="project-body"><h3>SUBFLOW</h3><div class="type">Subscription Management Platform</div><p>Customer self-service and admin tools for plans, subscriptions and billing.</p><div class="tags">Product discovery · UX/UI · Full-stack development</div><span class="project-link">Case study coming soon</span></div></article>
-<article class="project"><div class="screen" role="img" aria-label="Illustrative dashboard preview with fictional data"><span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span><div class="ui-shot"><div class="shot-brand">STRIPED WALL&nbsp; / &nbsp;SUBDESK&nbsp; ● &nbsp;DEMO MODE</div><div class="shot-title">Overview.</div><div class="shot-sub">A clear view of your business, at a glance.</div><div class="shot-metrics"><div><small>Active subscriptions</small><b>3</b></div><div><small>Payments collected</small><b>$167</b></div><div><small>Refunded</small><b>$0</b></div><div><small>Failed payments</small><b>3</b></div></div><div class="shot-lower"><div class="shot-chart"><strong>Collected over time</strong><div class="shot-bars"><i></i><i></i><i></i><i></i></div></div><div class="shot-table"><strong>Payment issues</strong><div class="shot-row"><span>txn_1002</span><span>J. Wilson</span><span>Failed</span></div><div class="shot-row"><span>txn_1005</span><span>O. Martin</span><span>Failed</span></div><div class="shot-row"><span>txn_1006</span><span>N. Williams</span><span>Failed</span></div></div></div></div></div><div class="project-body"><h3>PAYCONTROL</h3><div class="type">Payment Operations &amp; Reconciliation</div><p>An operational workspace for monitoring transactions and reconciling financial records.</p><div class="tags">Product discovery · UX/UI · Full-stack development</div><span class="project-link">Case study coming soon</span></div></article></div><div class="work-note">All projects featured here are self-initiated concepts developed by Striped Wall.</div></div></section>
+<article class="project">
+  <div
+    class="screen"
+    role="img"
+    aria-label="Illustrative Subflow admin preview showing subscriptions and plan statuses"
+  >
+    <span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="sf-shot">
+      <div class="sf-sidebar">
+        <b>◉ Subflow</b><small>by Striped Wall</small>
+        <div class="shot-group">WORKSPACE</div>
+        <span class="sf-active">Subscriptions</span><span>Customers</span
+        ><span>Plans</span><span>Payment issues</span>
+      </div>
+      <div class="sf-main">
+        <div class="sf-top">
+          Admin · Demo / No real charges <span>Jan 15, 2026</span>
+        </div>
+        <div class="sf-heading">
+          <b>Subscriptions</b><small>Manage your demo subscriptions.</small>
+        </div>
+        <div class="sf-filters">
+          <span>Search</span><span>Status · All</span><span>Plan · All</span>
+        </div>
+        <div class="sf-count">5 results</div>
+        <div class="sf-table">
+          <div class="sf-row sf-label">
+            <span>Customer</span><span>Plan</span><span>Status</span>
+          </div>
+          <div class="sf-row">
+            <span>Northstar Studio<br /><small>Alex Morgan</small></span
+            ><span>Studio<br />monthly</span
+            ><b class="sf-status active">Active</b>
+          </div>
+          <div class="sf-row">
+            <span>Fieldwork Co.<br /><small>Jamie Chen</small></span
+            ><span>Studio<br />monthly</span
+            ><b class="sf-status trial">Trialing</b>
+          </div>
+          <div class="sf-row">
+            <span>Bloom House<br /><small>Taylor Brooks</small></span
+            ><span>Studio<br />monthly</span
+            ><b class="sf-status past">Past due</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="project-body">
+    <h3>SUBFLOW</h3>
+    <div class="type">Subscription Management Platform</div>
+    <p>
+      Customer self-service and admin tools for plans, subscriptions and
+      billing.
+    </p>
+    <div class="tags">Product discovery · UX/UI · Full-stack development</div>
+    <a
+      class="project-link"
+      href="work/subflow/"
+      aria-label="Explore Subflow case study"
+      >Explore case study <span aria-hidden="true">↗</span></a
+    >
+  </div>
+</article>
+<article class="project">
+  <div
+    class="screen"
+    role="img"
+    aria-label="Illustrative Paycontrol overview showing payment metrics and issues"
+  >
+    <span class="screen-stripe" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="pc-shot">
+      <div class="pc-sidebar">
+        <b>▤ Paycontrol</b><small>BY STRIPED WALL</small>
+        <div class="shot-group">MONITOR</div>
+        <span class="pc-active">Overview</span><span>Reports</span>
+        <div class="shot-group">OPERATIONS</div>
+        <span>Transactions</span><span>Payment issues</span><span>Refunds</span
+        ><span>Reconciliation</span>
+      </div>
+      <div class="pc-main">
+        <div class="pc-top">
+          Workspace / Overview <span>Local demo · USD / EUR</span>
+        </div>
+        <div class="pc-heading">
+          <small>MONITOR / OVERVIEW</small><b>Your payments, in focus.</b
+          ><span>A connected view of performance and exceptions.</span>
+        </div>
+        <div class="pc-kpis">
+          <div><small>Attempts</small><b>42</b></div>
+          <div><small>Gross volume</small><b>$5.6k</b></div>
+          <div><small>Success rate</small><b>73.8%</b></div>
+          <div><small>Refunds</small><b>2</b></div>
+          <div><small>Discrepancies</small><b>Not run</b></div>
+        </div>
+        <div class="pc-lower">
+          <div class="pc-chart">
+            <b>Payment activity</b>
+            <div class="pc-bars">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+              ><i></i>
+            </div>
+          </div>
+          <div class="pc-attention">
+            <small>YOUR NEXT ACTIONS</small><b>Needs your attention</b
+            ><strong>11</strong><span>active investigations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="project-body">
+    <h3>PAYCONTROL</h3>
+    <div class="type">Payment Operations &amp; Reconciliation</div>
+    <p>
+      An operational workspace for monitoring transactions and reconciling
+      financial records.
+    </p>
+    <div class="tags">Product discovery · UX/UI · Full-stack development</div>
+    <a
+      class="project-link"
+      href="work/paycontrol/"
+      aria-label="Explore Paycontrol case study"
+      >Explore case study <span aria-hidden="true">↗</span></a
+    >
+  </div>
+</article></div><div class="work-note">All projects featured here are self-initiated concepts developed by Striped Wall.</div></div></section>
 <section class="about" id="about"><div class="wrap about-grid"><div><div class="eyebrow">05 / About Striped Wall</div><h2>Design and engineering, working as one.</h2></div><div class="about-copy"><p>In traditional workflows, design and development happen one after another. This can lead to rework when technical requirements meet design decisions.</p><p>At Striped Wall, both disciplines work in parallel from day one. Design decisions account for technical realities, while engineering evolves alongside the product vision.</p><p class="statement">Fewer compromises. Less rework. Better products.</p><div class="about-bottom"><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span>One integrated product team. Two complementary areas of expertise.</div></div></div></section>
 <section class="talk" id="contact"><div class="wrap talk-grid"><div><div class="eyebrow">06 / Let's talk</div><h2>Let's build something meaningful.</h2><p>Have a product idea, an existing platform to improve, or a technical challenge to solve? Tell us what you're working on. Let's explore how we can move it forward together.</p><a class="button" href="mailto:contact@stripedwall.agency">Discuss your project&nbsp; ↗</a></div><div class="contacts"><small>Email</small><a href="mailto:contact@stripedwall.agency">contact@stripedwall.agency ↗</a><small>Find us on</small><div class="contact-links"><a href="https://www.upwork.com/agencies/2120835511284164872/" target="_blank" rel="noopener">Upwork ↗</a><a href="https://www.linkedin.com/in/roman-kuznetsov/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div></div></section>
 </main><footer class="footer"><div class="wrap footrow"><a class="brand" href="#top"><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span>Striped Wall</a><nav class="footnav" aria-label="Footer navigation"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav><div class="social"><a href="mailto:contact@stripedwall.agency">Email</a><a href="https://www.upwork.com/agencies/2120835511284164872/" target="_blank" rel="noopener">Upwork</a><a href="https://www.linkedin.com/in/roman-kuznetsov/" target="_blank" rel="noopener">LinkedIn</a></div><div class="copyright">© Striped Wall — 2026</div></div></footer>
