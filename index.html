@@ -24,13 +24,11 @@
 <style data-source="assets/css/home.css">
 :root {
   --paper:#f5f2e9;
-  --ink:#292b27;
+  --ink:#2a2a2a;
   --muted:#77776e;
-  --olive:#729800;
   --yellow:#ffbd24;
   --orange:#f04b00;
   --sand:#e4d4c7;
-  --green-deep:#557500;
   --line:#d7d3c8;
   --white:#fbfaf6;
   --serif:Georgia,'Times New Roman',serif;
@@ -77,7 +75,7 @@ button {
   display:block;
   height:100%;
   flex:1;
-  background:var(--olive)
+  background:var(--green)
 }
 .stripe i:nth-child(2) {
   background:var(--yellow)
@@ -131,8 +129,8 @@ header {
   transition:.2s
 }
 .nav-cta:hover,.button.dark:hover {
-  background:var(--olive);
-  border-color:var(--olive);
+  background:var(--green);
+  border-color:var(--green);
   color:white
 }
 .menu {
@@ -243,7 +241,7 @@ section {
 }
 .num {
   font:11px var(--mono);
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .build-card h3 {
   font-size:30px;
@@ -297,7 +295,7 @@ section {
   font:10px/1.9 var(--mono);
   text-transform:uppercase;
   letter-spacing:.02em;
-  color:var(--olive-ink);
+  color:var(--green);
   margin-top:20px
 }
 
@@ -314,15 +312,15 @@ section {
 .principles {
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  border-top:1px solid #55564f;
-  border-bottom:1px solid #55564f;
+  border-top:1px solid #555555;
+  border-bottom:1px solid #555555;
   margin:52px 0 100px
 }
 .principle {
   padding:24px 20px 30px 0
 }
 .principle+.principle {
-  border-left:1px solid #55564f;
+  border-left:1px solid #555555;
   padding-left:20px
 }
 .principle h3 {
@@ -339,16 +337,16 @@ section {
 .steps {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  border-top:1px solid #55564f
+  border-top:1px solid #555555
 }
 .step {
   padding:25px 28px 27px 0;
-  border-bottom:1px solid #55564f;
+  border-bottom:1px solid #555555;
   min-height:205px
 }
 .step:nth-child(3n+2),.step:nth-child(3n) {
   padding-left:24px;
-  border-left:1px solid #55564f
+  border-left:1px solid #555555
 }
 .step h3 {
   font-size:20px;
@@ -408,7 +406,7 @@ section {
   left:0;
   right:0;
   height:5px;
-  background:var(--olive);
+  background:var(--green);
   top:22px
 }
 .screen:after {
@@ -458,7 +456,7 @@ section {
   right:10%;
   height:2px;
   top:60%;
-  background:var(--olive);
+  background:var(--green);
   transform:rotate(-12deg)
 }
 .project-body {
@@ -472,7 +470,7 @@ section {
 }
 .project .type {
   font-size:11px;
-  color:var(--olive-ink);
+  color:var(--green);
   margin:3px 0 12px
 }
 .project p {
@@ -524,7 +522,7 @@ a.project-link::after {
 .about-copy p {
   font-size:16px;
   max-width:580px;
-  color:#5f6059
+  color:#5f5f5f
 }
 .about-copy .statement {
   font-size:24px;
@@ -543,12 +541,12 @@ a.project-link::after {
 }
 
 .talk {
-  background:var(--green-deep);
+  background:var(--green);
   color:#f7f4eb;
   padding:90px 0
 }
 .talk .eyebrow {
-  color:#e0e8c9
+  color:var(--green)
 }
 .talk-grid {
   display:grid;
@@ -570,14 +568,14 @@ a.project-link::after {
   margin-top:14px
 }
 .contacts {
-  border-left:1px solid #9cae69;
+  border-left:1px solid var(--green);
   padding:22px 0 0 35px;
   align-self:end
 }
 .contacts small {
   font:10px var(--mono);
   text-transform:uppercase;
-  color:#e0e8c9
+  color:var(--green)
 }
 .contacts a {
   display:block;
@@ -667,10 +665,10 @@ a.project-link::after {
 .principle:nth-child(3) {
   border-left:0;
   padding-left:0;
-  border-top:1px solid #55564f
+  border-top:1px solid #555555
 }
 .principle:nth-child(4) {
-  border-top:1px solid #55564f
+  border-top:1px solid #555555
 }
 .steps {
   grid-template-columns:1fr 1fr
@@ -681,7 +679,7 @@ a.project-link::after {
 }
 .step:nth-child(even) {
   padding-left:18px;
-  border-left:1px solid #55564f
+  border-left:1px solid #555555
 }
 .process-close {
   display:block
@@ -713,7 +711,7 @@ a.project-link::after {
 }
 .contacts {
   border-left:0;
-  border-top:1px solid #9ca17e;
+  border-top:1px solid #9d9d9d;
   padding:22px 0 0
 }
 .footrow {
@@ -762,7 +760,7 @@ section {
 }
 .principle,.principle+.principle,.principle:nth-child(3) {
   border-left:0;
-  border-top:1px solid #55564f;
+  border-top:1px solid #555555;
   padding:20px 0
 }
 .principle:first-child {
@@ -833,7 +831,7 @@ section {
 .shot-brand {
   font:6px var(--mono);
   letter-spacing:.07em;
-  color:#62645d;
+  color:#636363;
   border-bottom:1px solid #e2dfd5;
   padding-bottom:7px
 }
@@ -863,7 +861,7 @@ section {
 .shot-metrics small {
   display:block;
   font-size:6px;
-  color:#65665e
+  color:#656565
 }
 .shot-metrics b {
   font:15px var(--serif)
@@ -892,7 +890,7 @@ section {
 }
 .shot-bars i {
   flex:1;
-  background:#b2d455;
+  background:var(--green);
   max-width:25px
 }
 .shot-bars i:nth-child(1) {
@@ -969,12 +967,10 @@ section {
 :root {
   --paper:#f6f3eb;
   --white:#fbfaf6;
-  --ink:#252821;
-  --muted:#72736b;
-  --olive:#729800;
+  --ink:#272727;
+  --muted:#727272;
   --yellow:#ffbd24;
   --orange:#f04b00;
-  --green-deep:#426100;
   --line:#d8d4c9;
   --sand:#e4d4c7
 }
@@ -1016,7 +1012,7 @@ header {
   letter-spacing:.015em
 }
 .links a:hover,.footnav a:hover,.social a:hover {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .nav-cta {
@@ -1029,7 +1025,7 @@ header {
   padding:106px 0 72px
 }
 .hero .eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .hero-grid {
@@ -1047,7 +1043,7 @@ header {
 }
 
 .hero h1 em {
-  color:var(--olive-ink);
+  color:var(--green);
   font-style:italic
 }
 
@@ -1098,13 +1094,13 @@ section {
 }
 
 .section-head>div:first-child .eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .section-head p {
   font-size:13px;
   line-height:1.7;
   max-width:460px;
-  color:#65665e
+  color:#656565
 }
 
 .build {
@@ -1143,11 +1139,11 @@ section {
   line-height:1.65;
   max-width:300px;
   margin-top:10px;
-  color:#66675e
+  color:#666666
 }
 
 .build-card:nth-child(1) .num {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .build-card:nth-child(2) .num {
   color:#795a00
@@ -1165,7 +1161,7 @@ section {
 .service-intro {
   margin-top:19px;
   max-width:610px;
-  color:#65665e
+  color:#656565
 }
 .service-grid {
   border:0;
@@ -1203,12 +1199,12 @@ section {
   font-size:9px;
   line-height:1.8;
   margin-top:17px;
-  color:#657e18
+  color:var(--green)
 }
 
 .process {
   padding:116px 0 108px;
-  background:#272a24
+  background:#292929
 }
 .process .section-head h2 {
   font-size:clamp(44px,5vw,66px)
@@ -1222,7 +1218,7 @@ section {
 
 .principles {
   margin:45px 0 96px;
-  border-color:#56584f
+  border-color:#575757
 }
 .principle {
   padding:23px 21px 26px 0;
@@ -1230,7 +1226,7 @@ section {
 }
 .principle+.principle {
   padding-left:22px;
-  border-color:#56584f
+  border-color:#575757
 }
 .principle .num {
   color:var(--yellow)
@@ -1248,17 +1244,17 @@ section {
 }
 
 .steps {
-  border-color:#56584f;
+  border-color:#575757;
   grid-template-columns:repeat(3,1fr)
 }
 .step {
   padding:25px 26px 26px 0;
   min-height:225px;
-  border-color:#56584f
+  border-color:#575757
 }
 .step:nth-child(3n+2),.step:nth-child(3n) {
   padding-left:25px;
-  border-color:#56584f
+  border-color:#575757
 }
 .step .num {
   color:var(--yellow);
@@ -1278,7 +1274,7 @@ section {
 }
 .outcome {
   font-size:9px;
-  color:#d5dfb2;
+  color:var(--green);
   line-height:1.5;
   margin-top:13px
 }
@@ -1379,19 +1375,19 @@ section {
 .project .type {
   font-size:10px;
   line-height:1.4;
-  color:#627e12;
+  color:var(--green);
   margin:2px 0 12px
 }
 .project p {
   font-size:11px;
   line-height:1.65;
   min-height:65px;
-  color:#66675e
+  color:#666666
 }
 .project .tags {
   font:8px/1.65 var(--mono);
   min-height:34px;
-  color:#62645b
+  color:#636363
 }
 .project-link {
   font-size:10px;
@@ -1404,7 +1400,7 @@ section {
   font-size:9px;
   line-height:1.6;
   margin-top:16px;
-  color:#62645b
+  color:#636363
 }
 
 .about {
@@ -1419,7 +1415,7 @@ section {
   max-width:510px
 }
 .about-grid>div:first-child .eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 .about-copy {
   padding-top:25px
@@ -1427,7 +1423,7 @@ section {
 .about-copy p {
   font-size:14px;
   line-height:1.8;
-  color:#5f6059
+  color:#5f5f5f
 }
 .about-copy .statement {
   font:28px/1.15 var(--serif);
@@ -1448,11 +1444,11 @@ section {
 }
 
 .talk {
-  background:var(--green-deep);
+  background:var(--green);
   padding:94px 0 91px
 }
 .talk .eyebrow {
-  color:#e3ebce
+  color:var(--green)
 }
 .talk-grid {
   grid-template-columns:1fr .72fr;
@@ -1466,7 +1462,7 @@ section {
 .talk p {
   font-size:13px;
   line-height:1.75;
-  color:#e4e6d9;
+  color:#e5e5e5;
   max-width:490px;
   margin-top:22px
 }
@@ -1479,11 +1475,11 @@ section {
 .contacts {
   align-self:center;
   padding:22px 0 0 35px;
-  border-color:#879c55
+  border-color:var(--green)
 }
 .contacts small {
   font-size:9px;
-  color:#d9e3c0
+  color:var(--green)
 }
 .contacts>a {
   font-size:15px;
@@ -1655,7 +1651,7 @@ section {
 }
 .principle,.principle+.principle,.principle:nth-child(3) {
   border-left:0;
-  border-top:1px solid #56584f;
+  border-top:1px solid #575757;
   padding:18px 0;
   min-height:0
 }
@@ -1719,7 +1715,7 @@ section {
 }
 .contacts {
   border-left:0;
-  border-top:1px solid #879c55;
+  border-top:1px solid var(--green);
   padding:20px 0 0
 }
 .footrow {
@@ -1744,26 +1740,24 @@ section {
 
 /* Color pass: stronger primary actions and distinct accents inside Process. */
 :root {
-  --action-green:#557500;
   --process-orange:#f56a2a;
-  --process-green:#a8cf3a
 }
 
 .nav-cta {
-  background:var(--action-green);
-  border-color:var(--action-green);
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
 .nav-cta:hover,.button.dark:hover {
-  background:#3f5e00;
-  border-color:#3f5e00;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
 .button.dark {
-  background:var(--action-green);
-  border-color:var(--action-green);
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
@@ -1776,29 +1770,27 @@ section {
 }
 
 .process .principles~.section-head .eyebrow {
-  color:var(--process-green)
+  color:var(--green)
 }
 
 .process .steps .num {
-  color:var(--process-green)
+  color:var(--green)
 }
 
 .process .outcome {
-  color:#c6dd8b
+  color:var(--green)
 }
 
 
 
 /* Refined brand color, Process separation, and clear case-screen framing. */
 :root {
-  --action-green:#729800;
   --process-orange:#f04b00;
-  --process-green:#a8cf3a
 }
 
 .nav-cta,.button.dark {
-  background:var(--action-green);
-  border-color:var(--action-green);
+  background:var(--green);
+  border-color:var(--green);
   color:var(--ink)
 }
 
@@ -1819,11 +1811,11 @@ section {
 }
 
 .process .principles~.section-head .eyebrow,.process .steps .num {
-  color:var(--process-green)
+  color:var(--green)
 }
 
 .process .outcome {
-  color:#d1e29b
+  color:var(--green)
 }
 
 /* Fine color rules punctuate the page without filling large areas. */
@@ -1836,7 +1828,7 @@ section {
 }
 
 .work {
-  border-top:2px solid var(--olive)
+  border-top:2px solid var(--green)
 }
 
 .about {
@@ -1869,7 +1861,7 @@ section {
 }
 
 .screen-stripe i:nth-child(2) {
-  background:var(--olive)
+  background:var(--green)
 }
 
 .screen-stripe i:nth-child(3) {
@@ -1913,14 +1905,12 @@ section {
 
 /* Color emphasis pass based on the latest review. */
 :root {
-  --action-green:#5d8100;
   --process-orange:#f04b00;
-  --process-green:#9bc52d
 }
 
 .nav-cta,.button.dark {
-  background:var(--action-green);
-  border-color:var(--action-green);
+  background:var(--green);
+  border-color:var(--green);
   color:#fff;
   font-weight:800
 }
@@ -1936,8 +1926,8 @@ section {
 }
 
 .nav-cta:hover,.button.dark:hover {
-  background:#4f7000;
-  border-color:#4f7000;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
@@ -1976,7 +1966,7 @@ section {
 .service .tags {
   font-size:9px;
   font-weight:500;
-  color:#5b7810
+  color:var(--green)
 }
 
 .process>.wrap>.section-head:first-child .eyebrow,.process .principle .num {
@@ -1984,7 +1974,7 @@ section {
 }
 
 .process .principles~.section-head .eyebrow,.process .steps .num {
-  color:var(--process-green)
+  color:var(--green)
 }
 
 .process .principles~.section-head {
@@ -2004,7 +1994,7 @@ section {
 
 .process .process-close span {
   font:11px var(--mono);
-  color:#d5dfb2;
+  color:var(--green);
   white-space:nowrap
 }
 
@@ -2038,9 +2028,8 @@ section {
 :root {
   --paper:#fbfaf5;
   --white:#fffefa;
-  --ink:#252821;
-  --muted:#66685f;
-  --olive:#789e00;
+  --ink:#272727;
+  --muted:#676767;
   --yellow:#ffc21f;
   --orange:#f04b00;
   --line:#dedbd1;
@@ -2077,7 +2066,7 @@ header,.footer {
 
 .work {
   background:#f7f6f0;
-  border-top-color:var(--olive)
+  border-top-color:var(--green)
 }
 
 .project {
@@ -2107,7 +2096,7 @@ header,.footer {
   border-color:#e2dfd6
 }
 .shot-bars i {
-  background:#9fc936
+  background:var(--green)
 }
 
 .about {
@@ -2115,11 +2104,11 @@ header,.footer {
 }
 
 .process {
-  background:#252821
+  background:#272727
 }
 
 .process .section-head p,.principle p,.step p {
-  color:#d0d1c7
+  color:#d0d0d0
 }
 
 .process .section-head:first-child .eyebrow,.process .principle .num {
@@ -2127,45 +2116,42 @@ header,.footer {
 }
 
 .process .principles~.section-head .eyebrow,.process .steps .num {
-  color:#a8d638
+  color:var(--green)
 }
 
 .process .outcome {
-  color:#d4e99e
+  color:var(--green)
 }
 
 .nav-cta,.button.dark {
-  background:#5d8100;
-  border-color:#5d8100;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
 .nav-cta:hover,.button.dark:hover {
-  background:#4f7000;
-  border-color:#4f7000;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
 .contacts {
-  border-color:#91a74c
+  border-color:var(--green)
 }
 .talk .eyebrow,.contacts small {
-  color:#e4ebd2
+  color:var(--green)
 }
 
 
 
 /* Final color and first-screen hierarchy pass. */
 :root {
-  --action-green:#82ad00;
-  --olive:#729800;
-  --process-green:#a7d63a;
   --process-orange:#f04b00
 }
 
 .nav-cta,.button.dark {
-  background:var(--action-green);
-  border-color:var(--action-green);
+  background:var(--green);
+  border-color:var(--green);
   color:#fff;
   font-size:12px;
   font-weight:800
@@ -2179,8 +2165,8 @@ header,.footer {
 }
 
 .nav-cta:hover,.button.dark:hover {
-  background:#709600;
-  border-color:#709600;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
@@ -2195,7 +2181,7 @@ header,.footer {
 }
 
 .hero h1 em {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .hero-stripes {
@@ -2218,7 +2204,7 @@ header,.footer {
 
 .hero-stripes i:nth-child(2) {
   width:78%;
-  background:var(--olive)
+  background:var(--green)
 }
 .hero-stripes i:nth-child(3) {
   width:54%;
@@ -2250,7 +2236,7 @@ header,.footer {
   display:inline-flex;
   align-items:center;
   padding:5px 9px;
-  border-left:3px solid var(--olive);
+  border-left:3px solid var(--green);
   background:#fffefa;
   color:var(--ink);
   font-size:11px;
@@ -2299,11 +2285,11 @@ header,.footer {
 }
 
 .process .principles~.section-head .eyebrow,.process .steps .num {
-  color:var(--process-green)
+  color:var(--green)
 }
 
 .process .process-close {
-  border-top-color:var(--process-green)
+  border-top-color:var(--green)
 }
 
 @media(max-width:900px) {
@@ -2369,14 +2355,14 @@ header,.footer {
 }
 
 .build-card:nth-child(2) .num {
-  color:var(--olive-ink);
+  color:var(--green);
   font-weight:500
 }
 
 .service .num {
   font-size:14px;
   font-weight:500;
-  color:#526e00;
+  color:var(--green);
   letter-spacing:.05em
 }
 
@@ -2384,7 +2370,7 @@ header,.footer {
   font-size:10.5px;
   font-weight:500;
   line-height:1.7;
-  color:#547500
+  color:var(--green)
 }
 
 .build,.services,.work,.about {
@@ -2423,7 +2409,7 @@ header,.footer {
 }
 
 .services .section-head>div:first-child>.eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .work .section-head>div:first-child>.eyebrow {
@@ -2431,14 +2417,14 @@ header,.footer {
 }
 
 .about-grid>div:first-child>.eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 
 
 /* Revised section-label color sequence. */
 .build .section-head>div:first-child>.eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .services .section-head>div:first-child>.eyebrow {
@@ -2446,7 +2432,7 @@ header,.footer {
 }
 
 .work .section-head>div:first-child>.eyebrow {
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .about-grid>div:first-child>.eyebrow {
@@ -2470,7 +2456,7 @@ header,.footer {
 }
 
 .why-copy .eyebrow {
-  color:var(--olive-ink);
+  color:var(--green);
   font-size:12px;
   font-weight:500;
   letter-spacing:.13em
@@ -2487,7 +2473,7 @@ header,.footer {
 .why-copy>p {
   font-size:14px;
   line-height:1.75;
-  color:#55584f;
+  color:#575757;
   max-width:560px
 }
 
@@ -2505,7 +2491,7 @@ header,.footer {
   align-items:center;
   padding-bottom:12px;
   border-bottom:1px solid #dedbd1;
-  color:#707269;
+  color:#717171;
   font:9px var(--mono);
   text-transform:uppercase;
   letter-spacing:.07em
@@ -2548,7 +2534,7 @@ header,.footer {
   justify-content:space-between;
   gap:16px;
   padding:10px 0 0;
-  color:#62645b;
+  color:#636363;
   font-size:10px
 }
 
@@ -2569,15 +2555,15 @@ header,.footer {
 
 .workflow-actions span {
   padding:8px 10px;
-  border:1px solid #8cac35;
-  color:#476400;
+  border:1px solid var(--green);
+  color:var(--green);
   font-size:10px;
   font-weight:700
 }
 
 .workflow-actions span:first-child {
-  background:#7da700;
-  border-color:#7da700;
+  background:var(--green);
+  border-color:var(--green);
   color:#fff
 }
 
@@ -2602,13 +2588,13 @@ header,.footer {
 
 .workflow-steps b {
   font:500 10px var(--mono);
-  color:var(--olive-ink)
+  color:var(--green)
 }
 
 .workflow-steps span {
   font-size:9px;
   line-height:1.45;
-  color:#565950
+  color:#585858
 }
 
 .why-lower {
@@ -2642,14 +2628,14 @@ header,.footer {
 .why-story p {
   font-size:13px;
   line-height:1.8;
-  color:#565950;
+  color:#585858;
   margin:0 0 15px
 }
 
 .why-story .why-experience {
   font-size:16px;
   line-height:1.5;
-  color:var(--olive-ink);
+  color:var(--green);
   margin-bottom:17px
 }
 
@@ -2761,7 +2747,7 @@ header,.footer {
 .workflow-top span:first-child {
   font-size:10px;
   font-weight:700;
-  color:var(--olive-ink);
+  color:var(--green);
   letter-spacing:.035em
 }
 
@@ -2856,12 +2842,12 @@ header,.footer {
 }
 .sf-shot {
   grid-template-columns: 26% 74%;
-  background: #f5f6f1;
-  color: #17251e;
+  background: #f5f5f5;
+  color: #222222;
 }
 .sf-sidebar {
-  background: #183b31;
-  color: #fff;
+  background: var(--green);
+  color: #1a1a1a;
   padding: 8px 6px;
   display: flex;
   flex-direction: column;
@@ -2874,12 +2860,12 @@ header,.footer {
 .sf-sidebar small {
   font-size: 5px;
   margin-top: -5px;
-  color: #d1ddd5;
+  color: inherit;
 }
 .sf-sidebar .shot-group {
   font: 5px var(--mono);
   letter-spacing: 0.06em;
-  color: #bdcbc2;
+  color: inherit;
   margin-top: 9px;
 }
 .sf-sidebar > span {
@@ -2889,7 +2875,7 @@ header,.footer {
   overflow: hidden;
 }
 .sf-sidebar .sf-active {
-  background: #315647;
+  background: white;
 }
 .sf-main {
   padding: 7px 8px;
@@ -2901,8 +2887,8 @@ header,.footer {
   justify-content: space-between;
   gap: 6px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #daddd5;
-  color: #58665e;
+  border-bottom: 1px solid #dcdcdc;
+  color: #626262;
   font-size: 5px;
   white-space: nowrap;
 }
@@ -2917,7 +2903,7 @@ header,.footer {
   letter-spacing: -0.04em;
 }
 .sf-heading small {
-  color: #68746d;
+  color: #717171;
   font-size: 6px;
 }
 .sf-filters {
@@ -2927,7 +2913,7 @@ header,.footer {
 }
 .sf-filters span {
   padding: 4px;
-  border: 1px solid #d8ddd5;
+  border: 1px solid #dbdbdb;
   background: #fff;
   font-size: 5px;
   white-space: nowrap;
@@ -2936,10 +2922,10 @@ header,.footer {
 .sf-count {
   margin: 6px 0 4px;
   font-size: 5px;
-  color: #59645e;
+  color: #616161;
 }
 .sf-table {
-  border: 1px solid #dfe2dc;
+  border: 1px solid #e1e1e1;
   background: #fff;
 }
 .sf-row {
@@ -2948,7 +2934,7 @@ header,.footer {
   align-items: center;
   gap: 3px;
   padding: 5px 4px;
-  border-top: 1px solid #e5e7e1;
+  border-top: 1px solid #e6e6e6;
   font-size: 5px;
   min-height: 23px;
 }
@@ -2956,13 +2942,13 @@ header,.footer {
   border-top: 0;
 }
 .sf-row small {
-  color: #778078;
+  color: #7e7e7e;
   font-size: 5px;
 }
 .sf-label {
   font: 5px var(--mono);
   text-transform: uppercase;
-  color: #69746d;
+  color: #717171;
   min-height: 15px;
 }
 .sf-status {
@@ -2973,8 +2959,8 @@ header,.footer {
   white-space: nowrap;
 }
 .sf-status.active {
-  background: #e4eee3;
-  color: #315b3a;
+  background: var(--green);
+  color: #1a1a1a;
 }
 .sf-status.trial {
   background: #f5efd9;
@@ -3169,8 +3155,7 @@ header,.footer {
 </style>
 <style data-source="assets/css/base.css">
 /* Shared accessibility, navigation and responsive safeguards. Loaded last. */
-:root { --olive-ink: #526e00; --orange-ink: #f04b00; --muted: #65665e; --app-muted: #65685e; }
-.mini-button { color: #1b2112; }
+:root { --green: #729800; --orange-ink: #f04b00; --muted: #656565; --app-muted: #676767; }
 html { scroll-padding-top: 100px; }
 body { overflow-wrap: break-word; }
 header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
@@ -3180,22 +3165,20 @@ main:focus { outline: none; }
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 20; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
 .skip-link:focus { transform: none; }
 .menu-toggle { display: none; border: 1px solid currentColor; background: transparent; color: var(--ink); padding: 10px 12px; font: 12px var(--mono); cursor: pointer; }
-.nav-cta, .button.dark, .button.primary { background: #729800; border-color: #729800; color: white; }
-.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: #466000; border-color: #466000; color: white; }
+.nav-cta, .button.dark, .button.primary { background: var(--green); border-color: var(--green); color: white; }
+.nav-cta:hover, .button.dark:hover, .button.primary:hover { background: var(--green); border-color: var(--green); color: white; text-decoration: underline; }
 .hero .eyebrow, .build-card .num, .why .eyebrow, #story .eyebrow, #screens .eyebrow, .outcome-row .eyebrow { color: #f04b00; }
-.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: #526e00; }
-/* Bright brand backgrounds need dark text; small accent text needs darker ink. */
-.home .nav-cta, .home .button.dark { background: var(--action-green); border-color: var(--action-green); color: #1b2112; }
-.home .nav-cta:hover, .home .button.dark:hover { background: #709600; border-color: #709600; color: #1b2112; }
-.home .hero h1 em { color: var(--olive); }
+.hero h1 em, .section-head > div:first-child .eyebrow, .about-grid > div:first-child .eyebrow, .service .num, .service .tags, .project .type, .journey .step, .journey .mini-label, .screen-title .n, .outcome-item .n, .visual-cap .tag { color: var(--green); }
+.home .hero h1 em { color: var(--green); }
 .home .hero .eyebrow, .home .why .eyebrow, .expertise strong, .workflow-top span:last-child, .workflow-steps b { color: #f04b00; }
-.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: #526e00; }
-.workflow-actions span:first-child { color: #1b2112; }
+.home .about-grid > div:first-child > .eyebrow, .workflow-top span:first-child, .why-story .why-experience { color: var(--green); }
+.workflow-actions span:first-child { color: white; }
 .process > .wrap > .section-head:first-child .eyebrow, .process .principle .num { color: #ff996c; }
-.process .principles ~ .section-head .eyebrow, .process .steps .num { color: #a7d63a; }
+.process .principles ~ .section-head .eyebrow, .process .steps .num { color: var(--green); }
 .decisions .section-head > div:first-child .eyebrow { color: var(--yellow); }
-.talk .eyebrow, .next .eyebrow { color: #e0e8c9; }
-.next .eyebrow, .next p, .contact-mini small { color: #fffefa; }
+.talk .eyebrow, .talk p, .contacts, .contacts small,
+.next .eyebrow, .next p, .contact-mini, .contact-mini small { color: #1a1a1a; }
+.contacts, .contact-mini { border-color: #4b4b4b; }
 .product-section::before, #story::before, #approach::before, #screens::before, .outcomes::before { width: 100%; left: 0; transform: none; }
 .product-section, #approach { width: 100%; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
 .split-copy { top: 110px; }
