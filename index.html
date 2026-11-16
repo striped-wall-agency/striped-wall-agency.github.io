@@ -462,6 +462,7 @@ section {
   transform:rotate(-12deg)
 }
 .project-body {
+  position:relative;
   padding:22px
 }
 .project h3 {
@@ -493,6 +494,12 @@ section {
   font-weight:700;
   display:flex;
   justify-content:space-between
+}
+/* Extend the case-study link across the project body. */
+a.project-link::after {
+  content:"";
+  position:absolute;
+  inset:0
 }
 .work-note {
   font:10px var(--mono);
